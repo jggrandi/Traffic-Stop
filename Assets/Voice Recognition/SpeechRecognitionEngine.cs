@@ -6,6 +6,7 @@ using UnityEngine.Windows.Speech;
 
 public class SpeechRecognitionEngine : MonoBehaviour
 {
+    private bool ready = false;
     public string[] keywords = new string[] { "driver license", "do you know", "left", "right" };
     public ConfidenceLevel confidence = ConfidenceLevel.Medium;
     public AudioClip[] audios = new AudioClip[] { };
@@ -13,7 +14,11 @@ public class SpeechRecognitionEngine : MonoBehaviour
     protected DictationRecognizer recognizer;
     private string word = "";
     public Animator[] amins = new Animator[] { };
-    int handleLicense = Animator.StringToHash("HandleLicense");
+    int HeadRot = Animator.StringToHash("HeadRot");
+    int HeadRotBack = Animator.StringToHash("HeadRotBack");
+    int Walk = Animator.StringToHash("Walk");
+    int LicensePass = Animator.StringToHash("LicensePass");
+    int Driving = Animator.StringToHash("Driving");
 
     void Start()
     {
@@ -30,6 +35,20 @@ public class SpeechRecognitionEngine : MonoBehaviour
     //    word = args.text;
     //    results.text = "You said: <b>" + word + "</b>";
     //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name == "BodyCollider")
+        {
+            ready = true;
+            amins[0].SetBool(HeadRot, true);
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        ready = false;
+    }
 
     void Update()
     {
@@ -38,12 +57,14 @@ public class SpeechRecognitionEngine : MonoBehaviour
 
         for (int i = 0; i< keywords.Length; i++)
         {
-            if (word.Contains(keywords[i]))
+            if ( ready && word.Contains(keywords[i]))
             {
                 switch (i)
                 {
                     case 0:
-                        amins[0].SetBool(handleLicense, true);
+                        amins[0].SetBool(HeadRot, false);
+                        amins[0].SetBool(HeadRotBack, true);
+                        amins[0].SetBool(LicensePass, true);
                         word = "";
                         break;
                     case 1:
@@ -52,7 +73,8 @@ public class SpeechRecognitionEngine : MonoBehaviour
                         word = "";
                         break;
                     default:
-                        amins[0].SetBool(handleLicense, false);
+                        amins[0].SetBool(HeadRotBack, false);
+                        amins[0].SetBool(LicensePass, false);
                         break;
                 }
             }
