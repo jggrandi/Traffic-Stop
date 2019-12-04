@@ -12,7 +12,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
     public AudioClip[] audios = new AudioClip[] { };
     public AudioSource[] audioSources = new AudioSource[] { };
     protected DictationRecognizer recognizer;
-    private string word = "";
+    public string word = "";
     public Animator[] amins = new Animator[] { };
     int HeadRot = Animator.StringToHash("HeadRot");
     int HeadRotBack = Animator.StringToHash("HeadRotBack");
@@ -37,7 +37,8 @@ public class SpeechRecognitionEngine : MonoBehaviour
     //}
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.name == "BodyCollider")
+        Debug.Log(other.name);
+        if(other.name == "HeadCollider")
         {
             ready = true;
             amins[0].SetBool(HeadRot, true);
