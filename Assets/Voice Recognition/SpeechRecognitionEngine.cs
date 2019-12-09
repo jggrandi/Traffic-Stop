@@ -58,35 +58,44 @@ public class SpeechRecognitionEngine : MonoBehaviour
 
     void Update()
     {
-        //var x = target.transform.position.x;
-        //var y = target.transform.position.y;
+        if (!ready) return;
+        if (word == "") return;
+        
+        int idWord = MatchSpeachToDatabase(word);
+        Debug.Log(idWord);
+        if (idWord == -1) return;
 
-        for (int i = 0; i< keywords.Length; i++)
+        switch (idWord)
         {
-            if ( ready && word.Contains(keywords[i]))
-            {
-                switch (i)
-                {
-                    case 0:
-                        amins[0].SetBool(HeadRot, false);
-                        amins[0].SetBool(HeadRotBack, true);
-                        amins[0].SetBool(LicensePass, true);
-                        break;
-                    case 1:
-                        audioSources[0].clip = audios[0];
-                        audioSources[0].Play();
-                        break;
-                    case 2:
-                        amins[0].SetBool(HeadRot, false);
-                        amins[0].SetBool(HeadRotBack, false);
-                        amins[0].SetBool(LicensePass, false);
-                        amins[0].SetBool(Driving, true);
-                        break;
-                    default:
-                        break;
-                }
-            }
+            case 0:
+                amins[0].SetBool(HeadRot, false);
+                amins[0].SetBool(HeadRotBack, true);
+                amins[0].SetBool(LicensePass, true);
+                break;
+            case 1:
+                audioSources[0].clip = audios[0];
+                audioSources[0].Play();
+                break;
+            case 2:
+                amins[0].SetBool(HeadRot, false);
+                amins[0].SetBool(HeadRotBack, false);
+                amins[0].SetBool(LicensePass, false);
+                amins[0].SetBool(Driving, true);
+                break;
+            default:
+                break;
         }
+        word = "";
+        idWord = -1;
+    }
+
+
+    int MatchSpeachToDatabase(string phraseSaid)
+    {
+        for (int i = 0; i < keywords.Length; i++)
+            if (phraseSaid.Contains(keywords[i]))
+                return i;
+        return -1;
     }
 
     void OnApplicationQuit()
