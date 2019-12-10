@@ -18,6 +18,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
     int HeadRotBack = Animator.StringToHash("HeadRotBack");
     int LicensePass = Animator.StringToHash("LicensePass");
     int Driving = Animator.StringToHash("Driving");
+    int Idle = Animator.StringToHash("Idle");
     void Start()
     {
         recognizer = new DictationRecognizer();
@@ -36,12 +37,13 @@ public class SpeechRecognitionEngine : MonoBehaviour
     //}
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
+        //Debug.Log(other.name);
         if(other.name == "HeadCollider")
         {
             ready = true;
             amins[0].SetBool(HeadRotBack, false);
             amins[0].SetBool(HeadRot, true);
+            amins[0].SetBool(Idle, false);
         }
 
     }
@@ -52,7 +54,10 @@ public class SpeechRecognitionEngine : MonoBehaviour
         {
             ready = false;
             amins[0].SetBool(HeadRot, false);
-            amins[0].SetBool(HeadRotBack, true);
+            amins[0].SetBool(Idle, true);
+            amins[0].SetBool(HeadRotBack, false);
+            amins[0].SetBool(LicensePass, false);
+            amins[0].SetBool(Driving, false);
         }
     }
 
@@ -60,9 +65,9 @@ public class SpeechRecognitionEngine : MonoBehaviour
     {
         if (!ready) return;
         if (word == "") return;
-        
+
         int idWord = MatchSpeachToDatabase(word);
-        Debug.Log(idWord);
+        Debug.Log("ggg " + idWord);
         if (idWord == -1) return;
 
         switch (idWord)
@@ -71,6 +76,8 @@ public class SpeechRecognitionEngine : MonoBehaviour
                 amins[0].SetBool(HeadRot, false);
                 amins[0].SetBool(HeadRotBack, true);
                 amins[0].SetBool(LicensePass, true);
+                amins[0].SetBool(Driving, false);
+                amins[0].SetBool(Idle, false);
                 break;
             case 1:
                 audioSources[0].clip = audios[0];
@@ -81,6 +88,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
                 amins[0].SetBool(HeadRotBack, false);
                 amins[0].SetBool(LicensePass, false);
                 amins[0].SetBool(Driving, true);
+                amins[0].SetBool(Idle, false);
                 break;
             default:
                 break;
