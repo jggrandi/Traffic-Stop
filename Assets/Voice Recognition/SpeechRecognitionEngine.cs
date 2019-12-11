@@ -93,6 +93,14 @@ public class SpeechRecognitionEngine : MonoBehaviour
                 amins[0].SetBool(LicensePassReset, true);
                 amins[0].SetBool(Leave, false);
                 break;
+            case 3:
+                amins[0].SetBool(HeadRot, false);
+                amins[0].SetBool(HeadRotBack, false);
+                amins[0].SetBool(LicensePass, false);
+                amins[0].SetBool(Driving, true);
+                amins[0].SetBool(LicensePassReset, false);
+                amins[0].SetBool(Leave, false);
+                break;
             default:
                 break;
         }
