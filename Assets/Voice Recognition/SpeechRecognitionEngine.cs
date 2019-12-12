@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
+using RogoDigital.Lipsync;
 
 public class SpeechRecognitionEngine : MonoBehaviour
 {
+    public LipSync LipSync;
+    public LipSyncData[] LipAnim = new LipSyncData[] { };
     private bool ready = false;
     public string[] keywords = new string[] { "license", "do you know", "thank", "right" };
     public ConfidenceLevel confidence = ConfidenceLevel.Medium;
-    public AudioClip[] audios = new AudioClip[] { };
     public AudioSource[] audioSources = new AudioSource[] { };
     protected DictationRecognizer recognizer;
     public string word = "";
@@ -82,8 +84,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
                 amins[0].SetBool(LicensePassReset, false);
                 break;
             case 1:
-                audioSources[0].clip = audios[0];
-                audioSources[0].Play();
+                LipSync.Play(LipAnim[0]);
                 break;
             case 2:
                 amins[0].SetBool(HeadRot, false);

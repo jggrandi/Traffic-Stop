@@ -211,7 +211,7 @@ Transform:
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1027503862
 GameObject:
@@ -302,7 +302,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1367172423
 PrefabInstance:
@@ -354,7 +354,7 @@ PrefabInstance:
     - target: {fileID: 6739097911086191166, guid: 007abda79b1281446bfce7d0d8b984a7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6739097911086191166, guid: 007abda79b1281446bfce7d0d8b984a7,
         type: 3}
@@ -373,72 +373,1273 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 007abda79b1281446bfce7d0d8b984a7, type: 3}
---- !u!1001 &1757647800
+--- !u!1001 &1460533349
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4339536627860985942, guid: a38189b1ca4571e4385ae5f9dbd4eaf1,
+    - target: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
         type: 3}
       propertyPath: m_Name
-      value: MaleDriver1
+      value: MaleD
       objectReference: {fileID: 0}
-    - target: {fileID: 748292750925212229, guid: a38189b1ca4571e4385ae5f9dbd4eaf1,
+    - target: {fileID: -5974112162225792653, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7932792131697842137, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.7852287
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 748292750925212229, guid: a38189b1ca4571e4385ae5f9dbd4eaf1,
+    - target: {fileID: -4216859302048453862, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9494755
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 748292750925212229, guid: a38189b1ca4571e4385ae5f9dbd4eaf1,
+    - target: {fileID: -4216859302048453862, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.058928
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 748292750925212229, guid: a38189b1ca4571e4385ae5f9dbd4eaf1,
+    - target: {fileID: -4216859302048453862, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 748292750925212229, guid: a38189b1ca4571e4385ae5f9dbd4eaf1,
+    - target: {fileID: -4216859302048453862, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 748292750925212229, guid: a38189b1ca4571e4385ae5f9dbd4eaf1,
+    - target: {fileID: -4216859302048453862, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 748292750925212229, guid: a38189b1ca4571e4385ae5f9dbd4eaf1,
+    - target: {fileID: -4216859302048453862, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 748292750925212229, guid: a38189b1ca4571e4385ae5f9dbd4eaf1,
+    - target: {fileID: -4216859302048453862, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 748292750925212229, guid: a38189b1ca4571e4385ae5f9dbd4eaf1,
+    - target: {fileID: -4216859302048453862, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 748292750925212229, guid: a38189b1ca4571e4385ae5f9dbd4eaf1,
+    - target: {fileID: -4216859302048453862, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 748292750925212229, guid: a38189b1ca4571e4385ae5f9dbd4eaf1,
+    - target: {fileID: -4216859302048453862, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_SelectedEditorRenderState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[26]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[25]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[4]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[30]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[5]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[27]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[22]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[10]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[8]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[7]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[14]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[18]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[6]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[12]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[31]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[45]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[46]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[59]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[58]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[63]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[62]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[53]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[54]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[17]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[32]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[33]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[26]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_SelectedEditorRenderState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[25]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[4]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[30]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[5]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[27]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[22]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[10]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[8]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[7]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[14]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[18]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[6]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[12]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[17]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[3]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[13]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[16]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[20]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[19]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a38189b1ca4571e4385ae5f9dbd4eaf1, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde, type: 3}
+--- !u!1 &1460533350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+    type: 3}
+  m_PrefabInstance: {fileID: 1460533349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1460533351 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -5105672806436731133, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+    type: 3}
+  m_PrefabInstance: {fileID: 1460533349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1460533352 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6306429551739687948, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+    type: 3}
+  m_PrefabInstance: {fileID: 1460533349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1460533353
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460533350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73062c91ee80bb040abd084433473a81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isReady: 1
+  users:
+  - {fileID: 1460533355}
+  _blendables:
+  - number: 0
+    currentWeight: 0
+  - number: 1
+    currentWeight: 0
+  - number: 2
+    currentWeight: 0
+  - number: 3
+    currentWeight: 0
+  - number: 4
+    currentWeight: 0
+  - number: 5
+    currentWeight: 0
+  - number: 6
+    currentWeight: 0
+  - number: 7
+    currentWeight: 0
+  - number: 8
+    currentWeight: 0
+  - number: 9
+    currentWeight: 0
+  - number: 10
+    currentWeight: 0
+  - number: 11
+    currentWeight: 0
+  - number: 12
+    currentWeight: 0
+  - number: 13
+    currentWeight: 0
+  - number: 14
+    currentWeight: 0
+  - number: 15
+    currentWeight: 0
+  - number: 16
+    currentWeight: 0
+  - number: 17
+    currentWeight: 0
+  - number: 18
+    currentWeight: 0
+  - number: 19
+    currentWeight: 0
+  - number: 20
+    currentWeight: 0
+  - number: 21
+    currentWeight: 0
+  - number: 22
+    currentWeight: 0
+  - number: 23
+    currentWeight: 0
+  - number: 24
+    currentWeight: 0
+  - number: 25
+    currentWeight: 0
+  - number: 26
+    currentWeight: 0
+  - number: 27
+    currentWeight: 0
+  - number: 28
+    currentWeight: 0
+  - number: 29
+    currentWeight: 0
+  - number: 30
+    currentWeight: 0
+  - number: 31
+    currentWeight: 0
+  - number: 32
+    currentWeight: 0
+  - number: 33
+    currentWeight: 0
+  - number: 34
+    currentWeight: 0
+  - number: 35
+    currentWeight: 0
+  - number: 36
+    currentWeight: 0
+  - number: 37
+    currentWeight: 0
+  - number: 38
+    currentWeight: 0
+  - number: 39
+    currentWeight: 0
+  - number: 40
+    currentWeight: 0
+  - number: 41
+    currentWeight: 0
+  - number: 42
+    currentWeight: 0
+  - number: 43
+    currentWeight: 0
+  - number: 44
+    currentWeight: 0
+  - number: 45
+    currentWeight: 0
+  - number: 46
+    currentWeight: 0
+  - number: 47
+    currentWeight: 0
+  - number: 48
+    currentWeight: 0
+  - number: 49
+    currentWeight: 0
+  - number: 50
+    currentWeight: 0
+  - number: 51
+    currentWeight: 0
+  - number: 52
+    currentWeight: 0
+  - number: 53
+    currentWeight: 0
+  - number: 54
+    currentWeight: 0
+  - number: 55
+    currentWeight: 0
+  - number: 56
+    currentWeight: 0
+  - number: 57
+    currentWeight: 0
+  - number: 58
+    currentWeight: 0
+  - number: 59
+    currentWeight: 0
+  - number: 60
+    currentWeight: 0
+  - number: 61
+    currentWeight: 0
+  - number: 62
+    currentWeight: 0
+  - number: 63
+    currentWeight: 0
+  - number: 64
+    currentWeight: 0
+  - number: 65
+    currentWeight: 0
+  - number: 66
+    currentWeight: 0
+  - number: 67
+    currentWeight: 0
+  - number: 68
+    currentWeight: 0
+  - number: 69
+    currentWeight: 0
+  - number: 70
+    currentWeight: 0
+  - number: 71
+    currentWeight: 0
+  - number: 72
+    currentWeight: 0
+  - number: 73
+    currentWeight: 0
+  - number: 74
+    currentWeight: 0
+  - number: 75
+    currentWeight: 0
+  - number: 76
+    currentWeight: 0
+  - number: 77
+    currentWeight: 0
+  - number: 78
+    currentWeight: 0
+  - number: 79
+    currentWeight: 0
+  - number: 80
+    currentWeight: 0
+  - number: 81
+    currentWeight: 0
+  - number: 82
+    currentWeight: 0
+  - number: 83
+    currentWeight: 0
+  - number: 84
+    currentWeight: 0
+  - number: 85
+    currentWeight: 0
+  - number: 86
+    currentWeight: 0
+  - number: 87
+    currentWeight: 0
+  - number: 88
+    currentWeight: 0
+  - number: 89
+    currentWeight: 0
+  - number: 90
+    currentWeight: 0
+  - number: 91
+    currentWeight: 0
+  - number: 92
+    currentWeight: 0
+  - number: 93
+    currentWeight: 0
+  - number: 94
+    currentWeight: 0
+  - number: 95
+    currentWeight: 0
+  manager: {fileID: 1460533354}
+--- !u!114 &1460533354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460533350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc1e47bffd97414a93a92fb41f56b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blendShapes:
+  - name: h_expressions.AE_AA_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 0
+  - name: h_expressions.AO_a_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 1
+  - name: h_expressions.Ax_E_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 2
+  - name: h_expressions.TD_I_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 3
+  - name: h_expressions.UH_OO_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 4
+  - name: h_expressions.UW_U_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 5
+  - name: h_expressions.H_EST_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 6
+  - name: h_expressions.FV_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 7
+  - name: h_expressions.S_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 8
+  - name: h_expressions.SH_CH_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 9
+  - name: h_expressions.MPB_Up_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 10
+  - name: h_expressions.MPB_Down_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 11
+  - name: h_expressions.KG_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 12
+  - name: h_expressions.RlipUp_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 13
+  - name: h_expressions.LlipUp_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 14
+  - name: h_expressions.RlipDown_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 15
+  - name: h_expressions.LlipDown_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 16
+  - name: h_expressions.RlipSide_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 17
+  - name: h_expressions.LlipSide_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 18
+  - name: h_expressions.RlipCorner_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 19
+  - name: h_expressions.LlipCorner_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 20
+  - name: h_expressions.JawCompress_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 21
+  - name: h_expressions.Rjaw_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 22
+  - name: h_expressions.Ljaw_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 23
+  - name: h_expressions.JawFront_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 24
+  - name: h_expressions.Chew_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 25
+  - name: h_expressions.MouthOpen_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 26
+  - name: h_expressions.Shout_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 27
+  - name: h_expressions.RsmileClose_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 28
+  - name: h_expressions.LsmileClose_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 29
+  - name: h_expressions.RsmileOpen_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 30
+  - name: h_expressions.LsmileOpen_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 31
+  - name: h_expressions.RmouthSad_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 32
+  - name: h_expressions.LmouthSad_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 33
+  - name: h_expressions.Rdisgust_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 34
+  - name: h_expressions.Ldisgust_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 35
+  - name: h_expressions.Kiss_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 36
+  - name: h_expressions.Rblow_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 37
+  - name: h_expressions.Lblow_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 38
+  - name: h_expressions.Chin_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 39
+  - name: h_expressions.Glotis_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 40
+  - name: h_expressions.RneckTension_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 41
+  - name: h_expressions.LneckTension_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 42
+  - name: h_expressions.Rnostril_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 43
+  - name: h_expressions.Lnostril_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 44
+  - name: h_expressions.ReyeClose_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 45
+  - name: h_expressions.LeyeClose_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 46
+  - name: h_expressions.ReyeOpen_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 47
+  - name: h_expressions.LeyeOpen_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 48
+  - name: h_expressions.Rsquint_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 49
+  - name: h_expressions.Lsquint_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 50
+  - name: h_expressions.RlowLid_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 51
+  - name: h_expressions.LlowLid_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 52
+  - name: h_expressions.Rsad_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 53
+  - name: h_expressions.Lsad_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 54
+  - name: h_expressions.Rpityful_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 55
+  - name: h_expressions.Lpityful_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 56
+  - name: h_expressions.RRbrowUp_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 57
+  - name: h_expressions.RbrowUp_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 58
+  - name: h_expressions.LbrowUp_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 59
+  - name: h_expressions.LLbrowUp_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 60
+  - name: h_expressions.RRbrowDown_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 61
+  - name: h_expressions.RbrowDown_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 62
+  - name: h_expressions.LbrowDown_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 63
+  - name: h_expressions.LLbrowDown_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533352}
+      blendShapeIndex: 64
+  - name: h_teeth.OutMiddle_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 0
+  - name: h_teeth.CurlUp_Out_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 1
+  - name: h_teeth.CurlDown_Out_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 2
+  - name: h_teeth.CurlRight_Out_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 3
+  - name: h_teeth.CurlLeft_Out_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 4
+  - name: h_teeth.Compress_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 5
+  - name: h_teeth.Up_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 6
+  - name: h_teeth.Right_In_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 7
+  - name: h_teeth.Left_In_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 8
+  - name: h_teeth.Throat_In_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 9
+  - name: h_teeth.RRR_In_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 10
+  - name: h_teeth.LLL_In_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 11
+  - name: h_teeth.t_AE_AA_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 12
+  - name: h_teeth.t_AO_a_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 13
+  - name: h_teeth.t_Ax_E_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 14
+  - name: h_teeth.t_TD_I_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 15
+  - name: h_teeth.t_UH_OO_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 16
+  - name: h_teeth.t_UW_U_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 17
+  - name: h_teeth.t_H_EST_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 18
+  - name: h_teeth.t_FV_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 19
+  - name: h_teeth.t_S_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 20
+  - name: h_teeth.t_SH_CH_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 21
+  - name: h_teeth.t_MPB_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 22
+  - name: h_teeth.t_KG_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 23
+  - name: h_teeth.t_JawCompress_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 24
+  - name: h_teeth.t_Rjaw_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 25
+  - name: h_teeth.t_Ljaw_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 26
+  - name: h_teeth.t_JawFront_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 27
+  - name: h_teeth.t_Chew_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 28
+  - name: h_teeth.t_MouthOpen_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 29
+  - name: h_teeth.t_Shout_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1460533351}
+      blendShapeIndex: 30
+  blendSystem: {fileID: 1460533353}
+--- !u!114 &1460533355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460533350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60953a4eedd70a246ab4eadbed9f0591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blendSystem: {fileID: 1460533353}
+  audioSource: {fileID: 1460533356}
+  useBones: 1
+  boneUpdateAnimation: 0
+  phonemes:
+  - blendShapes: 000000004e000000
+    blendableNames:
+    - h_expressions.AE_AA_h0 (0)
+    - h_expressions.AO_a_h0 (1)
+    weights:
+    - 100
+    - 100
+    bones: []
+    verified: 1
+    phonemeName: AI
+    phoneme: 0
+  - blendShapes: 020000004f000000
+    blendableNames:
+    - h_expressions.AE_AA_h0 (0)
+    - h_expressions.AO_a_h0 (1)
+    weights:
+    - 90
+    - 53.7
+    bones: []
+    verified: 1
+    phonemeName: E
+    phoneme: 0
+  - blendShapes: 0500000052000000
+    blendableNames:
+    - h_expressions.AE_AA_h0 (0)
+    - h_expressions.AO_a_h0 (1)
+    weights:
+    - 100
+    - 100
+    bones: []
+    verified: 1
+    phonemeName: U
+    phoneme: 0
+  - blendShapes: 0400000051000000
+    blendableNames:
+    - h_expressions.AE_AA_h0 (0)
+    - h_expressions.AO_a_h0 (1)
+    weights:
+    - 72
+    - 100
+    bones: []
+    verified: 1
+    phonemeName: O
+    phoneme: 0
+  - blendShapes: 0800000055000000
+    blendableNames:
+    - h_expressions.AE_AA_h0 (0)
+    - h_expressions.AO_a_h0 (1)
+    weights:
+    - 100
+    - 100
+    bones: []
+    verified: 1
+    phonemeName: CDGKNRSThYZ
+    phoneme: 0
+  - blendShapes: 0700000054000000
+    blendableNames:
+    - h_expressions.AE_AA_h0 (0)
+    - h_expressions.AO_a_h0 (1)
+    weights:
+    - 100
+    - 100
+    bones: []
+    verified: 1
+    phonemeName: FV
+    phoneme: 0
+  - blendShapes: 
+    blendableNames: []
+    weights: []
+    bones: []
+    verified: 1
+    phonemeName: L
+    phoneme: 0
+  - blendShapes: 0a00000057000000
+    blendableNames:
+    - h_expressions.AE_AA_h0 (0)
+    - h_expressions.AO_a_h0 (1)
+    weights:
+    - 100
+    - 100
+    bones: []
+    verified: 1
+    phonemeName: MBP
+    phoneme: 0
+  - blendShapes: 0500000052000000
+    blendableNames:
+    - h_expressions.AE_AA_h0 (0)
+    - h_expressions.AO_a_h0 (1)
+    weights:
+    - 100
+    - 100
+    bones: []
+    verified: 1
+    phonemeName: WQ
+    phoneme: 0
+  - blendShapes: 
+    blendableNames: []
+    weights: []
+    bones: []
+    verified: 1
+    phonemeName: Rest
+    phoneme: 0
+  emotions:
+  - blendShapes: 1e0000001f0000001a0000002d0000002e0000003a0000003b000000
+    blendableNames:
+    - h_expressions.AE_AA_h0 (0)
+    - h_expressions.AO_a_h0 (1)
+    - h_expressions.Ax_E_h0 (2)
+    - h_expressions.TD_I_h0 (3)
+    - h_expressions.UH_OO_h0 (4)
+    - h_expressions.UW_U_h0 (5)
+    - h_expressions.H_EST_h0 (6)
+    weights:
+    - 70
+    - 70
+    - 50
+    - 10.6
+    - 10.6
+    - 64
+    - 64
+    bones: []
+    verified: 1
+    emotion: Happy
+  - blendShapes: 3f0000003e000000
+    blendableNames:
+    - h_expressions.AE_AA_h0 (0)
+    - h_expressions.AO_a_h0 (1)
+    weights:
+    - 75
+    - 75
+    bones: []
+    verified: 1
+    emotion: Serious
+  - blendShapes: 
+    blendableNames: []
+    weights: []
+    bones: []
+    verified: 1
+    emotion: Eyebrows Up
+  - blendShapes: 35000000360000002000000021000000
+    blendableNames:
+    - h_expressions.AE_AA_h0 (0)
+    - h_expressions.AO_a_h0 (1)
+    - h_expressions.Ax_E_h0 (2)
+    - h_expressions.TD_I_h0 (3)
+    weights:
+    - 50
+    - 50
+    - 64
+    - 64
+    bones: []
+    verified: 1
+    emotion: Sad
+  playOnAwake: 0
+  loop: 0
+  defaultClip: {fileID: 0}
+  defaultDelay: 0
+  scaleAudioSpeed: 1
+  m_animationTimingMode: 0
+  frameRate: 30
+  restTime: 0.2
+  restHoldTime: 0.4
+  phonemeCurveGenerationMode: 1
+  emotionCurveGenerationMode: 0
+  keepEmotionWhenFinished: 0
+  setNeutralBonePosesOnStart: 0
+  gesturesAnimator: {fileID: 0}
+  gesturesLayer: 0
+  gestures: []
+  onFinishedPlaying:
+    m_PersistentCalls:
+      m_Calls: []
+  lastUsedVersion: 1.52
+--- !u!82 &1460533356
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460533350}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
