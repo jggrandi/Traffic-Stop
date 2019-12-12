@@ -19,8 +19,6 @@ public class SelectionIndicator : MonoBehaviour {
 
 			Bounds bigBounds = selected.GetComponentInChildren<Renderer>().bounds;
 
-			// This "diameter" only works correctly for relatively circular or square objects
-
 			float padding = 2.0f;
 
 
