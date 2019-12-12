@@ -15,7 +15,7 @@ public class SelectionIndicator : MonoBehaviour {
 	void Update () {
 		if(selected != null) {
             //transform.LookAt(Camera.main.transform);
-            GetComponentInChildren<Renderer>().enabled = true;
+            //GetComponentInChildren<Renderer>().enabled = true;
 
 			Bounds bigBounds = selected.GetComponentInChildren<Renderer>().bounds;
 
@@ -26,7 +26,7 @@ public class SelectionIndicator : MonoBehaviour {
 			this.transform.localScale = new Vector3( bigBounds.size.x*padding, bigBounds.size.y*padding, bigBounds.size.z*padding );
 		}
 		else {
-			GetComponentInChildren<Renderer>().enabled = false;
+			//GetComponentInChildren<Renderer>().enabled = false;
 		}
 	}
 }
