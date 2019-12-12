@@ -15,6 +15,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
     public AudioSource[] audioSources = new AudioSource[] { };
     protected DictationRecognizer recognizer;
     public string word = "";
+    //public bool trigger = false;
     public Animator[] amins = new Animator[] { };
     int HeadRot = Animator.StringToHash("HeadRot");
     int HeadRotBack = Animator.StringToHash("HeadRotBack");
@@ -68,7 +69,6 @@ public class SpeechRecognitionEngine : MonoBehaviour
     {
         if (!ready) return;
         if (word == "") return;
-
         int idWord = MatchSpeachToDatabase(word);
         Debug.Log("ggg " + idWord);
         if (idWord == -1) return;

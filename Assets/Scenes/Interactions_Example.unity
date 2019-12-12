@@ -708,6 +708,11 @@ PrefabInstance:
       propertyPath: LipSync
       value: 
       objectReference: {fileID: 8296172669025726940}
+    - target: {fileID: 1635851641650230963, guid: 4f78c93588288f646843553dc1aa230e,
+        type: 3}
+      propertyPath: keywords.Array.data[2]
+      value: thank
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f78c93588288f646843553dc1aa230e, type: 3}
 --- !u!4 &59216375 stripped
@@ -18321,6 +18326,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 340160000}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &1261229561 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8620294363122039378, guid: dc424916a8235c14cadc8c2bd41c052a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2316398658931836558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1262011375 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8396088471309832012, guid: af4499952f2bfda4bad4143b11e4ed34,
@@ -21759,6 +21770,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 2, z: 10}
   m_Center: {x: 0, y: 1.0000076, z: 0}
+--- !u!137 &1519231006 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1801582703938578781, guid: dc424916a8235c14cadc8c2bd41c052a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2316398658931836558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1520031824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 664630144483340838, guid: adfde29e3d582c24988c04bafc8090e3,
@@ -29903,6 +29920,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8620294363122039378, guid: dc424916a8235c14cadc8c2bd41c052a,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1801582703938578781, guid: dc424916a8235c14cadc8c2bd41c052a,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.size
+      value: 31
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc424916a8235c14cadc8c2bd41c052a, type: 3}
 --- !u!1001 &2907610646835946985
@@ -30245,13 +30272,206 @@ MonoBehaviour:
   m_GameObject: {fileID: 8296172669025726937}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfbd411424bbdb842a5b964a94bb8fc2, type: 3}
+  m_Script: {fileID: 11500000, guid: 73062c91ee80bb040abd084433473a81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isReady: 1
   users:
   - {fileID: 8296172669025726940}
-  _blendables: []
+  _blendables:
+  - number: 0
+    currentWeight: 0
+  - number: 1
+    currentWeight: 0
+  - number: 2
+    currentWeight: 0
+  - number: 3
+    currentWeight: 0
+  - number: 4
+    currentWeight: 0
+  - number: 5
+    currentWeight: 0
+  - number: 6
+    currentWeight: 0
+  - number: 7
+    currentWeight: 0
+  - number: 8
+    currentWeight: 0
+  - number: 9
+    currentWeight: 0
+  - number: 10
+    currentWeight: 0
+  - number: 11
+    currentWeight: 0
+  - number: 12
+    currentWeight: 0
+  - number: 13
+    currentWeight: 0
+  - number: 14
+    currentWeight: 0
+  - number: 15
+    currentWeight: 0
+  - number: 16
+    currentWeight: 0
+  - number: 17
+    currentWeight: 0
+  - number: 18
+    currentWeight: 0
+  - number: 19
+    currentWeight: 0
+  - number: 20
+    currentWeight: 0
+  - number: 21
+    currentWeight: 0
+  - number: 22
+    currentWeight: 0
+  - number: 23
+    currentWeight: 0
+  - number: 24
+    currentWeight: 0
+  - number: 25
+    currentWeight: 0
+  - number: 26
+    currentWeight: 0
+  - number: 27
+    currentWeight: 0
+  - number: 28
+    currentWeight: 0
+  - number: 29
+    currentWeight: 0
+  - number: 30
+    currentWeight: 0
+  - number: 31
+    currentWeight: 0
+  - number: 32
+    currentWeight: 0
+  - number: 33
+    currentWeight: 0
+  - number: 34
+    currentWeight: 0
+  - number: 35
+    currentWeight: 0
+  - number: 36
+    currentWeight: 0
+  - number: 37
+    currentWeight: 0
+  - number: 38
+    currentWeight: 0
+  - number: 39
+    currentWeight: 0
+  - number: 40
+    currentWeight: 0
+  - number: 41
+    currentWeight: 0
+  - number: 42
+    currentWeight: 0
+  - number: 43
+    currentWeight: 0
+  - number: 44
+    currentWeight: 0
+  - number: 45
+    currentWeight: 0
+  - number: 46
+    currentWeight: 0
+  - number: 47
+    currentWeight: 0
+  - number: 48
+    currentWeight: 0
+  - number: 49
+    currentWeight: 0
+  - number: 50
+    currentWeight: 0
+  - number: 51
+    currentWeight: 0
+  - number: 52
+    currentWeight: 0
+  - number: 53
+    currentWeight: 0
+  - number: 54
+    currentWeight: 0
+  - number: 55
+    currentWeight: 0
+  - number: 56
+    currentWeight: 0
+  - number: 57
+    currentWeight: 0
+  - number: 58
+    currentWeight: 0
+  - number: 59
+    currentWeight: 0
+  - number: 60
+    currentWeight: 0
+  - number: 61
+    currentWeight: 0
+  - number: 62
+    currentWeight: 0
+  - number: 63
+    currentWeight: 0
+  - number: 64
+    currentWeight: 0
+  - number: 65
+    currentWeight: 0
+  - number: 66
+    currentWeight: 0
+  - number: 67
+    currentWeight: 0
+  - number: 68
+    currentWeight: 0
+  - number: 69
+    currentWeight: 0
+  - number: 70
+    currentWeight: 0
+  - number: 71
+    currentWeight: 0
+  - number: 72
+    currentWeight: 0
+  - number: 73
+    currentWeight: 0
+  - number: 74
+    currentWeight: 0
+  - number: 75
+    currentWeight: 0
+  - number: 76
+    currentWeight: 0
+  - number: 77
+    currentWeight: 0
+  - number: 78
+    currentWeight: 0
+  - number: 79
+    currentWeight: 0
+  - number: 80
+    currentWeight: 0
+  - number: 81
+    currentWeight: 0
+  - number: 82
+    currentWeight: 0
+  - number: 83
+    currentWeight: 0
+  - number: 84
+    currentWeight: 0
+  - number: 85
+    currentWeight: 0
+  - number: 86
+    currentWeight: 0
+  - number: 87
+    currentWeight: 0
+  - number: 88
+    currentWeight: 0
+  - number: 89
+    currentWeight: 0
+  - number: 90
+    currentWeight: 0
+  - number: 91
+    currentWeight: 0
+  - number: 92
+    currentWeight: 0
+  - number: 93
+    currentWeight: 0
+  - number: 94
+    currentWeight: 0
+  - number: 95
+    currentWeight: 0
+  manager: {fileID: 8296172669025726941}
 --- !u!114 &8296172669025726940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30265,48 +30485,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blendSystem: {fileID: 8296172669025726939}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 8296172669025726938}
   useBones: 0
   boneUpdateAnimation: 0
   phonemes:
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 000000004e000000
+    blendableNames:
+    - h_expressions.AE_AA_h0 (0)
+    - h_teeth.t_AO_a_h0 (78)
+    weights:
+    - 100
+    - 100
     bones: []
     verified: 1
     phonemeName: AI
     phoneme: 0
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 020000004f000000
+    blendableNames:
+    - h_expressions.Ax_E_h0 (2)
+    - h_teeth.t_Ax_E_h0 (79)
+    weights:
+    - 90
+    - 53.7
     bones: []
     verified: 1
     phonemeName: E
     phoneme: 0
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 0500000052000000
+    blendableNames:
+    - h_expressions.UW_U_h0 (5)
+    - h_teeth.t_UW_U_h0 (82)
+    weights:
+    - 100
+    - 100
     bones: []
     verified: 1
     phonemeName: U
     phoneme: 0
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 0400000051000000
+    blendableNames:
+    - h_expressions.UH_OO_h0 (4)
+    - h_teeth.t_UH_OO_h0 (81)
+    weights:
+    - 72
+    - 100
     bones: []
     verified: 1
     phonemeName: O
     phoneme: 0
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 0800000055000000
+    blendableNames:
+    - h_expressions.S_h0 (8)
+    - h_teeth.t_S_h0 (85)
+    weights:
+    - 100
+    - 100
     bones: []
     verified: 1
     phonemeName: CDGKNRSThYZ
     phoneme: 0
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 0700000054000000
+    blendableNames:
+    - h_expressions.FV_h0 (7)
+    - h_teeth.t_FV_h0 (84)
+    weights:
+    - 100
+    - 100
     bones: []
     verified: 1
     phonemeName: FV
@@ -30318,16 +30562,24 @@ MonoBehaviour:
     verified: 1
     phonemeName: L
     phoneme: 0
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 0a00000057000000
+    blendableNames:
+    - h_expressions.MPB_Up_h0 (10)
+    - h_teeth.t_MPB_h0 (87)
+    weights:
+    - 100
+    - 100
     bones: []
     verified: 1
     phonemeName: MBP
     phoneme: 0
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 0500000052000000
+    blendableNames:
+    - h_expressions.UW_U_h0 (5)
+    - h_teeth.t_UW_U_h0 (82)
+    weights:
+    - 100
+    - 100
     bones: []
     verified: 1
     phonemeName: WQ
@@ -30340,15 +30592,33 @@ MonoBehaviour:
     phonemeName: Rest
     phoneme: 0
   emotions:
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 1e0000001f0000001a0000002d0000002e0000003a0000003b000000
+    blendableNames:
+    - h_expressions.RsmileOpen_h0 (30)
+    - h_expressions.LsmileOpen_h0 (31)
+    - h_expressions.MouthOpen_h0 (26)
+    - h_expressions.ReyeClose_h0 (45)
+    - h_expressions.LeyeClose_h0 (46)
+    - h_expressions.RbrowUp_h0 (58)
+    - h_expressions.LbrowUp_h0 (59)
+    weights:
+    - 70
+    - 70
+    - 50
+    - 10.6
+    - 10.6
+    - 64
+    - 64
     bones: []
     verified: 1
     emotion: Happy
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 3f0000003e000000
+    blendableNames:
+    - h_expressions.LbrowDown_h0 (63)
+    - h_expressions.RbrowDown_h0 (62)
+    weights:
+    - 75
+    - 75
     bones: []
     verified: 1
     emotion: Serious
@@ -30358,9 +30628,17 @@ MonoBehaviour:
     bones: []
     verified: 1
     emotion: Eyebrows Up
-  - blendShapes: 
-    blendableNames: []
-    weights: []
+  - blendShapes: 35000000360000002000000021000000
+    blendableNames:
+    - h_expressions.Rsad_h0 (53)
+    - h_expressions.Lsad_h0 (54)
+    - h_expressions.RmouthSad_h0 (32)
+    - h_expressions.LmouthSad_h0 (33)
+    weights:
+    - 50
+    - 50
+    - 64
+    - 64
     bones: []
     verified: 1
     emotion: Sad
@@ -30384,3 +30662,401 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   lastUsedVersion: 1.52
+--- !u!114 &8296172669025726941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296172669025726937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc1e47bffd97414a93a92fb41f56b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blendShapes:
+  - name: h_expressions.AE_AA_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 0
+  - name: h_expressions.AO_a_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 1
+  - name: h_expressions.Ax_E_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 2
+  - name: h_expressions.TD_I_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 3
+  - name: h_expressions.UH_OO_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 4
+  - name: h_expressions.UW_U_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 5
+  - name: h_expressions.H_EST_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 6
+  - name: h_expressions.FV_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 7
+  - name: h_expressions.S_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 8
+  - name: h_expressions.SH_CH_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 9
+  - name: h_expressions.MPB_Up_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 10
+  - name: h_expressions.MPB_Down_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 11
+  - name: h_expressions.KG_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 12
+  - name: h_expressions.RlipUp_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 13
+  - name: h_expressions.LlipUp_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 14
+  - name: h_expressions.RlipDown_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 15
+  - name: h_expressions.LlipDown_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 16
+  - name: h_expressions.RlipSide_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 17
+  - name: h_expressions.LlipSide_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 18
+  - name: h_expressions.RlipCorner_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 19
+  - name: h_expressions.LlipCorner_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 20
+  - name: h_expressions.JawCompress_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 21
+  - name: h_expressions.Rjaw_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 22
+  - name: h_expressions.Ljaw_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 23
+  - name: h_expressions.JawFront_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 24
+  - name: h_expressions.Chew_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 25
+  - name: h_expressions.MouthOpen_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 26
+  - name: h_expressions.Shout_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 27
+  - name: h_expressions.RsmileClose_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 28
+  - name: h_expressions.LsmileClose_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 29
+  - name: h_expressions.RsmileOpen_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 30
+  - name: h_expressions.LsmileOpen_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 31
+  - name: h_expressions.RmouthSad_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 32
+  - name: h_expressions.LmouthSad_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 33
+  - name: h_expressions.Rdisgust_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 34
+  - name: h_expressions.Ldisgust_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 35
+  - name: h_expressions.Kiss_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 36
+  - name: h_expressions.Rblow_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 37
+  - name: h_expressions.Lblow_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 38
+  - name: h_expressions.Chin_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 39
+  - name: h_expressions.Glotis_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 40
+  - name: h_expressions.RneckTension_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 41
+  - name: h_expressions.LneckTension_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 42
+  - name: h_expressions.Rnostril_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 43
+  - name: h_expressions.Lnostril_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 44
+  - name: h_expressions.ReyeClose_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 45
+  - name: h_expressions.LeyeClose_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 46
+  - name: h_expressions.ReyeOpen_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 47
+  - name: h_expressions.LeyeOpen_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 48
+  - name: h_expressions.Rsquint_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 49
+  - name: h_expressions.Lsquint_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 50
+  - name: h_expressions.RlowLid_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 51
+  - name: h_expressions.LlowLid_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 52
+  - name: h_expressions.Rsad_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 53
+  - name: h_expressions.Lsad_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 54
+  - name: h_expressions.Rpityful_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 55
+  - name: h_expressions.Lpityful_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 56
+  - name: h_expressions.RRbrowUp_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 57
+  - name: h_expressions.RbrowUp_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 58
+  - name: h_expressions.LbrowUp_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 59
+  - name: h_expressions.LLbrowUp_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 60
+  - name: h_expressions.RRbrowDown_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 61
+  - name: h_expressions.RbrowDown_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 62
+  - name: h_expressions.LbrowDown_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 63
+  - name: h_expressions.LLbrowDown_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1261229561}
+      blendShapeIndex: 64
+  - name: h_teeth.OutMiddle_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 0
+  - name: h_teeth.CurlUp_Out_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 1
+  - name: h_teeth.CurlDown_Out_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 2
+  - name: h_teeth.CurlRight_Out_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 3
+  - name: h_teeth.CurlLeft_Out_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 4
+  - name: h_teeth.Compress_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 5
+  - name: h_teeth.Up_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 6
+  - name: h_teeth.Right_In_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 7
+  - name: h_teeth.Left_In_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 8
+  - name: h_teeth.Throat_In_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 9
+  - name: h_teeth.RRR_In_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 10
+  - name: h_teeth.LLL_In_tg_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 11
+  - name: h_teeth.t_AE_AA_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 12
+  - name: h_teeth.t_AO_a_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 13
+  - name: h_teeth.t_Ax_E_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 14
+  - name: h_teeth.t_TD_I_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 15
+  - name: h_teeth.t_UH_OO_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 16
+  - name: h_teeth.t_UW_U_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 17
+  - name: h_teeth.t_H_EST_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 18
+  - name: h_teeth.t_FV_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 19
+  - name: h_teeth.t_S_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 20
+  - name: h_teeth.t_SH_CH_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 21
+  - name: h_teeth.t_MPB_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 22
+  - name: h_teeth.t_KG_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 23
+  - name: h_teeth.t_JawCompress_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 24
+  - name: h_teeth.t_Rjaw_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 25
+  - name: h_teeth.t_Ljaw_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 26
+  - name: h_teeth.t_JawFront_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 27
+  - name: h_teeth.t_Chew_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 28
+  - name: h_teeth.t_MouthOpen_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 29
+  - name: h_teeth.t_Shout_h0
+    mappings:
+    - skinnedMeshRenderer: {fileID: 1519231006}
+      blendShapeIndex: 30
+  blendSystem: {fileID: 8296172669025726939}
