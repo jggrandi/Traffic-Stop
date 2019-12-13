@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.trafficstop.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\Jeronimo\\Documents\\Github\\Traffic-Stop\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\zekun\\Documents\\github\\Traffic-Stop\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "Traffic Stop [Testing]"
