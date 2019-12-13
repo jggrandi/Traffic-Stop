@@ -15,11 +15,6 @@ public class HandAlertListner : MonoBehaviour
         hand = this.gameObject.GetComponent<Hand>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     void TriggerHapticPulse()
     {

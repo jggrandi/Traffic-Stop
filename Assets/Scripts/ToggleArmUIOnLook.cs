@@ -5,37 +5,41 @@ using UnityEngine;
 public class ToggleArmUIOnLook : Raycaster
 {
 
+    public delegate void OnLookAtArm();
+    public static OnLookAtArm TriggerArmDisplay;
+    public static OnLookAtArm HideArmDisplay;
+
     private IEnumerator coroutine;
 
     protected override void OnRaycasterEnter(GameObject target)
     {
-        coroutine = WaitToShowUI(target);
-        StartCoroutine(coroutine);
+        if (target.gameObject.name == "AttachToArm")
+        {
+            Debug.Log("ArmDisplayTriggered");
+            coroutine = WaitToShowUI(target);
+            StartCoroutine(coroutine);
+        }
     }
 
     protected override void OnRaycasterLeave(GameObject target)
     {
-        coroutine = WaitToHideUI(target);
-        StartCoroutine(coroutine);
-
+        if (target.gameObject.name == "AttachToArm")
+        {
+            coroutine = WaitToHideUI(target);
+            StartCoroutine(coroutine);
+        }
     }
 
     IEnumerator WaitToShowUI(GameObject target)
     {
         yield return new WaitForSeconds(.2f);
-        Debug.Log("HIT!");
-        for (int i = 0; i < target.transform.childCount; i++)
-            target.transform.GetChild(i).gameObject.SetActive(true);
-        
-
+        TriggerArmDisplay();
     }
+
     IEnumerator WaitToHideUI(GameObject target)
     {
         yield return new WaitForSeconds(.5f);
-        Debug.Log("LEAVE!");
-        for (int i = 0; i < target.transform.childCount; i++)
-            target.transform.GetChild(i).gameObject.SetActive(false);
-
+        HideArmDisplay();
     }
 
 

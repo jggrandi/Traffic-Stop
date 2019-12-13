@@ -7,7 +7,9 @@ public class AlertsHandler : Raycaster
 
     public delegate void OnAlertDelegate();
     public static OnAlertDelegate TriggerScanPlate;
+    public static OnAlertDelegate TriggerScanDriver;
     public static OnAlertDelegate TriggerResultOfPlateScan;
+    public static OnAlertDelegate TriggerResultOfDriverScan;
 
     private IEnumerator coroutine;
 
