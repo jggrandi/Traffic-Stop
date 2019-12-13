@@ -9,7 +9,7 @@ public class AlertsHandler : Raycaster
     public static OnAlertDelegate TriggerScanPlate;
     public static OnAlertDelegate TriggerScanDriver;
     public static OnAlertDelegate TriggerResultOfPlateScan;
-    public static OnAlertDelegate TriggerResultOfDriverScan;
+    public static OnAlertDelegate TriggerLicenseScan;
     public static OnAlertDelegate TriggerResultOfLicenseScan;
 
     private IEnumerator coroutine;
@@ -29,6 +29,7 @@ public class AlertsHandler : Raycaster
 
         if (target.gameObject.name == "DriverTrigger" && !driverLicenseAlreadyTriggered)
         {
+            TriggerLicenseScan();
             coroutine = Wait2(4f);
             StartCoroutine(coroutine);
             driverLicenseAlreadyTriggered = true;

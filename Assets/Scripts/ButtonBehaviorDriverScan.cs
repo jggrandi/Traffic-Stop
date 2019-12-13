@@ -10,7 +10,7 @@ public class ButtonBehaviorDriverScan : MonoBehaviour
     {
         this.GetComponent<Button>().interactable = false;
         this.GetComponentInChildren<BoxCollider>().enabled = false;
-        AlertsHandler.TriggerResultOfDriverScan += EnableButton;
+        AlertsHandler.TriggerResultOfLicenseScan += EnableButton;
     }
     
     void EnableButton()

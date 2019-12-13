@@ -7,13 +7,19 @@ public class DriverLicenseListener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpeechRecognitionEngine.EnableDriverLicense += ShowDriverLicense;
-        //AlertsHandler.TriggerResultOfLicenseScan += 
+        AlertsHandler.TriggerLicenseScan += ShowScanning;
+        AlertsHandler.TriggerResultOfLicenseScan += ShowAlerts;
     }
 
-    void ShowDriverLicense()
+    void ShowScanning()
     {
-        Debug.Log("AAsasdasdasdasdasd");
         gameObject.SetActive(true);
+        
+    }
+
+    void ShowAlerts()
+    {
+        gameObject.GetComponent<Renderer>().material.color = Color.red;
+
     }
 }

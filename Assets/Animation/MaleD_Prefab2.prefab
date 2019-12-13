@@ -183,9 +183,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 419383515041842970}
-  - component: {fileID: 419383515041842972}
   - component: {fileID: 419383515041842973}
   - component: {fileID: 2147798161945971724}
+  - component: {fileID: 3469659815053207947}
   m_Layer: 0
   m_Name: Voice Recognition Holder
   m_TagString: Untagged
@@ -207,35 +207,6 @@ Transform:
   m_Father: {fileID: 4659897246746727163}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &419383515041842972
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419383515041842971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fc40f2e2e198e7428f35f4aa26f5fc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LipSync: {fileID: 8570383092303143149}
-  LipAnim:
-  - {fileID: 11400000, guid: e6e7a20596d67f84c95ee74c309b4501, type: 2}
-  keywords:
-  - license
-  - do you know
-  - thank
-  - right
-  confidence: 1
-  audioSources:
-  - {fileID: 8570383092303143147}
-  word: 
-  amins:
-  - {fileID: 3324012882667798401}
-  - {fileID: 419383514472596181}
-  idWord: -1
-  driverLicense: {fileID: 6479279519621645325}
 --- !u!135 &419383515041842973
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -261,6 +232,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3be917a80086a48b97933694257f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3469659815053207947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419383515041842971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 381d7c370f91e484caa4e55081fc04e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LipSync: {fileID: 8570383092303143149}
+  LipAnim:
+  - {fileID: 11400000, guid: e6e7a20596d67f84c95ee74c309b4501, type: 2}
+  keywords:
+  - license
+  - do you know
+  - thank
+  - right
+  confidence: 1
+  audioSources:
+  - {fileID: 8570383092303143147}
+  word: 
+  amins:
+  - {fileID: 3324012882667798401}
+  - {fileID: 419383514472596181}
+  driverLicense: {fileID: 6479279519621645325}
 --- !u!1 &490983302917578691
 GameObject:
   m_ObjectHideFlags: 0
