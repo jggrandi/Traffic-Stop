@@ -30,7 +30,7 @@ public class PlateListener : MonoBehaviour
 
     void ChangeBracketsColor()
     {
-        //change the brackets material color to inform that the system scanned the plate and the car is good.
+        gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>().material.color = Color.green;
     }
 
 }
