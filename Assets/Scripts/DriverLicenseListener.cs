@@ -8,6 +8,7 @@ public class DriverLicenseListener : MonoBehaviour
     void Start()
     {
         SpeechRecognitionEngine.EnableDriverLicense += ShowDriverLicense;
+        //AlertsHandler.TriggerResultOfLicenseScan += 
     }
 
     void ShowDriverLicense()
