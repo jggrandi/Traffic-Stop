@@ -11414,16 +11414,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MIPlayer
       objectReference: {fileID: 0}
-    - target: {fileID: 5785897564554029624, guid: 9d2567580e907dd44aa6b0119d67bbd2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5785897564554029624, guid: 9d2567580e907dd44aa6b0119d67bbd2,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 5785897566028474240, guid: 9d2567580e907dd44aa6b0119d67bbd2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11478,6 +11468,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785897564554029624, guid: 9d2567580e907dd44aa6b0119d67bbd2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785897564554029624, guid: 9d2567580e907dd44aa6b0119d67bbd2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5785897564674779179, guid: 9d2567580e907dd44aa6b0119d67bbd2,
         type: 3}
