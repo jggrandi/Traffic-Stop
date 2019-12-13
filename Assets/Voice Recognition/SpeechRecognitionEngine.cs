@@ -74,6 +74,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
 
     void Update()
     {
+        KeyTrigAnimation();
         if (!ready) return;
         if (word == "") return;
         int idWord = MatchSpeachToDatabase(word);
@@ -132,5 +133,41 @@ public class SpeechRecognitionEngine : MonoBehaviour
             recognizer.Dispose();
             recognizer.Stop();
         }
+    }
+
+    void KeyTrigAnimation()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            amins[0].SetBool(HeadRot, false);
+            amins[0].SetBool(HeadRotBack, false);
+            amins[0].SetBool(LicensePass, true);
+            amins[0].SetBool(Driving, false);
+            amins[0].SetBool(Leave, false);
+            amins[0].SetBool(LicensePassReset, false);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            LipSync.Play(LipAnim[0]);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            amins[0].SetBool(HeadRot, false);
+            amins[0].SetBool(HeadRotBack, false);
+            amins[0].SetBool(LicensePass, false);
+            amins[0].SetBool(Driving, false);
+            amins[0].SetBool(LicensePassReset, true);
+            amins[0].SetBool(Leave, false);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            amins[0].SetBool(HeadRot, false);
+            amins[0].SetBool(HeadRotBack, false);
+            amins[0].SetBool(LicensePass, false);
+            amins[0].SetBool(Driving, true);
+            amins[0].SetBool(LicensePassReset, false);
+            amins[0].SetBool(Leave, false);
+        }
+
     }
 }
