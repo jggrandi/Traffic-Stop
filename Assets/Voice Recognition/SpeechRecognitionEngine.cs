@@ -23,6 +23,9 @@ public class SpeechRecognitionEngine : MonoBehaviour
     int Driving = Animator.StringToHash("Driving");
     int LicensePassReset = Animator.StringToHash("LicensePassReset");
     int Leave = Animator.StringToHash("Leave");
+    int Open = Animator.StringToHash("Open");
+    int Close = Animator.StringToHash("Close");
+
     void Start()
     {
         recognizer = new DictationRecognizer();
@@ -48,6 +51,8 @@ public class SpeechRecognitionEngine : MonoBehaviour
             amins[0].SetBool(HeadRotBack, false);
             amins[0].SetBool(HeadRot, true);
             amins[0].SetBool(LicensePassReset, false);
+            amins[1].SetBool(Open, true);
+            amins[1].SetBool(Close, false);
         }
 
     }
@@ -62,6 +67,8 @@ public class SpeechRecognitionEngine : MonoBehaviour
             amins[0].SetBool(Leave, true);
             amins[0].SetBool(LicensePass, false);
             amins[0].SetBool(Driving, false);
+            amins[1].SetBool(Close, true);
+            amins[1].SetBool(Open, false);
         }
     }
 
