@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db07302a52ae0d84f8f0c1bf5a629241, type: 3}
+  m_Name: New Preset
+  m_EditorClassIdentifier: 
+  displayPath: My Presets/MFE 2
+  isRelative: 1
+  phonemeShapes:
+  - phonemeName: AI
+    phoneme: 0
+    blendables:
+    - blendableNumber: 0
+      blendableName: h_expressions.AE_AA_h0 (0)
+      weight: 100
+    - blendableNumber: 78
+      blendableName: h_teeth.t_AO_a_h0 (78)
+      weight: 100
+    bones: []
+  - phonemeName: E
+    phoneme: 0
+    blendables:
+    - blendableNumber: 2
+      blendableName: h_expressions.Ax_E_h0 (2)
+      weight: 90
+    - blendableNumber: 79
+      blendableName: h_teeth.t_Ax_E_h0 (79)
+      weight: 53.7
+    bones: []
+  - phonemeName: U
+    phoneme: 0
+    blendables:
+    - blendableNumber: 5
+      blendableName: h_expressions.UW_U_h0 (5)
+      weight: 100
+    - blendableNumber: 82
+      blendableName: h_teeth.t_UW_U_h0 (82)
+      weight: 100
+    bones: []
+  - phonemeName: O
+    phoneme: 0
+    blendables:
+    - blendableNumber: 4
+      blendableName: h_expressions.UH_OO_h0 (4)
+      weight: 72
+    - blendableNumber: 81
+      blendableName: h_teeth.t_UH_OO_h0 (81)
+      weight: 100
+    bones: []
+  - phonemeName: CDGKNRSThYZ
+    phoneme: 0
+    blendables:
+    - blendableNumber: 8
+      blendableName: h_expressions.S_h0 (8)
+      weight: 100
+    - blendableNumber: 85
+      blendableName: h_teeth.t_S_h0 (85)
+      weight: 100
+    bones: []
+  - phonemeName: FV
+    phoneme: 0
+    blendables:
+    - blendableNumber: 7
+      blendableName: h_expressions.FV_h0 (7)
+      weight: 100
+    - blendableNumber: 84
+      blendableName: h_teeth.t_FV_h0 (84)
+      weight: 100
+    bones: []
+  - phonemeName: L
+    phoneme: 0
+    blendables: []
+    bones: []
+  - phonemeName: MBP
+    phoneme: 0
+    blendables:
+    - blendableNumber: 10
+      blendableName: h_expressions.MPB_Up_h0 (10)
+      weight: 100
+    - blendableNumber: 87
+      blendableName: h_teeth.t_MPB_h0 (87)
+      weight: 100
+    bones: []
+  - phonemeName: WQ
+    phoneme: 0
+    blendables:
+    - blendableNumber: 5
+      blendableName: h_expressions.UW_U_h0 (5)
+      weight: 100
+    - blendableNumber: 82
+      blendableName: h_teeth.t_UW_U_h0 (82)
+      weight: 100
+    bones: []
+  - phonemeName: Rest
+    phoneme: 0
+    blendables: []
+    bones: []
+  emotionShapes:
+  - emotion: Happy
+    blendables:
+    - blendableNumber: 30
+      blendableName: h_expressions.RsmileOpen_h0 (30)
+      weight: 70
+    - blendableNumber: 31
+      blendableName: h_expressions.LsmileOpen_h0 (31)
+      weight: 70
+    - blendableNumber: 26
+      blendableName: h_expressions.MouthOpen_h0 (26)
+      weight: 50
+    - blendableNumber: 45
+      blendableName: h_expressions.ReyeClose_h0 (45)
+      weight: 10.6
+    - blendableNumber: 46
+      blendableName: h_expressions.LeyeClose_h0 (46)
+      weight: 10.6
+    - blendableNumber: 58
+      blendableName: h_expressions.RbrowUp_h0 (58)
+      weight: 64
+    - blendableNumber: 59
+      blendableName: h_expressions.LbrowUp_h0 (59)
+      weight: 64
+    bones: []
+  - emotion: Serious
+    blendables:
+    - blendableNumber: 63
+      blendableName: h_expressions.LbrowDown_h0 (63)
+      weight: 75
+    - blendableNumber: 62
+      blendableName: h_expressions.RbrowDown_h0 (62)
+      weight: 75
+    bones: []
+  - emotion: Eyebrows Up
+    blendables: []
+    bones: []
+  - emotion: Sad
+    blendables:
+    - blendableNumber: 53
+      blendableName: h_expressions.Rsad_h0 (53)
+      weight: 50
+    - blendableNumber: 54
+      blendableName: h_expressions.Lsad_h0 (54)
+      weight: 50
+    - blendableNumber: 32
+      blendableName: h_expressions.RmouthSad_h0 (32)
+      weight: 64
+    - blendableNumber: 33
+      blendableName: h_expressions.LmouthSad_h0 (33)
+      weight: 64
+    bones: []
