@@ -1,21 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class PlateListener : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
-        AlertsHandler.triggerScanPlate += ShowARPlate;  
+        AlertsHandler.TriggerScanPlate += ShowARPlate;
+        AlertsHandler.TriggerResultOfPlateScan += HideScanBar;
+        AlertsHandler.TriggerResultOfPlateScan += ChangeBracketsColor;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
     void ShowARPlate()
     {
         for(int i = 0; i < this.gameObject.transform.childCount; i++)
@@ -24,4 +22,15 @@ public class PlateListener : MonoBehaviour
             g.SetActive(true);
         }
     }
+
+    void HideScanBar()
+    {
+        gameObject.transform.GetChild(1).gameObject.SetActive(false);
+    }
+
+    void ChangeBracketsColor()
+    {
+        //change the brackets material color to inform that the system scanned the plate and the car is good.
+    }
+
 }
