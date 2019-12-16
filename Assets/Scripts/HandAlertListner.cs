@@ -11,14 +11,18 @@ public class HandAlertListner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AlertsHandler.TriggerResultOfPlateScan += TriggerHapticPulse;
-        AlertsHandler.TriggerResultOfLicenseScan += TriggerHapticPulse;
+        //AlertsHandler.TriggerResultOfPlateScan += TriggerHapticPulse;
+        //AlertsHandler.TriggerResultOfLicenseScan += TriggerHapticPulse;
+
+        AlertsHandler.OnScanPlateResult += TriggerHapticPulse;
+        AlertsHandler.OnScanDriverLicenseResult += TriggerHapticPulse;
+
 
         hand = this.gameObject.GetComponent<Hand>();
     }
 
 
-    void TriggerHapticPulse()
+    void TriggerHapticPulse(int _scanCode)
     {
         hand.TriggerHapticPulse(1f, 100, 1f);
     }

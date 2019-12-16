@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AlertsHandler : Raycaster
 {
+    public enum  ScanCode {Scanning, Clear, Warning, Danger}; 
 
-    public delegate void OnAlertDelegate();
-    public static OnAlertDelegate TriggerScanPlate;
-    public static OnAlertDelegate TriggerScanDriver;
-    public static OnAlertDelegate TriggerResultOfPlateScan;
-    public static OnAlertDelegate TriggerLicenseScan;
-    public static OnAlertDelegate TriggerResultOfLicenseScan;
+    public static Action<int> OnScanPlate;
+    public static Action<int> OnScanPlateResult;
+    public static Action<int> OnScanDriverLicense;
+    public static Action<int> OnScanDriverLicenseResult;
+    //public delegate void OnAlertDelegate();
+    //public static event OnAlertDelegate TriggerScanPlate;
+    //public static event OnAlertDelegate TriggerResultOfPlateScan;
+    //public static event OnAlertDelegate TriggerLicenseScan;
+    //public static event OnAlertDelegate TriggerResultOfLicenseScan;
 
     private IEnumerator coroutine;
 
@@ -21,7 +26,8 @@ public class AlertsHandler : Raycaster
     {
         if (target.gameObject.name == "PlateTrigger" && !plateAlreadyTriggered)
         {
-            TriggerScanPlate();
+            OnScanPlate((int)ScanCode.Scanning);
+            //TriggerScanPlate();
             plateAlreadyTriggered = true;
             coroutine = Wait(4f);
             StartCoroutine(coroutine);
@@ -29,7 +35,8 @@ public class AlertsHandler : Raycaster
 
         if (target.gameObject.name == "DriverTrigger" && !driverLicenseAlreadyTriggered)
         {
-            TriggerLicenseScan();
+            //TriggerLicenseScan();
+            OnScanDriverLicense((int)ScanCode.Scanning);
             coroutine = Wait2(4f);
             StartCoroutine(coroutine);
             driverLicenseAlreadyTriggered = true;
@@ -41,14 +48,16 @@ public class AlertsHandler : Raycaster
     private IEnumerator Wait(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        TriggerResultOfPlateScan();
+        OnScanPlateResult((int)ScanCode.Clear);
+        //TriggerResultOfPlateScan();
 
     }
 
     private IEnumerator Wait2(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        TriggerResultOfLicenseScan();
+        OnScanDriverLicenseResult((int)ScanCode.Warning);
+        //TriggerResultOfLicenseScan();
 
     }
 

@@ -6,31 +6,68 @@ using Valve.VR.InteractionSystem;
 public class PlateListener : MonoBehaviour
 {
 
+    GameObject plateHighlighter;
+
     // Start is called before the first frame update
     void Start()
     {
-        AlertsHandler.TriggerScanPlate += ShowARPlate;
-        AlertsHandler.TriggerResultOfPlateScan += HideScanBar;
-        AlertsHandler.TriggerResultOfPlateScan += ChangeBracketsColor;
+        AlertsHandler.OnScanPlate += ShowARPlate;
+        AlertsHandler.OnScanPlateResult += ShowResultOfScan;
+
+        //AlertsHandler.TriggerScanPlate += ShowARPlate;
+        //AlertsHandler.TriggerResultOfPlateScan += HideScanBar;
+        //AlertsHandler.TriggerResultOfPlateScan += ChangeBracketsColor;
+
+        if (gameObject.transform.childCount > 0)
+            plateHighlighter = gameObject.transform.GetChild(0).gameObject;
     }
 
-    void ShowARPlate()
+    void ShowARPlate(int scanCode)
     {
-        for(int i = 0; i < this.gameObject.transform.childCount; i++)
-        {
-            GameObject g = gameObject.transform.GetChild(i).gameObject;
-            g.SetActive(true);
-        }
+        Color alertColor = DefineColorBasedOnAlertCode(scanCode);
+        ChangeBracketsColor(alertColor);
+        plateHighlighter.SetActive(true);
     }
+
+    void ShowResultOfScan(int scanCode)
+    {
+        HideScanBar();
+        Color alertColor = DefineColorBasedOnAlertCode(scanCode);
+        ChangeBracketsColor(alertColor);
+    }
+
+    Color DefineColorBasedOnAlertCode(int _scanCode)
+    {
+        Color returnColor;
+        switch (_scanCode)
+        {
+            case (int)AlertsHandler.ScanCode.Scanning:
+                returnColor = Color.yellow;
+                break;
+            case (int)AlertsHandler.ScanCode.Clear:
+                returnColor = Color.green;
+                break;
+            case (int)AlertsHandler.ScanCode.Warning:
+                returnColor = Color.red;
+                break;
+            default:
+                returnColor = Color.white;
+                break;
+        }
+        return returnColor;
+    }
+
 
     void HideScanBar()
     {
-        gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        GameObject plateScan = plateHighlighter.transform.GetChild(1).gameObject;
+        plateScan.SetActive(false);
     }
 
-    void ChangeBracketsColor()
+    void ChangeBracketsColor(Color colorCode)
     {
-        gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Renderer>().material.color = Color.green;
+        GameObject brackets = plateHighlighter.transform.GetChild(0).gameObject;
+        brackets.GetComponent<Renderer>().material.color = colorCode;
     }
 
 }

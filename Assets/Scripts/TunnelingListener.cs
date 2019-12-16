@@ -12,11 +12,12 @@ public class TunnelingListener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AlertsHandler.TriggerResultOfLicenseScan += ShowTunnel;
+        //AlertsHandler.TriggerResultOfLicenseScan += ShowTunnel;
+        AlertsHandler.OnScanDriverLicenseResult += ShowTunnel;
         tunnelling = gameObject.GetComponent<Tunnelling>();
     }
 
-    void ShowTunnel()
+    void ShowTunnel(int _scanCode)
     {
         tunnelling.effectColor = Color.red;
         tunnelling.effectCoverage = .5f;

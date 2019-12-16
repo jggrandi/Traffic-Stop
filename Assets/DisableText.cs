@@ -7,10 +7,11 @@ public class DisableText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AlertsHandler.TriggerResultOfPlateScan += DisableInstructions;
+        AlertsHandler.OnScanPlateResult += DisableInstructions;
+        //AlertsHandler.TriggerResultOfPlateScan += DisableInstructions;
     }
 
-    void DisableInstructions()
+    void DisableInstructions(int _scanCode)
     {
         gameObject.SetActive(false);
     }
