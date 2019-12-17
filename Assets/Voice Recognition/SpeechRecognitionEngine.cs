@@ -56,6 +56,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
             amins[0].SetBool(LicensePassReset, false);
             amins[1].SetBool(Open, true);
             amins[1].SetBool(Close, false);
+            amins[0].SetBool(Leave, false);
         }
 
     }
@@ -88,17 +89,19 @@ public class SpeechRecognitionEngine : MonoBehaviour
         {
             case 0:
                 DriverLicensePass();
-
                 break;
             case 1:
-                LipSyncAction();
-
+                LipSyncAction(LipAnim[0]);
                 break;
             case 2:
                 RestoreHandToNormalPose();
                 break;
             case 3:
                 ReturnDriverLicense();
+                break;
+            case 4:
+            case 5:
+                LipSyncAction(LipAnim[1]);
                 break;
             default:
                 break;
@@ -127,6 +130,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
 
     void DriverLicensePass()
     {
+        LipSyncAction(LipAnim[2]);
         amins[0].SetBool(HeadRot, false);
         amins[0].SetBool(HeadRotBack, false);
         amins[0].SetBool(LicensePass, true);
@@ -139,13 +143,14 @@ public class SpeechRecognitionEngine : MonoBehaviour
 
     }
 
-    void LipSyncAction()
+    void LipSyncAction(LipSyncData lipAnim)
     {
-        LipSync.Play(LipAnim[0]);
+        LipSync.Play(lipAnim);
     }
 
     void RestoreHandToNormalPose()
     {
+        LipSyncAction(LipAnim[3]);
         amins[0].SetBool(HeadRot, false);
         amins[0].SetBool(HeadRotBack, false);
         amins[0].SetBool(LicensePass, false);
@@ -172,7 +177,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            LipSyncAction();
+            LipSyncAction(LipAnim[0]);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
