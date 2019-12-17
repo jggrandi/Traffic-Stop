@@ -4,20 +4,31 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ButtonBehaviorPlateScan : MonoBehaviour
 {
+    public GameObject vbutton;
+    public GameObject obutton;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.GetComponent<Button>().interactable = false;
-        this.GetComponentInChildren<BoxCollider>().enabled = false;
+        vbutton.GetComponent<Button>().interactable = false;
+        vbutton.GetComponentInChildren<BoxCollider>().enabled = false;
+        obutton.GetComponent<Button>().interactable = false;
+        obutton.GetComponentInChildren<BoxCollider>().enabled = false;
         //AlertsHandler.TriggerResultOfPlateScan += EnableButton;
         AlertsHandler.OnScanPlateResult += EnableButton;
     }
     
-    void EnableButton(int _scanCode)
+    void EnableButton( int _scanCode)
     {
-        this.GetComponent<Button>().interactable = true;
-        this.GetComponentInChildren<BoxCollider>().enabled = true;
+        vbutton.GetComponent<Button>().interactable = true;
+        vbutton.GetComponentInChildren<BoxCollider>().enabled = true;
+        obutton.GetComponent<Button>().interactable = true;
+        obutton.GetComponentInChildren<BoxCollider>().enabled = true;
 
+    }
+
+    private void OnDisable()
+    {
+        AlertsHandler.OnScanPlateResult -= EnableButton;
     }
 }

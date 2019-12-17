@@ -14,16 +14,20 @@ public class HandAlertListner : MonoBehaviour
         //AlertsHandler.TriggerResultOfPlateScan += TriggerHapticPulse;
         //AlertsHandler.TriggerResultOfLicenseScan += TriggerHapticPulse;
 
-        AlertsHandler.OnScanPlateResult += TriggerHapticPulse;
         AlertsHandler.OnScanDriverLicenseResult += TriggerHapticPulse;
-
+        AlertsHandler.OnScanPlateResult += TriggerHapticPulse;
 
         hand = this.gameObject.GetComponent<Hand>();
     }
 
-
-    void TriggerHapticPulse(int _scanCode)
+    void TriggerHapticPulse( int _scanCode)
     {
         hand.TriggerHapticPulse(1f, 100, 1f);
+    }
+
+    private void OnDisable()
+    {
+        AlertsHandler.OnScanDriverLicenseResult -= TriggerHapticPulse;
+        AlertsHandler.OnScanPlateResult -= TriggerHapticPulse;
     }
 }

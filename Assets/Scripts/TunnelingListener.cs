@@ -17,14 +17,17 @@ public class TunnelingListener : MonoBehaviour
         tunnelling = gameObject.GetComponent<Tunnelling>();
     }
 
-    void ShowTunnel(int _scanCode)
+    void ShowTunnel( int _scanCode)
     {
-        tunnelling.effectColor = Color.red;
-        tunnelling.effectCoverage = .5f;
-        tunnelling.effectFeather = .15f;
+        if (_scanCode == (int)AlertsHandler.ScanCode.Warning)
+        {
+            tunnelling.effectColor = AlertsHandler.DefineColorBasedOnAlertCode(_scanCode);
+            tunnelling.effectCoverage = .5f;
+            tunnelling.effectFeather = .15f;
 
-        coroutine = WaitScan(3f);
-        StartCoroutine(coroutine);
+            coroutine = WaitScan(3f);
+            StartCoroutine(coroutine);
+        }
     }
 
     void ResetTunnel()
@@ -39,4 +42,9 @@ public class TunnelingListener : MonoBehaviour
         ResetTunnel();
     }
 
+
+    private void OnDisable()
+    {
+        AlertsHandler.OnScanDriverLicenseResult -= ShowTunnel;
+    }
 }

@@ -3,25 +3,27 @@ using System.Collections;
 
 public class SelectionIndicator : MonoBehaviour {
 
-    //MouseManager mm;
+    public static GameObject selectedObject;
+    GameObject objHighlighter;
 
-    public GameObject selected;
-
-    GameObject plateHighlighter;
 	// Use this for initialization
 	void Start () {
-        if(gameObject.transform.childCount != 0)
-            plateHighlighter = gameObject.transform.GetChild(0).gameObject;
+        if (gameObject.transform.childCount != 0)
+            objHighlighter = gameObject.transform.GetChild(0).gameObject;
     }
 
     float padding = 2.0f;
     // Update is called once per frame
     void Update () {
-		if(selected != null) {
+        if (selectedObject == null) return;
+        if (selectedObject.name != "DriverLicense" && selectedObject.name != "Plate") return;
+        
+        if (selectedObject.name == "DriverLicense") //temporary solution
+            objHighlighter.transform.LookAt(Camera.main.transform);
 
-            Bounds bigBounds = selected.GetComponentInChildren<Renderer>().bounds;
-            plateHighlighter.transform.position = new Vector3(bigBounds.center.x, bigBounds.center.y, bigBounds.center.z);
-            plateHighlighter.transform.localScale = new Vector3(bigBounds.size.x * padding, bigBounds.size.y * padding, bigBounds.size.z * padding);
+        Bounds bigBounds = selectedObject.GetComponentInChildren<Renderer>().bounds;
+        objHighlighter.transform.position = new Vector3(bigBounds.center.x, bigBounds.center.y, bigBounds.center.z);
+        objHighlighter.transform.localScale = new Vector3(bigBounds.size.x * padding, bigBounds.size.y * padding, bigBounds.size.z * padding);
 
             //for (int i = 0; i < gameObject.transform.childCount; i++)
             //{
@@ -35,8 +37,8 @@ public class SelectionIndicator : MonoBehaviour {
                
             //    plateHighlighter.transform.localScale = new Vector3(bigBounds.size.x * padding, bigBounds.size.y * padding, bigBounds.size.z * padding);
             //}
-		}
-
+	
 	}
+
 }
  

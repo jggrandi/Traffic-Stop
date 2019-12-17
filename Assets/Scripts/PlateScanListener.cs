@@ -1,44 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
-public class DriverLicenseListener : MonoBehaviour
+public class PlateScanListener : MonoBehaviour
 {
+
     GameObject objHighlighter;
+
     // Start is called before the first frame update
     void Start()
     {
-        //AlertsHandler.TriggerLicenseScan += ShowScanning;
-        //AlertsHandler.TriggerResultOfLicenseScan += ShowAlerts;
-        AlertsHandler.OnScanDriverLicense += ShowScanning;
-        AlertsHandler.OnScanDriverLicenseResult += ShowResultOfScan;
+        AlertsHandler.OnScanPlate += ShowARScanning;
+        AlertsHandler.OnScanPlateResult += ShowResultOfScan;
+
+        //AlertsHandler.TriggerScanPlate += ShowARPlate;
+        //AlertsHandler.TriggerResultOfPlateScan += HideScanBar;
+        //AlertsHandler.TriggerResultOfPlateScan += ChangeBracketsColor;
 
         if (gameObject.transform.childCount > 0)
             objHighlighter = gameObject.transform.GetChild(0).gameObject;
-
     }
 
-    void ShowScanning(int _scanCode)
+    void ShowARScanning( int _scanCode)
     {
         Color alertColor = AlertsHandler.DefineColorBasedOnAlertCode(_scanCode);
         ChangeBracketsColor(alertColor);
         objHighlighter.SetActive(true);
-        objHighlighter.transform.GetChild(0).transform.Rotate(new Vector3(0, 180f, 0)); //face the quad to the
-    }
 
+    }
 
     void ShowResultOfScan(int _scanCode)
     {
         HideScanBar();
         Color alertColor = AlertsHandler.DefineColorBasedOnAlertCode(_scanCode);
         ChangeBracketsColor(alertColor);
-    }
-
-
-    void ChangeBracketsColor(Color colorCode)
-    {
-        GameObject brackets = objHighlighter.transform.GetChild(0).gameObject;
-        brackets.GetComponent<Renderer>().material.color = colorCode;
+        objHighlighter.transform.GetChild(0).transform.Rotate(new Vector3(0, 0, 0)); //face the quad to the
     }
 
     void HideScanBar()
@@ -47,9 +44,16 @@ public class DriverLicenseListener : MonoBehaviour
         scanBar.SetActive(false);
     }
 
+    void ChangeBracketsColor(Color colorCode)
+    {
+        GameObject brackets = objHighlighter.transform.GetChild(0).gameObject;
+        brackets.GetComponent<Renderer>().material.color = colorCode;
+    }
+
     private void OnDisable()
     {
-        AlertsHandler.OnScanDriverLicense -= ShowScanning;
-        AlertsHandler.OnScanDriverLicenseResult -= ShowResultOfScan;
+        AlertsHandler.OnScanPlate -= ShowARScanning;
+        AlertsHandler.OnScanPlateResult -= ShowResultOfScan;
     }
+
 }

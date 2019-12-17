@@ -5,7 +5,9 @@ using System;
 
 public class AlertsHandler : Raycaster
 {
-    public enum  ScanCode {Scanning, Clear, Warning, Danger}; 
+    public enum  ScanCode {Scanning, Clear, Warning, Danger};
+    public enum ObjType { Plate, DriverLicense, LegalObj, IllegalObj};
+
 
     public static Action<int> OnScanPlate;
     public static Action<int> OnScanPlateResult;
@@ -22,41 +24,66 @@ public class AlertsHandler : Raycaster
     bool plateAlreadyTriggered = false;
     bool driverLicenseAlreadyTriggered = false;
 
+    
     protected override void OnRaycasterEnter(GameObject target)
     {
+        SelectionIndicator.selectedObject = target.transform.parent.gameObject;
         if (target.gameObject.name == "PlateTrigger" && !plateAlreadyTriggered)
         {
             OnScanPlate((int)ScanCode.Scanning);
             //TriggerScanPlate();
-            plateAlreadyTriggered = true;
-            coroutine = Wait(4f);
+            coroutine = Wait(4f, ScanCode.Clear);
             StartCoroutine(coroutine);
+            plateAlreadyTriggered = true;
         }
 
         if (target.gameObject.name == "DriverTrigger" && !driverLicenseAlreadyTriggered)
         {
             //TriggerLicenseScan();
             OnScanDriverLicense((int)ScanCode.Scanning);
-            coroutine = Wait2(4f);
+            //OnScanObject((int)ObjType.DriverLicense,(int)ScanCode.Scanning);
+            //coroutine = Wait2(4f);
+            coroutine = Wait2(4f, ScanCode.Warning);
             StartCoroutine(coroutine);
             driverLicenseAlreadyTriggered = true;
         }
+    }
 
+    public static Color DefineColorBasedOnAlertCode(int _scanCode)
+    {
+        Color returnColor;
+        switch (_scanCode)
+        {
+            case (int)ScanCode.Scanning:
+                returnColor = Color.yellow;
+                break;
+            case (int)ScanCode.Clear:
+                returnColor = Color.green;
+                break;
+            case (int)ScanCode.Warning:
+                returnColor = Color.red;
+                break;
+            default:
+                returnColor = Color.white;
+                break;
+        }
+        return returnColor;
     }
 
 
-    private IEnumerator Wait(float waitTime)
+    private IEnumerator Wait(float waitTime, ScanCode scanCode)
     {
         yield return new WaitForSeconds(waitTime);
-        OnScanPlateResult((int)ScanCode.Clear);
+        //OnScanObjectResult((int)objType,(int)scanCode);
+        OnScanPlateResult((int)scanCode);
         //TriggerResultOfPlateScan();
 
     }
 
-    private IEnumerator Wait2(float waitTime)
+    private IEnumerator Wait2(float waitTime, ScanCode scanCode)
     {
         yield return new WaitForSeconds(waitTime);
-        OnScanDriverLicenseResult((int)ScanCode.Warning);
+        OnScanDriverLicenseResult((int)scanCode);
         //TriggerResultOfLicenseScan();
 
     }
