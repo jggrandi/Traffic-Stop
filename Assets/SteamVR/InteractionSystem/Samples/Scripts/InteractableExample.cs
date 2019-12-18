@@ -6,6 +6,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System;
 
 namespace Valve.VR.InteractionSystem.Sample
 {
@@ -24,8 +25,10 @@ namespace Valve.VR.InteractionSystem.Sample
 
         private Interactable interactable;
 
-		//-------------------------------------------------
-		void Awake()
+        public static Action OnHoldLicense;
+
+    //-------------------------------------------------
+    void Awake()
 		{
 			//var textMeshs = GetComponentsInChildren<TextMesh>();
    //         generalText = textMeshs[0];
@@ -37,11 +40,14 @@ namespace Valve.VR.InteractionSystem.Sample
             interactable = this.GetComponent<Interactable>();
 		}
 
-
-		//-------------------------------------------------
-		// Called when a Hand starts hovering over this object
-		//-------------------------------------------------
-		private void OnHandHoverBegin( Hand hand )
+        private void Start()
+        {
+            
+        }
+        //-------------------------------------------------
+        // Called when a Hand starts hovering over this object
+        //-------------------------------------------------
+        private void OnHandHoverBegin( Hand hand )
 		{
 			//generalText.text = "Hovering hand: " + hand.name;
 		}
@@ -66,6 +72,7 @@ namespace Valve.VR.InteractionSystem.Sample
 
             if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
             {
+                OnHoldLicense();
                 // Save our position/rotation so that we can restore it when we detach
                 oldPosition = transform.position;
                 oldRotation = transform.rotation;
@@ -149,5 +156,8 @@ namespace Valve.VR.InteractionSystem.Sample
 		private void OnHandFocusLost( Hand hand )
 		{
 		}
+
+
+
 	}
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f44607bd270d4f4eaa8869ed9b5b85c, type: 3}
   m_Name: HiOfficer
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 96a11dc71037d6348bedc23d84439e0c, type: 3}
+  clip: {fileID: 8300000, guid: 7bf6be1de0d5b0648bfcfae091169162, type: 3}
   phonemeData:
   - phoneme: 0
     phonemeNumber: 0

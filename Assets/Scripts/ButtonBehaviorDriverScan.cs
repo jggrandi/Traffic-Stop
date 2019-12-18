@@ -8,19 +8,26 @@ public class ButtonBehaviorDriverScan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        driverbutton.GetComponent<Button>().interactable = false;
-        driverbutton.GetComponentInChildren<BoxCollider>().enabled = false;
         AlertsHandler.OnScanDriverLicense += EnableButton;
     }
     
     void EnableButton( int _scanCode)
     {
-        driverbutton.GetComponent<Button>().interactable = true;
+        Button b1 = driverbutton.GetComponent<Button>();
+        TurnRed(b1);
+        b1.interactable = true;
         driverbutton.GetComponentInChildren<BoxCollider>().enabled = true;
     }
 
     private void OnDisable()
     {
         AlertsHandler.OnScanDriverLicense -= EnableButton;
+    }
+
+    public void TurnRed(Button b)
+    {
+        ColorBlock colors = b.colors;
+        colors.normalColor = Color.red;
+        b.colors = colors;
     }
 }

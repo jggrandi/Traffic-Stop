@@ -23,7 +23,7 @@ public class DriverLicenseListener : MonoBehaviour
         Color alertColor = AlertsHandler.DefineColorBasedOnAlertCode(_scanCode);
         ChangeBracketsColor(alertColor);
         objHighlighter.SetActive(true);
-        objHighlighter.transform.GetChild(0).transform.Rotate(new Vector3(0, 180f, 0)); //face the quad to the
+        //objHighlighter.transform.GetChild(0).transform.Rotate(new Vector3(0, 180f, 0)); //face the quad to the
     }
 
 

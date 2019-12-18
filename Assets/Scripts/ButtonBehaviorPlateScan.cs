@@ -10,19 +10,20 @@ public class ButtonBehaviorPlateScan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        vbutton.GetComponent<Button>().interactable = false;
-        vbutton.GetComponentInChildren<BoxCollider>().enabled = false;
-        obutton.GetComponent<Button>().interactable = false;
-        obutton.GetComponentInChildren<BoxCollider>().enabled = false;
         //AlertsHandler.TriggerResultOfPlateScan += EnableButton;
         AlertsHandler.OnScanPlateResult += EnableButton;
     }
     
     void EnableButton( int _scanCode)
     {
-        vbutton.GetComponent<Button>().interactable = true;
+        Button b1 = vbutton.GetComponent<Button>();
+        TurnGreen(b1);
+        b1.interactable = true;        
         vbutton.GetComponentInChildren<BoxCollider>().enabled = true;
-        obutton.GetComponent<Button>().interactable = true;
+
+        Button b2 = obutton.GetComponent<Button>();
+        TurnGreen(b2);
+        b2.interactable = true;
         obutton.GetComponentInChildren<BoxCollider>().enabled = true;
 
     }
@@ -31,4 +32,12 @@ public class ButtonBehaviorPlateScan : MonoBehaviour
     {
         AlertsHandler.OnScanPlateResult -= EnableButton;
     }
+
+    public void TurnGreen(Button b)
+    {
+        ColorBlock colors = b.colors;
+        colors.normalColor = new Color32(0, 225, 0, 80);
+        b.colors = colors;
+    }
+
 }

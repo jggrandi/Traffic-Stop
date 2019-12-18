@@ -20,10 +20,18 @@ public class UIHandler : MonoBehaviour
     public GameObject vehicleButton;
     public GameObject ownerButton;
     public GameObject driverButton;
+    bool firstPressVehicle = true;
+    bool firstPressOwner = true;
+    bool firstPressDriver = true;
 
     //-------------------------------------------------
     public void ToggleVehicleInfo(Hand hand)
     {
+        if(firstPressVehicle)
+        {
+            TurnWhite(vehicleButton);
+            firstPressVehicle = false;
+        }
         vehicleInfo.SetActive(!vehicleInfo.activeInHierarchy);
         ownerInfo.SetActive(false);
         driverInfo.SetActive(false);
@@ -32,6 +40,11 @@ public class UIHandler : MonoBehaviour
 
     public void ToggleOwnerInfo(Hand hand)
     {
+        if (firstPressOwner)
+        {
+            TurnWhite(ownerButton);
+            firstPressOwner = false;
+        }
         ownerInfo.SetActive(!ownerInfo.activeInHierarchy);
         vehicleInfo.SetActive(false);
         driverInfo.SetActive(false);
@@ -40,10 +53,23 @@ public class UIHandler : MonoBehaviour
 
     public void ToggleDriverInfo(Hand hand)
     {
+        if (firstPressDriver)
+        {
+            TurnWhite(driverButton);
+            firstPressDriver = false;
+        }
         driverInfo.SetActive(!driverInfo.activeInHierarchy);
         vehicleInfo.SetActive(false);
         ownerInfo.SetActive(false);
         //canvas.SetActive(!canvas.activeInHierarchy);
+    }
+
+    void TurnWhite(GameObject obj)
+    {
+        Button b = obj.GetComponent<Button>();
+        ColorBlock colors = b.colors;
+        colors.normalColor = new Color32(225, 225, 225, 0);
+        b.colors = colors;
     }
 
 }

@@ -26,6 +26,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
     int Open = Animator.StringToHash("Open");
     int Close = Animator.StringToHash("Close");
 
+    public GameObject Selector3D;
     public GameObject driverLicense;
     private IEnumerator coroutine;
 
@@ -78,6 +79,12 @@ public class SpeechRecognitionEngine : MonoBehaviour
 
     void Update()
     {
+        if (recognizer.Status == SpeechSystemStatus.Stopped)
+        {
+            Debug.Log("STOOOOPPPPEEEDDDD");
+            recognizer.Start();
+        }
+
         KeyTrigAnimation();
         if (!ready) return;
         if (word == "") return;
@@ -157,6 +164,8 @@ public class SpeechRecognitionEngine : MonoBehaviour
         amins[0].SetBool(Driving, false);
         amins[0].SetBool(LicensePassReset, true);
         amins[0].SetBool(Leave, false);
+        driverLicense.SetActive(false);
+        Selector3D.SetActive(false);
     }
 
     void ReturnDriverLicense()
