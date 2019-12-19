@@ -18,8 +18,8 @@ public class SelectionIndicator : MonoBehaviour {
         if (selectedObject == null) return;
         if (selectedObject.name != "DriverLicense" && selectedObject.name != "Plate") return;
         
-        //if (selectedObject.name == "DriverLicense") //temporary solution
-        //    objHighlighter.transform.LookAt(Camera.main.transform);
+        if (selectedObject.name == "DriverLicense") //temporary solution
+            objHighlighter.transform.LookAt(Camera.main.transform);
 
         Bounds bigBounds = selectedObject.GetComponentInChildren<Renderer>().bounds;
         objHighlighter.transform.position = new Vector3(bigBounds.center.x, bigBounds.center.y, bigBounds.center.z);

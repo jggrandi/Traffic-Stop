@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DriverLicenseListener : MonoBehaviour
 {
-    GameObject objHighlighter;
+
+    public GameObject brackets;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,8 +14,8 @@ public class DriverLicenseListener : MonoBehaviour
         AlertsHandler.OnScanDriverLicense += ShowScanning;
         AlertsHandler.OnScanDriverLicenseResult += ShowResultOfScan;
 
-        if (gameObject.transform.childCount > 0)
-            objHighlighter = gameObject.transform.GetChild(0).gameObject;
+        //if (gameObject.transform.childCount > 0)
+        //    objHighlighter = gameObject.transform.GetChild(0).gameObject;
 
     }
 
@@ -22,14 +23,13 @@ public class DriverLicenseListener : MonoBehaviour
     {
         Color alertColor = AlertsHandler.DefineColorBasedOnAlertCode(_scanCode);
         ChangeBracketsColor(alertColor);
-        objHighlighter.SetActive(true);
-        //objHighlighter.transform.GetChild(0).transform.Rotate(new Vector3(0, 180f, 0)); //face the quad to the
+        brackets.SetActive(true);
+        //transform.GetChild(0).transform.Rotate(new Vector3(0, 180f, 0)); //face the quad to the
     }
 
 
     void ShowResultOfScan(int _scanCode)
     {
-        HideScanBar();
         Color alertColor = AlertsHandler.DefineColorBasedOnAlertCode(_scanCode);
         ChangeBracketsColor(alertColor);
     }
@@ -37,14 +37,8 @@ public class DriverLicenseListener : MonoBehaviour
 
     void ChangeBracketsColor(Color colorCode)
     {
-        GameObject brackets = objHighlighter.transform.GetChild(0).gameObject;
+        //GameObject brackets = objHighlighter.transform.GetChild(0).gameObject;
         brackets.GetComponent<Renderer>().material.color = colorCode;
-    }
-
-    void HideScanBar()
-    {
-        GameObject scanBar = objHighlighter.transform.GetChild(1).gameObject;
-        scanBar.SetActive(false);
     }
 
     private void OnDisable()
