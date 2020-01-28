@@ -19,12 +19,15 @@ public class SpeechRecognitionEngine : MonoBehaviour
     public Animator[] amins = new Animator[] { };
     int HeadRot = Animator.StringToHash("HeadRot");
     int GrabLicense = Animator.StringToHash("GrabLicense");
-    int GetLicenss = Animator.StringToHash("GetLicenss");
+    int GetLicense = Animator.StringToHash("GetLicense");
     int LicensePass = Animator.StringToHash("LicensePass");
     int LicensePassReset = Animator.StringToHash("LicensePassReset");
     int Leave = Animator.StringToHash("Leave");
     int Open = Animator.StringToHash("Open");
     int Close = Animator.StringToHash("Close");
+    int Reverse = Animator.StringToHash("Reverse");
+    int PlaceLice = Animator.StringToHash("PlaceLice");
+
 
     public GameObject Selector3D;
     public GameObject driverLicense;
@@ -153,6 +156,8 @@ public class SpeechRecognitionEngine : MonoBehaviour
         amins[0].SetBool(LicensePass, false);
         amins[0].SetBool(LicensePassReset, true);
         amins[0].SetBool(Leave, false);
+        amins[2].SetBool(Reverse, false);
+        amins[2].SetBool(PlaceLice, false);
         driverLicense.SetActive(false);
         Selector3D.SetActive(false);
     }
@@ -163,6 +168,21 @@ public class SpeechRecognitionEngine : MonoBehaviour
         amins[0].SetBool(LicensePass, false);
         amins[0].SetBool(LicensePassReset, false);
         amins[0].SetBool(Leave, false);
+        amins[0].SetBool(GetLicense, true);
+        amins[0].SetBool(GrabLicense, false);
+    }
+
+    void PutLicense()
+    {
+        driverLicense.SetActive(true);
+        amins[0].SetBool(HeadRot, false);
+        amins[0].SetBool(LicensePass, false);
+        amins[0].SetBool(LicensePassReset, false);
+        amins[0].SetBool(Leave, false);
+        amins[0].SetBool(GetLicense, false);
+        amins[0].SetBool(GrabLicense, true);
+        amins[2].SetBool(Reverse, false);
+        amins[2].SetBool(PlaceLice, true);
     }
 
     void KeyTrigAnimation()
@@ -182,6 +202,10 @@ public class SpeechRecognitionEngine : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             ReturnDriverLicense();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            PutLicense();
         }
 
     }

@@ -41,7 +41,7 @@ public class Driver_IK : MonoBehaviour
     void returnLicense()
     {
         resetrightHandLock();
-        getLicense = true;
+        actLicense();
         weight = 1f;
         LicenseAnim.SetBool(Animator.StringToHash("Reverse"), true);
         LicenseAnim.SetBool(Animator.StringToHash("PlaceLice"), false);
@@ -65,7 +65,7 @@ public class Driver_IK : MonoBehaviour
         {
             if(weight < 1f)
             {
-                weight += 2f * Time.deltaTime; ;
+                weight += 3f * Time.deltaTime; ;
             }
             ik.solver.rightHandEffector.position = rightHandTarget[0].position;
             ik.solver.rightHandEffector.rotation = rightHandTarget[0].rotation;
