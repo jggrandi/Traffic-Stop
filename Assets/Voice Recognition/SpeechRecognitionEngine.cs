@@ -18,9 +18,9 @@ public class SpeechRecognitionEngine : MonoBehaviour
     //public bool trigger = false;
     public Animator[] amins = new Animator[] { };
     int HeadRot = Animator.StringToHash("HeadRot");
-    int HeadRotBack = Animator.StringToHash("HeadRotBack");
+    int GrabLicense = Animator.StringToHash("GrabLicense");
+    int GetLicenss = Animator.StringToHash("GetLicenss");
     int LicensePass = Animator.StringToHash("LicensePass");
-    int Driving = Animator.StringToHash("Driving");
     int LicensePassReset = Animator.StringToHash("LicensePassReset");
     int Leave = Animator.StringToHash("Leave");
     int Open = Animator.StringToHash("Open");
@@ -52,7 +52,6 @@ public class SpeechRecognitionEngine : MonoBehaviour
         if (other.name == "HeadCollider")
         {
             ready = true;
-            amins[0].SetBool(HeadRotBack, false);
             amins[0].SetBool(HeadRot, true);
             amins[0].SetBool(LicensePassReset, false);
             amins[1].SetBool(Open, true);
@@ -71,7 +70,6 @@ public class SpeechRecognitionEngine : MonoBehaviour
             amins[0].SetBool(LicensePassReset, false);
             amins[0].SetBool(Leave, true);
             amins[0].SetBool(LicensePass, false);
-            amins[0].SetBool(Driving, false);
             amins[1].SetBool(Close, true);
             amins[1].SetBool(Open, false);
         }
@@ -79,11 +77,6 @@ public class SpeechRecognitionEngine : MonoBehaviour
 
     void Update()
     {
-        if (recognizer.Status == SpeechSystemStatus.Stopped)
-        {
-            Debug.Log("STOOOOPPPPEEEDDDD");
-            recognizer.Start();
-        }
 
         KeyTrigAnimation();
         if (!ready) return;
@@ -139,9 +132,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
     {
         LipSyncAction(LipAnim[2]);
         amins[0].SetBool(HeadRot, false);
-        amins[0].SetBool(HeadRotBack, false);
         amins[0].SetBool(LicensePass, true);
-        amins[0].SetBool(Driving, false);
         amins[0].SetBool(Leave, false);
         amins[0].SetBool(LicensePassReset, false);
 
@@ -159,9 +150,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
     {
         LipSyncAction(LipAnim[3]);
         amins[0].SetBool(HeadRot, false);
-        amins[0].SetBool(HeadRotBack, false);
         amins[0].SetBool(LicensePass, false);
-        amins[0].SetBool(Driving, false);
         amins[0].SetBool(LicensePassReset, true);
         amins[0].SetBool(Leave, false);
         driverLicense.SetActive(false);
@@ -171,9 +160,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
     void ReturnDriverLicense()
     {
         amins[0].SetBool(HeadRot, false);
-        amins[0].SetBool(HeadRotBack, false);
         amins[0].SetBool(LicensePass, false);
-        amins[0].SetBool(Driving, true);
         amins[0].SetBool(LicensePassReset, false);
         amins[0].SetBool(Leave, false);
     }

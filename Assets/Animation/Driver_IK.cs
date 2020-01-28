@@ -7,22 +7,65 @@ using RootMotion.FinalIK;
 public class Driver_IK : MonoBehaviour
 {
     public FullBodyBipedIK ik;
-    public Transform leftHandTarget, rightHandTarget, leftFootTarget, rightFootTarget;
-    public bool rightHandLock = true;
+    public Transform leftHandTarget, leftFootTarget, rightFootTarget;
+    public bool rightHandLock = true, getLicense = false;
+    public float weight = 1f;
+    public Transform[] rightHandTarget;
+    public HandPoser handPoser;
+    public Animator LicenseAnim;
+
+    void setrightHandLock()
+    {
+        rightHandLock = true;
+    }
+
+    void resetrightHandLock()
+    {
+        rightHandLock = false;
+    }
+
+    void setGetLicense()
+    {
+        getLicense = true;
+    }
+
+    void resetGetLicense()
+    {
+        LicenseAnim.SetBool(Animator.StringToHash("Play"), false);
+        LicenseAnim.SetBool(Animator.StringToHash("Reset"), true);
+        getLicense = false;
+    }
 
     private void LateUpdate()
     {
         if (rightHandLock)
         {
-            ik.solver.rightHandEffector.position = rightHandTarget.position;
-            ik.solver.rightHandEffector.rotation = rightHandTarget.rotation;
-            ik.solver.rightHandEffector.positionWeight = 1f;
-            ik.solver.rightHandEffector.rotationWeight = 1f;
+            weight = 1f;
+            ik.solver.rightHandEffector.position = rightHandTarget[0].position;
+            ik.solver.rightHandEffector.rotation = rightHandTarget[0].rotation;
+            ik.solver.rightHandEffector.positionWeight = weight;
+            ik.solver.rightHandEffector.rotationWeight = weight;
+            handPoser.poseRoot = rightHandTarget[0];
+        }
+        else if (getLicense)
+        {
+            weight = 1f;
+            ik.solver.rightHandEffector.position = rightHandTarget[1].position;
+            ik.solver.rightHandEffector.rotation = rightHandTarget[1].rotation;
+            ik.solver.rightHandEffector.positionWeight = weight;
+            ik.solver.rightHandEffector.rotationWeight = weight;
+            handPoser.poseRoot = rightHandTarget[1];
+            LicenseAnim.SetBool(Animator.StringToHash("Play"), true);
+            LicenseAnim.SetBool(Animator.StringToHash("Reset"), false);
         }
         else
         {
-            ik.solver.rightHandEffector.positionWeight = 0f;
-            ik.solver.rightHandEffector.rotationWeight = 0f;
+            if (weight > 0f)
+            {
+                weight -= 2f*Time.deltaTime;
+                ik.solver.rightHandEffector.positionWeight = weight;
+                ik.solver.rightHandEffector.rotationWeight = weight;
+            }
         }
         ik.solver.leftHandEffector.position = leftHandTarget.position;
         ik.solver.leftHandEffector.rotation = leftHandTarget.rotation;
