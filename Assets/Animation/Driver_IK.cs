@@ -17,6 +17,7 @@ public class Driver_IK : MonoBehaviour
     void setrightHandLock()
     {
         rightHandLock = true;
+        getLicense = false;
     }
 
     void resetrightHandLock()
@@ -26,21 +27,46 @@ public class Driver_IK : MonoBehaviour
 
     void setGetLicense()
     {
+        actLicense();
+        weight = 1f;
+        LicenseAnim.SetBool(Animator.StringToHash("Play"), true);
+        LicenseAnim.SetBool(Animator.StringToHash("Reset"), false);
+    }
+
+    void actLicense()
+    {
         getLicense = true;
+    }
+
+    void returnLicense()
+    {
+        resetrightHandLock();
+        getLicense = true;
+        weight = 1f;
+        LicenseAnim.SetBool(Animator.StringToHash("Reverse"), true);
+        LicenseAnim.SetBool(Animator.StringToHash("PlaceLice"), false);
+    }
+
+    void inactLicense()
+    {
+        getLicense = false;
     }
 
     void resetGetLicense()
     {
         LicenseAnim.SetBool(Animator.StringToHash("Play"), false);
         LicenseAnim.SetBool(Animator.StringToHash("Reset"), true);
-        getLicense = false;
+        inactLicense();
     }
 
     private void LateUpdate()
     {
         if (rightHandLock)
         {
-            weight = 1f;
+            if(weight < 1f)
+            {
+                weight += 2f * Time.deltaTime; ;
+            }
             ik.solver.rightHandEffector.position = rightHandTarget[0].position;
             ik.solver.rightHandEffector.rotation = rightHandTarget[0].rotation;
             ik.solver.rightHandEffector.positionWeight = weight;
@@ -49,20 +75,18 @@ public class Driver_IK : MonoBehaviour
         }
         else if (getLicense)
         {
-            weight = 1f;
             ik.solver.rightHandEffector.position = rightHandTarget[1].position;
             ik.solver.rightHandEffector.rotation = rightHandTarget[1].rotation;
             ik.solver.rightHandEffector.positionWeight = weight;
             ik.solver.rightHandEffector.rotationWeight = weight;
             handPoser.poseRoot = rightHandTarget[1];
-            LicenseAnim.SetBool(Animator.StringToHash("Play"), true);
-            LicenseAnim.SetBool(Animator.StringToHash("Reset"), false);
+
         }
         else
         {
             if (weight > 0f)
             {
-                weight -= 2f*Time.deltaTime;
+                weight -= 0.5f*Time.deltaTime;
                 ik.solver.rightHandEffector.positionWeight = weight;
                 ik.solver.rightHandEffector.rotationWeight = weight;
             }
