@@ -2965,6 +2965,7 @@ MonoBehaviour:
   amins:
   - {fileID: 3324012882667798401}
   - {fileID: 419383514472596181}
+  Selector3D: {fileID: 0}
   driverLicense: {fileID: 6479279519621645325}
 --- !u!1 &490983302917578691
 GameObject:
@@ -4584,6 +4585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075abb563d1cce847a7a64010986456d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brackets: {fileID: 0}
 --- !u!1 &3080180039101065985
 GameObject:
   m_ObjectHideFlags: 0
@@ -6791,7 +6793,7 @@ Animator:
   m_GameObject: {fileID: 8570383092303143144}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde, type: 3}
-  m_Controller: {fileID: 9100000, guid: d397a98e35d0b3342a49fd3a2bc0419c, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7881,10 +7883,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 3eed8165b861f444cbb8fe297fefedd7, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 161ecd4b359dbd145b2ef3d9dfdec122, type: 2}
     - target: {fileID: 400020, guid: 3eed8165b861f444cbb8fe297fefedd7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.3837
@@ -7909,6 +7907,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 3eed8165b861f444cbb8fe297fefedd7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 161ecd4b359dbd145b2ef3d9dfdec122, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3eed8165b861f444cbb8fe297fefedd7, type: 3}
 --- !u!4 &419383514465414449 stripped

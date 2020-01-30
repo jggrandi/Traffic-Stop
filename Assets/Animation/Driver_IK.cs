@@ -13,6 +13,13 @@ public class Driver_IK : MonoBehaviour
     public Transform[] rightHandTarget;
     public HandPoser handPoser;
     public Animator LicenseAnim;
+    public Valve.VR.InteractionSystem.Sample.InteractableExample license;
+    private Animator driverAmin;
+
+    private void Start()
+    {
+        driverAmin = GameObject.Find("MaleD").GetComponent<Animator>();
+    }
 
     void setrightHandLock()
     {
@@ -55,17 +62,21 @@ public class Driver_IK : MonoBehaviour
     void resetGetLicense()
     {
         LicenseAnim.SetBool(Animator.StringToHash("Play"), false);
-        LicenseAnim.SetBool(Animator.StringToHash("Reset"), true);
+        //LicenseAnim.SetBool(Animator.StringToHash("Reset"), true);
         inactLicense();
     }
 
+
+
+
     private void LateUpdate()
     {
+
         if (rightHandLock)
         {
             if(weight < 1f)
             {
-                weight += 3f * Time.deltaTime; ;
+                weight += 2f * Time.deltaTime; ;
             }
             ik.solver.rightHandEffector.position = rightHandTarget[0].position;
             ik.solver.rightHandEffector.rotation = rightHandTarget[0].rotation;
@@ -86,7 +97,7 @@ public class Driver_IK : MonoBehaviour
         {
             if (weight > 0f)
             {
-                weight -= 0.5f*Time.deltaTime;
+                weight -= 2f*Time.deltaTime;
                 ik.solver.rightHandEffector.positionWeight = weight;
                 ik.solver.rightHandEffector.rotationWeight = weight;
             }

@@ -27,8 +27,10 @@ namespace Valve.VR.InteractionSystem.Sample
 
         public static Action OnHoldLicense;
 
+        public bool isGrabEnding, isGrabing;
+
     //-------------------------------------------------
-    void Awake()
+        void Awake()
 		{
 			//var textMeshs = GetComponentsInChildren<TextMesh>();
    //         generalText = textMeshs[0];
@@ -80,12 +82,13 @@ namespace Valve.VR.InteractionSystem.Sample
                 // Call this to continue receiving HandHoverUpdate messages,
                 // and prevent the hand from hovering over anything else
                 hand.HoverLock(interactable);
-
+                isGrabing = true;
                 // Attach this object to the hand
                 hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
             }
             else if (isGrabEnding)
             {
+                isGrabing = false;
                 // Detach this object from the hand
                 hand.DetachObject(gameObject);
 

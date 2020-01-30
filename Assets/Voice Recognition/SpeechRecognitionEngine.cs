@@ -7,6 +7,7 @@ using RogoDigital.Lipsync;
 
 public class SpeechRecognitionEngine : MonoBehaviour
 {
+    private Valve.VR.InteractionSystem.Sample.InteractableExample license;
     public LipSync LipSync;
     public LipSyncData[] LipAnim = new LipSyncData[] { };
     private bool ready = false;
@@ -35,6 +36,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
 
     void Start()
     {
+        license = driverLicense.GetComponent<Valve.VR.InteractionSystem.Sample.InteractableExample>();
         recognizer = new DictationRecognizer();
         recognizer.Start();
         recognizer.DictationResult += (text, confidence) =>
@@ -59,7 +61,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
             amins[0].SetBool(LicensePassReset, false);
             amins[1].SetBool(Open, true);
             amins[1].SetBool(Close, false);
-            amins[0].SetBool(Leave, false);
+            //amins[0].SetBool(Leave, false);
         }
 
     }
@@ -80,12 +82,17 @@ public class SpeechRecognitionEngine : MonoBehaviour
 
     void Update()
     {
-
+        if(license.isGrabing && !amins[0].GetBool(LicensePassReset))
+        {
+            amins[0].SetBool(LicensePassReset, true);
+            amins[0].SetBool(HeadRot, false);
+            amins[0].SetBool(LicensePass, false);
+            amins[2].SetBool("Reset", true);
+        }
         KeyTrigAnimation();
         if (!ready) return;
         if (word == "") return;
         int idWord = MatchSpeachToDatabase(word);
-        Debug.Log("ggg " + idWord);
         if (idWord == -1) return;
 
         switch (idWord)

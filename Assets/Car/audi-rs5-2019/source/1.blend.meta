@@ -1,0 +1,860 @@
+fileFormatVersion: 2
+guid: 8366c95a826af9f48bdb9af32756fb06
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      74: -2497044799374535593
+    second: MetalDkGlossy|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: 9188267280875720208
+    second: MetalDkGlossy|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: 4111213618082105927
+    second: MetalDkGlossy|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: -460216595941198885
+    second: MetalDkGlossy|CarPaint|Take 001|BaseLayer
+  - first:
+      74: 2974945941744841192
+    second: MetalDkGlossy|DomeLight|Take 001|BaseLayer
+  - first:
+      74: 8333434980947084917
+    second: MetalDkGlossy|Dome|Take 001|BaseLayer
+  - first:
+      74: -7763440098729464848
+    second: MetalDkGlossy|Glass|Take 001|BaseLayer
+  - first:
+      74: -6205311332866148804
+    second: MetalDkGlossy|Group|Take 001|BaseLayer
+  - first:
+      74: 4415749782522284041
+    second: MetalDkGlossy|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: -7510974696828195303
+    second: MetalDkGlossy|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: 2282911471873507921
+    second: MetalDkGlossy|others|Take 001|BaseLayer
+  - first:
+      74: 3409795710992912628
+    second: MetalDkGlossy|Plane001|Take 001|BaseLayer
+  - first:
+      74: -1354940955654016847
+    second: MetalDkGlossy|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: 6546299204547990290
+    second: MetalDkGlossy|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: 620029974673218459
+    second: MetalDkGlossy|Wheels|Take 001|BaseLayer
+  - first:
+      74: 1866674655059682659
+    second: Body_plastic|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: 5020763849842581244
+    second: Body_plastic|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: 7007813204526323656
+    second: Body_plastic|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: 7224818197185179110
+    second: Body_plastic|CarPaint|Take 001|BaseLayer
+  - first:
+      74: 8519744098590433664
+    second: Body_plastic|DomeLight|Take 001|BaseLayer
+  - first:
+      74: -4934024569060672803
+    second: Body_plastic|Dome|Take 001|BaseLayer
+  - first:
+      74: -386943737314017455
+    second: Body_plastic|Glass|Take 001|BaseLayer
+  - first:
+      74: -5822886983479146462
+    second: Body_plastic|Group|Take 001|BaseLayer
+  - first:
+      74: 8920157739386223062
+    second: Body_plastic|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: 2616006691711064370
+    second: Body_plastic|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: 540053531097373402
+    second: Body_plastic|others|Take 001|BaseLayer
+  - first:
+      74: -8517331769090144101
+    second: Body_plastic|Plane001|Take 001|BaseLayer
+  - first:
+      74: -825555898288653479
+    second: Body_plastic|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: -1345748191934360933
+    second: Body_plastic|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: -4369582748328478720
+    second: Body_plastic|Wheels|Take 001|BaseLayer
+  - first:
+      74: 5174505104780800936
+    second: RLightsChromeGlass|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: 6956445186947874004
+    second: RLightsChromeGlass|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: 7192459166699033043
+    second: RLightsChromeGlass|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: 784747501955573679
+    second: RLightsChromeGlass|CarPaint|Take 001|BaseLayer
+  - first:
+      74: -3310260951558505091
+    second: RLightsChromeGlass|DomeLight|Take 001|BaseLayer
+  - first:
+      74: -9086646216295568932
+    second: RLightsChromeGlass|Dome|Take 001|BaseLayer
+  - first:
+      74: -7900872652525896954
+    second: RLightsChromeGlass|Glass|Take 001|BaseLayer
+  - first:
+      74: -8056510273484485396
+    second: RLightsChromeGlass|Group|Take 001|BaseLayer
+  - first:
+      74: -5921462573924423694
+    second: RLightsChromeGlass|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: 8868170322144162983
+    second: RLightsChromeGlass|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: 5019128678991548693
+    second: RLightsChromeGlass|others|Take 001|BaseLayer
+  - first:
+      74: -4871979195175017345
+    second: RLightsChromeGlass|Plane001|Take 001|BaseLayer
+  - first:
+      74: 3705075627975677440
+    second: RLightsChromeGlass|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: -8846072061478239310
+    second: RLightsChromeGlass|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: 1704546376192442381
+    second: RLightsChromeGlass|Wheels|Take 001|BaseLayer
+  - first:
+      74: -8076397667601202553
+    second: Undercarriage|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: 7049440300697296491
+    second: Undercarriage|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: -5778354764973647740
+    second: Undercarriage|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: -3824128148350772091
+    second: Undercarriage|CarPaint|Take 001|BaseLayer
+  - first:
+      74: -2774269832609778388
+    second: Undercarriage|DomeLight|Take 001|BaseLayer
+  - first:
+      74: -4912800148676402826
+    second: Undercarriage|Dome|Take 001|BaseLayer
+  - first:
+      74: 6609736684794149812
+    second: Undercarriage|Glass|Take 001|BaseLayer
+  - first:
+      74: 479035437890985086
+    second: Undercarriage|Group|Take 001|BaseLayer
+  - first:
+      74: -5415620707929115500
+    second: Undercarriage|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: 303973900006468389
+    second: Undercarriage|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: 3362826323577607639
+    second: Undercarriage|others|Take 001|BaseLayer
+  - first:
+      74: 6196131390484611819
+    second: Undercarriage|Plane001|Take 001|BaseLayer
+  - first:
+      74: 8555187216694320294
+    second: Undercarriage|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: -3466673301399999367
+    second: Undercarriage|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: -8611754129209590735
+    second: Undercarriage|Wheels|Take 001|BaseLayer
+  - first:
+      74: -4567575364524463907
+    second: CarPaint|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: -7757292431610908035
+    second: CarPaint|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: -2308672433765325321
+    second: CarPaint|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: -504635131277855313
+    second: CarPaint|CarPaint|Take 001|BaseLayer
+  - first:
+      74: 1282428670664597604
+    second: CarPaint|DomeLight|Take 001|BaseLayer
+  - first:
+      74: 2046470607626090547
+    second: CarPaint|Dome|Take 001|BaseLayer
+  - first:
+      74: -7236290546363868601
+    second: CarPaint|Glass|Take 001|BaseLayer
+  - first:
+      74: -2798378963544767481
+    second: CarPaint|Group|Take 001|BaseLayer
+  - first:
+      74: -4314884141062152806
+    second: CarPaint|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: -6276631163131990289
+    second: CarPaint|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: -1427451776445963465
+    second: CarPaint|others|Take 001|BaseLayer
+  - first:
+      74: 2140636975169616287
+    second: CarPaint|Plane001|Take 001|BaseLayer
+  - first:
+      74: -786781902612361397
+    second: CarPaint|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: 727665711933878659
+    second: CarPaint|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: -2362457768862956725
+    second: CarPaint|Wheels|Take 001|BaseLayer
+  - first:
+      74: 1222356078494716689
+    second: others|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: 6066275247321335239
+    second: others|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: 1012750833199912155
+    second: others|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: -8754491528404187406
+    second: others|CarPaint|Take 001|BaseLayer
+  - first:
+      74: -2762221143578625111
+    second: others|DomeLight|Take 001|BaseLayer
+  - first:
+      74: 7520018322546700427
+    second: others|Dome|Take 001|BaseLayer
+  - first:
+      74: -1043113305491460756
+    second: others|Glass|Take 001|BaseLayer
+  - first:
+      74: -5593882991546587392
+    second: others|Group|Take 001|BaseLayer
+  - first:
+      74: -7476672797631767087
+    second: others|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: -7692840350879605148
+    second: others|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: 2129830380534507447
+    second: others|others|Take 001|BaseLayer
+  - first:
+      74: 8665361211022692972
+    second: others|Plane001|Take 001|BaseLayer
+  - first:
+      74: 8544446435109793629
+    second: others|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: 7205511794163471093
+    second: others|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: -6980164043800997434
+    second: others|Wheels|Take 001|BaseLayer
+  - first:
+      74: 359121971403471169
+    second: Wheels|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: -6349550013990203521
+    second: Wheels|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: -2644844179692355714
+    second: Wheels|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: 7771161831510848692
+    second: Wheels|CarPaint|Take 001|BaseLayer
+  - first:
+      74: 2359856132060846324
+    second: Wheels|DomeLight|Take 001|BaseLayer
+  - first:
+      74: 1720960204431952718
+    second: Wheels|Dome|Take 001|BaseLayer
+  - first:
+      74: -1262661089425755182
+    second: Wheels|Glass|Take 001|BaseLayer
+  - first:
+      74: 2628623038125406701
+    second: Wheels|Group|Take 001|BaseLayer
+  - first:
+      74: -344745439808814191
+    second: Wheels|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: 2766489874173426976
+    second: Wheels|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: 2833571738633618518
+    second: Wheels|others|Take 001|BaseLayer
+  - first:
+      74: 5584613497012934259
+    second: Wheels|Plane001|Take 001|BaseLayer
+  - first:
+      74: -298685726985577669
+    second: Wheels|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: 5928944345184439327
+    second: Wheels|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: -1207539298300808232
+    second: Wheels|Wheels|Take 001|BaseLayer
+  - first:
+      74: 4373494918929577538
+    second: Glass|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: 49628869532544297
+    second: Glass|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: -6386321768530769748
+    second: Glass|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: 1095327577587557595
+    second: Glass|CarPaint|Take 001|BaseLayer
+  - first:
+      74: 5249343178866258797
+    second: Glass|DomeLight|Take 001|BaseLayer
+  - first:
+      74: -2996180462634952053
+    second: Glass|Dome|Take 001|BaseLayer
+  - first:
+      74: 7513521361555711144
+    second: Glass|Glass|Take 001|BaseLayer
+  - first:
+      74: 8724460301970923144
+    second: Glass|Group|Take 001|BaseLayer
+  - first:
+      74: -1752841779732858681
+    second: Glass|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: -8569366373004049756
+    second: Glass|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: 496998295584335627
+    second: Glass|others|Take 001|BaseLayer
+  - first:
+      74: 2058084388885456231
+    second: Glass|Plane001|Take 001|BaseLayer
+  - first:
+      74: 782835404570138037
+    second: Glass|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: 6127400299099863185
+    second: Glass|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: -2351405094937245146
+    second: Glass|Wheels|Take 001|BaseLayer
+  - first:
+      74: -3784791496973421615
+    second: DomeLight|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: 3479017018439217011
+    second: DomeLight|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: 5309393767712302901
+    second: DomeLight|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: -8653463945110000301
+    second: DomeLight|CarPaint|Take 001|BaseLayer
+  - first:
+      74: 325006265925184671
+    second: DomeLight|DomeLight|Take 001|BaseLayer
+  - first:
+      74: 8735301833108286249
+    second: DomeLight|Dome|Take 001|BaseLayer
+  - first:
+      74: 6034735354186892170
+    second: DomeLight|Glass|Take 001|BaseLayer
+  - first:
+      74: -6699104419799324604
+    second: DomeLight|Group|Take 001|BaseLayer
+  - first:
+      74: 3183418737580642159
+    second: DomeLight|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: -9008888012304209057
+    second: DomeLight|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: 8456602225865563140
+    second: DomeLight|others|Take 001|BaseLayer
+  - first:
+      74: -2305150249293415545
+    second: DomeLight|Plane001|Take 001|BaseLayer
+  - first:
+      74: -4758587033487818037
+    second: DomeLight|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: -5712290786519526374
+    second: DomeLight|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: -3761468361052935407
+    second: DomeLight|Wheels|Take 001|BaseLayer
+  - first:
+      74: 5256412542952294692
+    second: CameraAnim.Target|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: 4050040065521786973
+    second: CameraAnim.Target|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: -3487617372560810896
+    second: CameraAnim.Target|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: -8513107746253572448
+    second: CameraAnim.Target|CarPaint|Take 001|BaseLayer
+  - first:
+      74: -484260915663907649
+    second: CameraAnim.Target|DomeLight|Take 001|BaseLayer
+  - first:
+      74: 5984587425908950948
+    second: CameraAnim.Target|Dome|Take 001|BaseLayer
+  - first:
+      74: 7898188183489816023
+    second: CameraAnim.Target|Glass|Take 001|BaseLayer
+  - first:
+      74: -5566477785338004400
+    second: CameraAnim.Target|Group|Take 001|BaseLayer
+  - first:
+      74: 6106786755255501395
+    second: CameraAnim.Target|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: -4745056124593829424
+    second: CameraAnim.Target|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: -3135189850428040129
+    second: CameraAnim.Target|others|Take 001|BaseLayer
+  - first:
+      74: -5067867393566829816
+    second: CameraAnim.Target|Plane001|Take 001|BaseLayer
+  - first:
+      74: 2884170546065035293
+    second: CameraAnim.Target|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: 4170952894066464669
+    second: CameraAnim.Target|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: -384532123426154446
+    second: CameraAnim.Target|Wheels|Take 001|BaseLayer
+  - first:
+      74: 4358382343226973157
+    second: CameraAnim|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: -7452372815559202291
+    second: CameraAnim|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: 950915065402040806
+    second: CameraAnim|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: -3325126925914248748
+    second: CameraAnim|CarPaint|Take 001|BaseLayer
+  - first:
+      74: 4494909254024455368
+    second: CameraAnim|DomeLight|Take 001|BaseLayer
+  - first:
+      74: -5100487147234313963
+    second: CameraAnim|Dome|Take 001|BaseLayer
+  - first:
+      74: 4651932022019254596
+    second: CameraAnim|Glass|Take 001|BaseLayer
+  - first:
+      74: 2609710345193490643
+    second: CameraAnim|Group|Take 001|BaseLayer
+  - first:
+      74: -5144764424066097680
+    second: CameraAnim|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: 2720775014016505695
+    second: CameraAnim|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: 5220060185503225327
+    second: CameraAnim|others|Take 001|BaseLayer
+  - first:
+      74: -8838819959269614032
+    second: CameraAnim|Plane001|Take 001|BaseLayer
+  - first:
+      74: -1924377312841994548
+    second: CameraAnim|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: -3537168029120501178
+    second: CameraAnim|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: -3683836522882501059
+    second: CameraAnim|Wheels|Take 001|BaseLayer
+  - first:
+      74: -5388809430458756083
+    second: OmniInterior|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: 5701764457647140422
+    second: OmniInterior|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: -95618855816862442
+    second: OmniInterior|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: 5956524648096196244
+    second: OmniInterior|CarPaint|Take 001|BaseLayer
+  - first:
+      74: 6324052819164414857
+    second: OmniInterior|DomeLight|Take 001|BaseLayer
+  - first:
+      74: 4292815322125255301
+    second: OmniInterior|Dome|Take 001|BaseLayer
+  - first:
+      74: 5614270816339450833
+    second: OmniInterior|Glass|Take 001|BaseLayer
+  - first:
+      74: 6821434343634099804
+    second: OmniInterior|Group|Take 001|BaseLayer
+  - first:
+      74: -3219563141132356794
+    second: OmniInterior|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: -408074109204154756
+    second: OmniInterior|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: 3133452714384446993
+    second: OmniInterior|others|Take 001|BaseLayer
+  - first:
+      74: -5980789416853024748
+    second: OmniInterior|Plane001|Take 001|BaseLayer
+  - first:
+      74: 4551338948284947770
+    second: OmniInterior|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: 1449035269452075573
+    second: OmniInterior|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: -8270525841905491714
+    second: OmniInterior|Wheels|Take 001|BaseLayer
+  - first:
+      74: -3184855072551840274
+    second: Group|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: -6291755104309832560
+    second: Group|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: -3900665741787998858
+    second: Group|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: 6920167037051727890
+    second: Group|CarPaint|Take 001|BaseLayer
+  - first:
+      74: 6901344416352842863
+    second: Group|DomeLight|Take 001|BaseLayer
+  - first:
+      74: 5910054338429906215
+    second: Group|Dome|Take 001|BaseLayer
+  - first:
+      74: 2170272783645820755
+    second: Group|Glass|Take 001|BaseLayer
+  - first:
+      74: 6306395993422048845
+    second: Group|Group|Take 001|BaseLayer
+  - first:
+      74: -8522729492513072614
+    second: Group|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: 8139030171791741456
+    second: Group|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: -1161054004718713321
+    second: Group|others|Take 001|BaseLayer
+  - first:
+      74: 7074923649064103117
+    second: Group|Plane001|Take 001|BaseLayer
+  - first:
+      74: 1990682214610301752
+    second: Group|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: -6322639482735936379
+    second: Group|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: -2580160161729666617
+    second: Group|Wheels|Take 001|BaseLayer
+  - first:
+      74: -8402147902307627362
+    second: Glass.001|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: -4241799842991536582
+    second: Glass.001|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: -718816479561273523
+    second: Glass.001|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: 8746808466621133056
+    second: Glass.001|CarPaint|Take 001|BaseLayer
+  - first:
+      74: 6001974306064956766
+    second: Glass.001|DomeLight|Take 001|BaseLayer
+  - first:
+      74: 4004385706753230359
+    second: Glass.001|Dome|Take 001|BaseLayer
+  - first:
+      74: -5605730498914616905
+    second: Glass.001|Glass|Take 001|BaseLayer
+  - first:
+      74: -6726006431659321096
+    second: Glass.001|Group|Take 001|BaseLayer
+  - first:
+      74: 8907765054766521392
+    second: Glass.001|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: -6413413398989159327
+    second: Glass.001|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: -5456227131302851561
+    second: Glass.001|others|Take 001|BaseLayer
+  - first:
+      74: -1592103424074930033
+    second: Glass.001|Plane001|Take 001|BaseLayer
+  - first:
+      74: 7590316205073997544
+    second: Glass.001|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: -7097124706182389823
+    second: Glass.001|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: -6555136939863076830
+    second: Glass.001|Wheels|Take 001|BaseLayer
+  - first:
+      74: -8334940368725176195
+    second: Glass.002|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: -7910314230172285375
+    second: Glass.002|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: 9153120919436580872
+    second: Glass.002|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: 8428145085739814284
+    second: Glass.002|CarPaint|Take 001|BaseLayer
+  - first:
+      74: -3398360352271551125
+    second: Glass.002|DomeLight|Take 001|BaseLayer
+  - first:
+      74: -2982893046991895465
+    second: Glass.002|Dome|Take 001|BaseLayer
+  - first:
+      74: -3470062339771429030
+    second: Glass.002|Glass|Take 001|BaseLayer
+  - first:
+      74: -277209554057844652
+    second: Glass.002|Group|Take 001|BaseLayer
+  - first:
+      74: -4306742742126511779
+    second: Glass.002|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: 4478087537703283132
+    second: Glass.002|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: 8565780162457634200
+    second: Glass.002|others|Take 001|BaseLayer
+  - first:
+      74: -1531407753442349786
+    second: Glass.002|Plane001|Take 001|BaseLayer
+  - first:
+      74: 193944327486127013
+    second: Glass.002|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: 8449841205404797340
+    second: Glass.002|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: 4206216630914696278
+    second: Glass.002|Wheels|Take 001|BaseLayer
+  - first:
+      74: -941874824573531348
+    second: Glass.003|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: 4479167304157217384
+    second: Glass.003|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: 8697412239832384495
+    second: Glass.003|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: -4287227404216702052
+    second: Glass.003|CarPaint|Take 001|BaseLayer
+  - first:
+      74: 4337625568473792006
+    second: Glass.003|DomeLight|Take 001|BaseLayer
+  - first:
+      74: -4092617897752049334
+    second: Glass.003|Dome|Take 001|BaseLayer
+  - first:
+      74: 202348376644388705
+    second: Glass.003|Glass|Take 001|BaseLayer
+  - first:
+      74: 5610925298199913768
+    second: Glass.003|Group|Take 001|BaseLayer
+  - first:
+      74: 3828745490740964751
+    second: Glass.003|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: -4250734493911265910
+    second: Glass.003|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: 85856101024723380
+    second: Glass.003|others|Take 001|BaseLayer
+  - first:
+      74: 8708154755031562972
+    second: Glass.003|Plane001|Take 001|BaseLayer
+  - first:
+      74: 1607426467109172778
+    second: Glass.003|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: -4547848059569910936
+    second: Glass.003|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: -7919455760223297984
+    second: Glass.003|Wheels|Take 001|BaseLayer
+  - first:
+      74: 6565182741872661851
+    second: Glass.004|Body_plastic|Take 001|BaseLayer
+  - first:
+      74: 1147241994954703927
+    second: Glass.004|CameraAnim.Target|Take 001|BaseLayer
+  - first:
+      74: -3159326447282135378
+    second: Glass.004|CameraAnim|Take 001|BaseLayer
+  - first:
+      74: -2589941980417252434
+    second: Glass.004|CarPaint|Take 001|BaseLayer
+  - first:
+      74: 1509396305532445234
+    second: Glass.004|DomeLight|Take 001|BaseLayer
+  - first:
+      74: -8362022510835151578
+    second: Glass.004|Dome|Take 001|BaseLayer
+  - first:
+      74: -7327202869687480206
+    second: Glass.004|Glass|Take 001|BaseLayer
+  - first:
+      74: 632762040697609167
+    second: Glass.004|Group|Take 001|BaseLayer
+  - first:
+      74: -2447263396613981797
+    second: Glass.004|MetalDkGlossy|Take 001|BaseLayer
+  - first:
+      74: 4752022905313284806
+    second: Glass.004|OmniInterior|Take 001|BaseLayer
+  - first:
+      74: -4298618725188844394
+    second: Glass.004|others|Take 001|BaseLayer
+  - first:
+      74: 7434435526423329396
+    second: Glass.004|Plane001|Take 001|BaseLayer
+  - first:
+      74: -4071543657630162673
+    second: Glass.004|RLightsChromeGlass|Take 001|BaseLayer
+  - first:
+      74: -197951599475531843
+    second: Glass.004|Undercarriage|Take 001|BaseLayer
+  - first:
+      74: -358495993598835549
+    second: Glass.004|Wheels|Take 001|BaseLayer
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
