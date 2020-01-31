@@ -27,6 +27,7 @@ public class AlertsHandler : Raycaster
     
     protected override void OnRaycasterEnter(GameObject target)
     {
+        Debug.Log(target);
         SelectionIndicator.selectedObject = target.transform.parent.gameObject;
         if (target.gameObject.name == "PlateTrigger" && !plateAlreadyTriggered)
         {
