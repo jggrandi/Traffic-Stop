@@ -70,7 +70,7 @@ namespace Valve.VR.InteractionSystem.Sample
 		private void HandHoverUpdate( Hand hand )
 		{
             GrabTypes startingGrabType = hand.GetGrabStarting();
-            bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
+            isGrabEnding = hand.IsGrabEnding(this.gameObject);
 
             if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
             {

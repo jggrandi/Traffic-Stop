@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
 using RogoDigital.Lipsync;
+using System;
 
 public class SpeechRecognitionEngine : MonoBehaviour
 {
+    public static Action onDriverlicenseReturn;
     private Valve.VR.InteractionSystem.Sample.InteractableExample license;
     public LipSync LipSync;
     public LipSyncData[] LipAnim = new LipSyncData[] { };
@@ -61,7 +63,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
             amins[0].SetBool(LicensePassReset, false);
             amins[1].SetBool(Open, true);
             amins[1].SetBool(Close, false);
-            //amins[0].SetBool(Leave, false);
+            amins[0].SetBool(Leave, false);
         }
 
     }
@@ -84,10 +86,12 @@ public class SpeechRecognitionEngine : MonoBehaviour
     {
         if(license.isGrabing && !amins[0].GetBool(LicensePassReset))
         {
-            amins[0].SetBool(LicensePassReset, true);
-            amins[0].SetBool(HeadRot, false);
-            amins[0].SetBool(LicensePass, false);
+            RestoreHandToNormalPose();
             amins[2].SetBool("Reset", true);
+        }
+        if (license.isGrabEnding )
+        {
+            PutLicense();
         }
         KeyTrigAnimation();
         if (!ready) return;
@@ -140,12 +144,14 @@ public class SpeechRecognitionEngine : MonoBehaviour
 
     void DriverLicensePass()
     {
+        Selector3D.SetActive(true);
         LipSyncAction(LipAnim[2]);
         amins[0].SetBool(HeadRot, false);
         amins[0].SetBool(LicensePass, true);
         amins[0].SetBool(Leave, false);
         amins[0].SetBool(LicensePassReset, false);
-
+        amins[0].SetBool(GrabLicense, false);
+        amins[0].SetBool(GetLicense, false);
         coroutine = WaitToShowDriverLicense(5.7f);
         StartCoroutine(coroutine);
 
@@ -158,19 +164,21 @@ public class SpeechRecognitionEngine : MonoBehaviour
 
     void RestoreHandToNormalPose()
     {
-        LipSyncAction(LipAnim[3]);
+        //LipSyncAction(LipAnim[3]);
         amins[0].SetBool(HeadRot, false);
         amins[0].SetBool(LicensePass, false);
         amins[0].SetBool(LicensePassReset, true);
         amins[0].SetBool(Leave, false);
         amins[2].SetBool(Reverse, false);
         amins[2].SetBool(PlaceLice, false);
-        driverLicense.SetActive(false);
-        Selector3D.SetActive(false);
+        //driverLicense.SetActive(false);
+        //Selector3D.SetActive(false);
     }
 
     void ReturnDriverLicense()
     {
+        onDriverlicenseReturn();
+        Selector3D.SetActive(false);
         amins[0].SetBool(HeadRot, false);
         amins[0].SetBool(LicensePass, false);
         amins[0].SetBool(LicensePassReset, false);

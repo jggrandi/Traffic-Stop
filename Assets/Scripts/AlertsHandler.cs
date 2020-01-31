@@ -37,7 +37,7 @@ public class AlertsHandler : Raycaster
             plateAlreadyTriggered = true;
         }
 
-        if (target.gameObject.name == "DriverTrigger" && !driverLicenseAlreadyTriggered)
+        if (target.gameObject.name == "DriverTrigger" /*&& !driverLicenseAlreadyTriggered*/)
         {
             //TriggerLicenseScan();
             OnScanDriverLicense((int)ScanCode.Scanning);
@@ -45,7 +45,7 @@ public class AlertsHandler : Raycaster
             //coroutine = Wait2(4f);
             coroutine = Wait2(4f, ScanCode.Warning);
             StartCoroutine(coroutine);
-            driverLicenseAlreadyTriggered = true;
+            //driverLicenseAlreadyTriggered = true;
         }
     }
 

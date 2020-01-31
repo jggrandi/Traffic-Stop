@@ -51,6 +51,7 @@ public class Driver_IK : MonoBehaviour
         actLicense();
         weight = 1f;
         LicenseAnim.SetBool(Animator.StringToHash("Reverse"), true);
+        LicenseAnim.SetBool(Animator.StringToHash("Reset"), false);
         LicenseAnim.SetBool(Animator.StringToHash("PlaceLice"), false);
     }
 

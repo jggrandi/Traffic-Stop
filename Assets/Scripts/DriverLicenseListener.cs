@@ -13,10 +13,15 @@ public class DriverLicenseListener : MonoBehaviour
         //AlertsHandler.TriggerResultOfLicenseScan += ShowAlerts;
         AlertsHandler.OnScanDriverLicense += ShowScanning;
         AlertsHandler.OnScanDriverLicenseResult += ShowResultOfScan;
-
+        SpeechRecognitionEngine.onDriverlicenseReturn += ResetBracket;
         //if (gameObject.transform.childCount > 0)
         //    objHighlighter = gameObject.transform.GetChild(0).gameObject;
 
+    }
+
+    void ResetBracket()
+    {
+        ChangeBracketsColor(Color.white);
     }
 
     void ShowScanning(int _scanCode)
