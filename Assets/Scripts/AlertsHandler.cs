@@ -21,24 +21,24 @@ public class AlertsHandler : Raycaster
 
     private IEnumerator coroutine;
 
-    bool plateAlreadyTriggered = false;
-    bool driverLicenseAlreadyTriggered = false;
+    bool isPlateTriggered = false;
+    bool isDriverLicenseTriggered = false;
 
     
     protected override void OnRaycasterEnter(GameObject target)
     {
         Debug.Log(target);
         SelectionIndicator.selectedObject = target.transform.parent.gameObject;
-        if (target.gameObject.name == "PlateTrigger" && !plateAlreadyTriggered)
+        if (target.gameObject.name == "PlateTrigger" && !isPlateTriggered)
         {
             OnScanPlate((int)ScanCode.Scanning);
             //TriggerScanPlate();
             coroutine = Wait(4f, ScanCode.Clear);
             StartCoroutine(coroutine);
-            plateAlreadyTriggered = true;
+            isPlateTriggered = true;
         }
 
-        if (target.gameObject.name == "DriverTrigger" /*&& !driverLicenseAlreadyTriggered*/)
+        if (target.gameObject.name == "DriverTrigger" && !isDriverLicenseTriggered)
         {
             //TriggerLicenseScan();
             OnScanDriverLicense((int)ScanCode.Scanning);
