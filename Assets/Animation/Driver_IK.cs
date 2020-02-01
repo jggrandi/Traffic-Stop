@@ -13,7 +13,7 @@ public class Driver_IK : MonoBehaviour
     public Transform[] rightHandTarget;
     public HandPoser handPoser;
     public Animator LicenseAnim;
-    public Valve.VR.InteractionSystem.Sample.InteractableExample license;
+    //public Valve.VR.InteractionSystem.Sample.InteractableExample license;
     private Animator driverAmin;
 
     private void Start()

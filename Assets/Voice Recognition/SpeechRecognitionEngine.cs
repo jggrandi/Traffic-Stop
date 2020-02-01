@@ -9,7 +9,7 @@ using System;
 public class SpeechRecognitionEngine : MonoBehaviour
 {
     public static Action onDriverlicenseReturn;
-    private Valve.VR.InteractionSystem.Sample.InteractableExample license;
+    //private Valve.VR.InteractionSystem.Sample.InteractableExample license;
     public LipSync LipSync;
     public LipSyncData[] LipAnim = new LipSyncData[] { };
     private bool ready = false;
@@ -32,13 +32,13 @@ public class SpeechRecognitionEngine : MonoBehaviour
     int PlaceLice = Animator.StringToHash("PlaceLice");
 
 
-    public GameObject Selector3D;
-    public GameObject driverLicense;
+    //public GameObject Selector3D;
+    //public GameObject driverLicense;
     private IEnumerator coroutine;
 
     void Start()
     {
-        license = driverLicense.GetComponent<Valve.VR.InteractionSystem.Sample.InteractableExample>();
+        //license = driverLicense.GetComponent<Valve.VR.InteractionSystem.Sample.InteractableExample>();
         recognizer = new DictationRecognizer();
         recognizer.Start();
         recognizer.DictationResult += (text, confidence) =>
@@ -55,44 +55,28 @@ public class SpeechRecognitionEngine : MonoBehaviour
     //}
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.name);
-        if (other.name == "HeadCollider")
-        {
-            ready = true;
-            amins[0].SetBool(HeadRot, true);
-            amins[0].SetBool(LicensePassReset, false);
-            amins[1].SetBool(Open, true);
-            amins[1].SetBool(Close, false);
-            amins[0].SetBool(Leave, false);
-        }
-
+        Debug.Log(other.name);
+        //if (other.name == "HeadCollider")
+ //           FirstHeadRotation();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.name == "HeadCollider")
-        {
-            ready = false;
-            amins[0].SetBool(HeadRot, false);
-            amins[0].SetBool(LicensePassReset, false);
-            amins[0].SetBool(Leave, true);
-            amins[0].SetBool(LicensePass, false);
-            amins[1].SetBool(Close, true);
-            amins[1].SetBool(Open, false);
-        }
+        //if (other.name == "HeadCollider")
+//            ReturnToIdlePosition();
     }
 
     void Update()
     {
-        if(license.isGrabing && !amins[0].GetBool(LicensePassReset))
-        {
-            RestoreHandToNormalPose();
-            amins[2].SetBool("Reset", true);
-        }
-        if (license.isGrabEnding )
-        {
-            PutLicense();
-        }
+        //if(/*license.isGrabing && */!amins[0].GetBool(LicensePassReset))
+        //{
+        //    RestoreHandToNormalPose();
+        //    amins[2].SetBool("Reset", true);
+        //}
+        //if (license.isGrabEnding )
+        //{
+        //    PutLicense();
+        //}
         KeyTrigAnimation();
         if (!ready) return;
         if (word == "") return;
@@ -102,16 +86,16 @@ public class SpeechRecognitionEngine : MonoBehaviour
         switch (idWord)
         {
             case 0:
-                DriverLicensePass();
+                //DriverLicensePass();
                 break;
             case 1:
-                LipSyncAction(LipAnim[0]);
+                //LipSyncAction(LipAnim[0]);
                 break;
             case 2:
-                RestoreHandToNormalPose();
+                //RestoreHandToNormalPose();
                 break;
             case 3:
-                ReturnDriverLicense();
+                //ReturnDriverLicense();
                 break;
             case 4:
             case 5:
@@ -142,85 +126,41 @@ public class SpeechRecognitionEngine : MonoBehaviour
         }
     }
 
-    void DriverLicensePass()
-    {
-        Selector3D.SetActive(true);
-        LipSyncAction(LipAnim[2]);
-        amins[0].SetBool(HeadRot, false);
-        amins[0].SetBool(LicensePass, true);
-        amins[0].SetBool(Leave, false);
-        amins[0].SetBool(LicensePassReset, false);
-        amins[0].SetBool(GrabLicense, false);
-        amins[0].SetBool(GetLicense, false);
-        coroutine = WaitToShowDriverLicense(5.7f);
-        StartCoroutine(coroutine);
 
-    }
+
+
+
 
     void LipSyncAction(LipSyncData lipAnim)
     {
         LipSync.Play(lipAnim);
     }
 
-    void RestoreHandToNormalPose()
-    {
-        //LipSyncAction(LipAnim[3]);
-        amins[0].SetBool(HeadRot, false);
-        amins[0].SetBool(LicensePass, false);
-        amins[0].SetBool(LicensePassReset, true);
-        amins[0].SetBool(Leave, false);
-        amins[2].SetBool(Reverse, false);
-        amins[2].SetBool(PlaceLice, false);
-        //driverLicense.SetActive(false);
-        //Selector3D.SetActive(false);
-    }
 
-    void ReturnDriverLicense()
-    {
-        onDriverlicenseReturn();
-        Selector3D.SetActive(false);
-        amins[0].SetBool(HeadRot, false);
-        amins[0].SetBool(LicensePass, false);
-        amins[0].SetBool(LicensePassReset, false);
-        amins[0].SetBool(Leave, false);
-        amins[0].SetBool(GetLicense, true);
-        amins[0].SetBool(GrabLicense, false);
-    }
 
-    void PutLicense()
-    {
-        driverLicense.SetActive(true);
-        amins[0].SetBool(HeadRot, false);
-        amins[0].SetBool(LicensePass, false);
-        amins[0].SetBool(LicensePassReset, false);
-        amins[0].SetBool(Leave, false);
-        amins[0].SetBool(GetLicense, false);
-        amins[0].SetBool(GrabLicense, true);
-        amins[2].SetBool(Reverse, false);
-        amins[2].SetBool(PlaceLice, true);
-    }
+
 
     void KeyTrigAnimation()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            DriverLicensePass();
+            //DriverLicensePass();
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            LipSyncAction(LipAnim[0]);
+            //LipSyncAction(LipAnim[0]);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            RestoreHandToNormalPose();
+            //RestoreHandToNormalPose();
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            ReturnDriverLicense();
+            //ReturnDriverLicense();
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            PutLicense();
+            //PutBackLicense();
         }
 
     }
@@ -230,7 +170,7 @@ public class SpeechRecognitionEngine : MonoBehaviour
     {
         Debug.Log("TTT");
         yield return new WaitForSeconds(time);
-        driverLicense.SetActive(true);
+        //driverLicense.SetActive(true);
     }
 
 }

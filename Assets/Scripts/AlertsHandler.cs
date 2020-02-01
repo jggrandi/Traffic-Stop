@@ -13,11 +13,7 @@ public class AlertsHandler : Raycaster
     public static Action<int> OnScanPlateResult;
     public static Action<int> OnScanDriverLicense;
     public static Action<int> OnScanDriverLicenseResult;
-    //public delegate void OnAlertDelegate();
-    //public static event OnAlertDelegate TriggerScanPlate;
-    //public static event OnAlertDelegate TriggerResultOfPlateScan;
-    //public static event OnAlertDelegate TriggerLicenseScan;
-    //public static event OnAlertDelegate TriggerResultOfLicenseScan;
+
 
     private IEnumerator coroutine;
 

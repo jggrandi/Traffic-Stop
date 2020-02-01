@@ -20,7 +20,7 @@ public class GetLicenseAminTrigger : MonoBehaviour
             driverAmin.SetBool("GetLicense", true);
             driverAmin.SetBool("LicensePassReset", false);
         }
-        if (other.name.Contains("finger") && driverAmin.GetBool("GetLicense") && driver.license.isGrabEnding)
+        if (other.name.Contains("finger") /*&& driverAmin.GetBool("GetLicense") && driver.license.isGrabEnding*/)
         {
             driverAmin.SetBool("GetLicense", false);
             driverAmin.SetBool("GrabLicense", true);
