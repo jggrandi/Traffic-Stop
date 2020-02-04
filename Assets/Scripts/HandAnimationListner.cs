@@ -6,8 +6,10 @@ public class HandAnimationListner : MonoBehaviour
 {
     Animator handAnimator;
 
-    int getLicenseBack = Animator.StringToHash("Reverse");
-    int putLicenseBack = Animator.StringToHash("PlaceLice");
+    int handSteeringWheelToWindow = Animator.StringToHash("Reverse");
+    int licenseWindowToDash = Animator.StringToHash("PlaceLice");
+    int licenseDashToWindow = Animator.StringToHash("Play");
+    int handWindowToSteeringWheel = Animator.StringToHash("Reset");
 
 
     // Start is called before the first frame update
@@ -19,17 +21,39 @@ public class HandAnimationListner : MonoBehaviour
 
         Commands.OnPutBackLicense += PlayAnimationPutBack;
         Commands.OnReturnToIdle += PlayAnimationIdle;
+        Driver_IK.OnSetGetLicense += PlayAnimationDashToWindow;
+        Driver_IK.OnReturnLicense += PlayAnimationSteeringWheelToWindow;
+        Driver_IK.OnResetGetLicense += PlayAnimationHandBackToSteeringWheel;
     }
 
     void PlayAnimationPutBack()
     {
-        handAnimator.SetBool(getLicenseBack, false);
-        handAnimator.SetBool(putLicenseBack, true);
+        handAnimator.SetBool(handSteeringWheelToWindow, false);
+        handAnimator.SetBool(licenseWindowToDash, true); // window to dash
     }
     void PlayAnimationIdle()
     {
-        handAnimator.SetBool(getLicenseBack, false);
-        handAnimator.SetBool(putLicenseBack, false);
+        handAnimator.SetBool(handSteeringWheelToWindow, false);
+        handAnimator.SetBool(licenseWindowToDash, false);
+    }
+
+    void PlayAnimationDashToWindow()
+    {
+        handAnimator.SetBool(licenseDashToWindow, true); // license animation from dash to window
+        handAnimator.SetBool(handWindowToSteeringWheel, false); // go to steering wheel
+    }
+
+    void PlayAnimationSteeringWheelToWindow()
+    {
+        handAnimator.SetBool(handSteeringWheelToWindow, true); // license animation from steering wheel to window
+        handAnimator.SetBool(handWindowToSteeringWheel, false); //
+        handAnimator.SetBool(licenseWindowToDash, false); // window to dash
+    }
+
+    void PlayAnimationHandBackToSteeringWheel()
+    {
+        handAnimator.SetBool(licenseDashToWindow, false);
+        handAnimator.SetBool(handWindowToSteeringWheel, true);
     }
 
     private void OnDisable()

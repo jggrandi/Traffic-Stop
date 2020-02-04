@@ -11,16 +11,12 @@ using Valve.VR.InteractionSystem;
 
 //-------------------------------------------------------------------------
 [RequireComponent(typeof(Interactable))]
-public class GrabDriversLicense : MonoBehaviour
+public class GrabDriversLicense : UIScanListner
 {
-    public GameObject reference;
+    public GameObject targetReference;
 
-    private TextMesh generalText;
-    private TextMesh hoveringText;
     private Vector3 oldPosition;
     private Quaternion oldRotation;
-
-    private float attachTime;
 
     private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers) & (~Hand.AttachmentFlags.VelocityMovement);
 
@@ -30,9 +26,12 @@ public class GrabDriversLicense : MonoBehaviour
     public static Action OnReturnLicense;
     public static Action OnPutLicenseBack;
 
-    //public bool isGrabEnding, isGrabing;
+    private bool isGrabEnding;
+    public static bool isGrabbing = false;
 
-    bool isLicenseReturned = false;
+
+    bool isLicenseScanned = false;
+
 
     //-------------------------------------------------
     void Awake()
@@ -49,8 +48,24 @@ public class GrabDriversLicense : MonoBehaviour
 
     private void Start()
     {
-
+        InitalSetup();
+        AlertsHandler.OnScanDriverLicenseResult += AllowDriversLicenseReturn;
+        AlertsHandler.OnScanDriverLicense += ShowScanning;
+        AlertsHandler.OnScanDriverLicenseResult += ShowResultOfScan;
     }
+    private void OnDisable()
+    {
+        AlertsHandler.OnScanDriverLicenseResult -= AllowDriversLicenseReturn;
+        AlertsHandler.OnScanDriverLicense -= ShowScanning;
+        AlertsHandler.OnScanDriverLicenseResult -= ShowResultOfScan;
+    }
+
+    protected override void ShowScanning(int _scanCode)
+    {
+        if (!isGrabbing) return;
+        base.ShowScanning(_scanCode);
+    }
+
     //-------------------------------------------------
     // Called when a Hand starts hovering over this object
     //-------------------------------------------------
@@ -75,10 +90,11 @@ public class GrabDriversLicense : MonoBehaviour
     private void HandHoverUpdate(Hand hand)
     {
         GrabTypes startingGrabType = hand.GetGrabStarting();
-        bool isGrabEnding = hand.IsGrabEnding(this.gameObject);
+        isGrabEnding = hand.IsGrabEnding(this.gameObject);
 
         if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
         {
+            isGrabbing = true;
             OnHoldLicense();
             // Save our position/rotation so that we can restore it when we detach
             oldPosition = transform.position;
@@ -91,9 +107,11 @@ public class GrabDriversLicense : MonoBehaviour
             // Attach this object to the hand
             hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
         }
-        else if (isGrabEnding )
+        else if (isGrabEnding)
         {
+            isGrabbing = false;
             OnPutLicenseBack();
+            HideBrackets();
             //isGrabing = false;
             // Detach this object from the hand
             hand.DetachObject(gameObject);
@@ -112,21 +130,24 @@ public class GrabDriversLicense : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(Vector3.Distance(transform.position, reference.transform.position));
+        //Debug.Log(Vector3.Distance(transform.position, reference.transform.position));
+
+        if (!isGrabbing) return;
+        if (!isLicenseScanned) return;
         if (IsAbleToReturnDriversLicense())
-        {
-            Debug.Log("AAAA"); /// IT IS ENTERING HERE WHEN IT SHOULD NOT.
             OnReturnLicense();
-        }
     }
 
     bool IsAbleToReturnDriversLicense()
     {
-        //Vector3 returnPos = new Vector3(-0.5593f, 0.1085f, -0.1134f);
-
-        if (Vector3.Distance(transform.position, reference.transform.position) < 0.1f)
+        if( Vector3.Distance(transform.position, targetReference.transform.position) <= 0.1f)
             return true;
         return false;
+    }
+
+    void AllowDriversLicenseReturn(int _code)
+    {
+        isLicenseScanned = true;
     }
 
     //-------------------------------------------------

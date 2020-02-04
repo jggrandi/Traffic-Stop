@@ -23,10 +23,10 @@ public class Commands : MonoBehaviour
 
     protected virtual void SetupCommands()
     {
-        HandleInteractableArea.OnEnterInteractableArea += OfficerApproach;
+        HandleInteractableArea.OnEnterInteractableArea += WhenOfficerApproach;
         HandleInteractableArea.OnExitInteractableArea += ResetToIdle;
-        GrabDriversLicense.OnHoldLicense += HandDriversLicense;
-        GrabDriversLicense.OnReturnLicense += GetLicenseBack;
+        GrabDriversLicense.OnHoldLicense += WhenOfficerGetDriversLicense;
+        GrabDriversLicense.OnReturnLicense += GoGetLicenseBack;
         GrabDriversLicense.OnPutLicenseBack += ReturnLicenseToOriginalPlace;
 
         driverAnimations = GetComponent<HandleDriverAnimations>();
@@ -38,10 +38,19 @@ public class Commands : MonoBehaviour
             Debug.LogError("Couldn't load 'AvatarVoiceAnswers'");
     }
 
+    private void OnDisable()
+    {
+        HandleInteractableArea.OnEnterInteractableArea -= WhenOfficerApproach;
+        HandleInteractableArea.OnExitInteractableArea -= ResetToIdle;
+        GrabDriversLicense.OnHoldLicense -= WhenOfficerGetDriversLicense;
+        GrabDriversLicense.OnReturnLicense -= GoGetLicenseBack;
+        GrabDriversLicense.OnPutLicenseBack -= ReturnLicenseToOriginalPlace;
+    }
+
     protected virtual void FindDriversLicense()
     {
         driverAnswers.PlayLetMeFind();
-        driverAnimations.DriverLicensePass();
+        driverAnimations.PassDriversLicense();
     }
 
     protected virtual void SayIDontKnow()
@@ -54,14 +63,13 @@ public class Commands : MonoBehaviour
         driverAnswers.PlayHiOfficer();
     }
 
-    protected virtual void HandDriversLicense()
+    protected virtual void WhenOfficerGetDriversLicense()
     {
         driverAnswers.PlayOk();
         driverAnimations.RestoreHandToNormalPose();
-        OnReturnToIdle();
     }
 
-    protected virtual void GetLicenseBack()
+    protected virtual void GoGetLicenseBack()
     {
         driverAnimations.GetLicenseBack();
     }
@@ -72,7 +80,7 @@ public class Commands : MonoBehaviour
         OnPutBackLicense();
     }
 
-    public void OfficerApproach()
+    public void WhenOfficerApproach()
     {
         driverAnimations.OfficerApproach();
         OnOfficerApproach();
@@ -85,10 +93,6 @@ public class Commands : MonoBehaviour
     }
 
 
-    private void OnDisable()
-    {
-        HandleInteractableArea.OnEnterInteractableArea -= OfficerApproach;
-        HandleInteractableArea.OnExitInteractableArea -= ResetToIdle;
-    }
+
 
 }

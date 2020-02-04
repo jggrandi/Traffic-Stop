@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RootMotion.FinalIK;
-
+using System;
 
 public class Driver_IK : MonoBehaviour
 {
@@ -12,59 +12,51 @@ public class Driver_IK : MonoBehaviour
     public float weight = 1f;
     public Transform[] rightHandTarget;
     public HandPoser handPoser;
-    public Animator LicenseAnim;
-    //public Valve.VR.InteractionSystem.Sample.InteractableExample license;
-    private Animator driverAmin;
 
-    private void Start()
-    {
-        driverAmin = GameObject.Find("MaleD").GetComponent<Animator>();
-    }
+    public static Action OnSetGetLicense;
+    public static Action OnReturnLicense;
+    public static Action OnResetGetLicense;
 
-    void setrightHandLock()
+    void SetrightHandLock()
     {
         rightHandLock = true;
         getLicense = false;
     }
 
-    void resetrightHandLock()
+    void ResetrightHandLock()
     {
         rightHandLock = false;
     }
 
-    void setGetLicense()
+    void SetGetLicense()
     {
-        actLicense();
+        ActLicense();
         weight = 1f;
-        LicenseAnim.SetBool(Animator.StringToHash("Play"), true);
-        LicenseAnim.SetBool(Animator.StringToHash("Reset"), false);
+        OnSetGetLicense();
     }
 
-    void actLicense()
+    void ActLicense()
     {
         getLicense = true;
     }
 
-    void returnLicense()
+    void ReturnLicense()
     {
-        resetrightHandLock();
-        actLicense();
+        ResetrightHandLock();
+        ActLicense();
         weight = 1f;
-        LicenseAnim.SetBool(Animator.StringToHash("Reverse"), true);
-        LicenseAnim.SetBool(Animator.StringToHash("Reset"), false);
-        LicenseAnim.SetBool(Animator.StringToHash("PlaceLice"), false);
+        OnReturnLicense();
     }
 
-    void inactLicense()
+    void InactLicense()
     {
         getLicense = false;
     }
 
-    void resetGetLicense()
+    void ResetGetLicense()
     {
-        LicenseAnim.SetBool(Animator.StringToHash("Play"), false);
-        //LicenseAnim.SetBool(Animator.StringToHash("Reset"), true);
-        inactLicense();
+        InactLicense();
+        OnResetGetLicense();
     }
 
 
@@ -73,7 +65,7 @@ public class Driver_IK : MonoBehaviour
     private void LateUpdate()
     {
 
-        if (rightHandLock)
+        if (rightHandLock)// if it is locked to the steering wheel
         {
             if(weight < 1f)
             {
@@ -85,7 +77,7 @@ public class Driver_IK : MonoBehaviour
             ik.solver.rightHandEffector.rotationWeight = weight;
             handPoser.poseRoot = rightHandTarget[0];
         }
-        else if (getLicense)
+        else if (getLicense) 
         {
             ik.solver.rightHandEffector.position = rightHandTarget[1].position;
             ik.solver.rightHandEffector.rotation = rightHandTarget[1].rotation;

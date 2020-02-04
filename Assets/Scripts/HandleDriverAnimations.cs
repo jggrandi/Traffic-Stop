@@ -6,6 +6,7 @@ using System;
 public class HandleDriverAnimations : MonoBehaviour
 {
 
+    
 
     Animator driverAnimator;
     int headRot = Animator.StringToHash("HeadRot");
@@ -69,7 +70,7 @@ public class HandleDriverAnimations : MonoBehaviour
     }
 
 
-    public void DriverLicensePass()
+    public void PassDriversLicense()
     {
         //Selector3D.SetActive(true);
         //LipSyncAction(LipAnim[2]);

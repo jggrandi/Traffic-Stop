@@ -34,7 +34,7 @@ public class AlertsHandler : Raycaster
             isPlateTriggered = true;
         }
 
-        if (target.gameObject.name == "DriverTrigger" && !isDriverLicenseTriggered)
+        if (target.gameObject.name == "DriverLicense" && !isDriverLicenseTriggered)
         {
             //TriggerLicenseScan();
             OnScanDriverLicense((int)ScanCode.Scanning);
@@ -42,7 +42,7 @@ public class AlertsHandler : Raycaster
             //coroutine = Wait2(4f);
             coroutine = Wait2(4f, ScanCode.Warning);
             StartCoroutine(coroutine);
-            //driverLicenseAlreadyTriggered = true;
+            isDriverLicenseTriggered = true;
         }
     }
 

@@ -30,12 +30,12 @@ public class KeyCommands : Commands
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            HandDriversLicense();
+            WhenOfficerGetDriversLicense();
             //RestoreHandToNormalPose();
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            GetLicenseBack();
+            GoGetLicenseBack();
             //ReturnDriverLicense();
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))

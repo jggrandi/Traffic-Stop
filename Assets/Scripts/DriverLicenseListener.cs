@@ -10,7 +10,7 @@ public class DriverLicenseListener : UIScanListner
     {
         AlertsHandler.OnScanDriverLicense += ShowScanning;
         AlertsHandler.OnScanDriverLicenseResult += ShowResultOfScan;
-        SpeechRecognitionEngine.onDriverlicenseReturn += ResetBracket;
+        SpeechRecognitionEngine.onDriverlicenseReturn += ResetBracketColor;
 
     }
 

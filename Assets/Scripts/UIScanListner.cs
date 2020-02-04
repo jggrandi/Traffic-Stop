@@ -5,38 +5,69 @@ using UnityEngine;
 public class UIScanListner : MonoBehaviour
 {
     public GameObject brackets;
-    private Color defaultColor;
+    private Color defaultColor = Color.white;
     // Start is called before the first frame update
     void Start()
     {
-        defaultColor = Color.white;
+
     }
 
-    bool isBracketsOn()
+    protected virtual void InitalSetup()
+    {
+        if (!IsBracketsOn())
+        {
+            Debug.Log("The Brackets are not assigned to the object");
+            return;
+        }
+        ResetBracketColor();
+        HideBrackets();
+    }
+
+    bool IsBracketsOn()
     {
         if (brackets != null)
             return true;
         return false;
     }
 
-    protected virtual void ResetBracket()
+    protected virtual void HideBrackets()
     {
-        if (!isBracketsOn()) return;
+        if (!IsBracketsOn()) return;
+        brackets.GetComponent<MeshRenderer>().enabled = false;
+    }
+
+    protected virtual void ShowBrackets()
+    {
+        if (!IsBracketsOn()) return;
+        brackets.GetComponent<MeshRenderer>().enabled = true;
+    }
+
+    protected virtual bool IsBracketsShowing()
+    {
+        if (brackets.GetComponent<MeshRenderer>().enabled)
+            return true;
+        return false;
+    }
+
+    protected virtual void ResetBracketColor()
+    {
+        if (!IsBracketsOn()) return;
         ChangeBracketsColor(defaultColor);
     }
 
     protected virtual void ShowScanning(int _scanCode)
     {
-        if (!isBracketsOn()) return;
+        if (!IsBracketsOn()) return;
+        if(!IsBracketsShowing()) ShowBrackets();
         Color alertColor = AlertsHandler.DefineColorBasedOnAlertCode(_scanCode);
         ChangeBracketsColor(alertColor);
-        brackets.SetActive(true);
     }
 
 
     protected virtual void ShowResultOfScan(int _scanCode)
     {
-        if (!isBracketsOn()) return;
+        if (!IsBracketsOn()) return;
+        if (!IsBracketsShowing()) ShowBrackets();
         Color alertColor = AlertsHandler.DefineColorBasedOnAlertCode(_scanCode);
         ChangeBracketsColor(alertColor);
     }
@@ -44,7 +75,8 @@ public class UIScanListner : MonoBehaviour
 
     void ChangeBracketsColor(Color colorCode)
     {
-        if (!isBracketsOn()) return;
+        if (!IsBracketsOn()) return;
+        if (!IsBracketsShowing()) ShowBrackets();
         brackets.GetComponent<Renderer>().material.color = colorCode;
     }
 }

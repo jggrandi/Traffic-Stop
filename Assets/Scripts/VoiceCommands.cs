@@ -45,11 +45,11 @@ public class VoiceCommands : Commands
                 //LipSyncAction(LipAnim[0]);
                 break;
             case 2:
-                HandDriversLicense();
+                WhenOfficerGetDriversLicense();
                 //RestoreHandToNormalPose();
                 break;
             case 3:
-                GetLicenseBack();
+                GoGetLicenseBack();
                 //ReturnDriverLicense();
                 break;
             case 4:
