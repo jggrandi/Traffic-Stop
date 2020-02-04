@@ -57,13 +57,13 @@ public class SpeechRecognitionEngine : MonoBehaviour
     {
         Debug.Log(other.name);
         //if (other.name == "HeadCollider")
- //           FirstHeadRotation();
+        //           OfficerApproach();
     }
 
     private void OnTriggerExit(Collider other)
     {
         //if (other.name == "HeadCollider")
-//            ReturnToIdlePosition();
+        //            ReturnToIdle();
     }
 
     void Update()
