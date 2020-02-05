@@ -20,7 +20,17 @@ public class AlertsHandler : Raycaster
     bool isPlateTriggered = false;
     bool isDriverLicenseTriggered = false;
 
-    
+    private void Start()
+    {
+        HandleInteractableArea.OnExitInteractableArea += ResetTriggers;
+    }
+
+    void ResetTriggers()
+    {
+        isPlateTriggered = false;
+        isDriverLicenseTriggered = false;
+    }
+
     protected override void OnRaycasterEnter(GameObject target)
     {
         //Debug.Log(target);
