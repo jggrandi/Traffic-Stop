@@ -9,6 +9,7 @@ public class ArmDisplayListener : MonoBehaviour
     {
         ToggleArmUIOnLook.TriggerArmDisplay += ShowArmDisplay;
         ToggleArmUIOnLook.HideArmDisplay += HideDisplay;
+        //HideDisplay();
     }
 
     void ShowArmDisplay()
