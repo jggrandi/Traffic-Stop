@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ButtonBehaviorPlateScan : MonoBehaviour
 {
-    public GameObject vbutton;
-    public GameObject obutton;
+    GameObject vbutton;
+    GameObject obutton;
 
     // Start is called before the first frame update
     void Start()

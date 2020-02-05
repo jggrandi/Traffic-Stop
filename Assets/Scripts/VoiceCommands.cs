@@ -7,16 +7,21 @@ using System;
 
 public class VoiceCommands : Commands
 {
-    public string[] keywords = new string[] { "license", "do you know", "thank", "right" };
+    Dictionary<DriverInteraction, string> keywords = new Dictionary<DriverInteraction, string>();
+    //string[] keywords = new string[] { "license", "do you know", "thank", "hello" };
     protected DictationRecognizer recognizer;
     public string word = "";
-
-    private bool ready = false;
+    public ConfidenceLevel confidence = ConfidenceLevel.Medium;
+    private bool isAllowVoiceCommands = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        SetupCommands();
+
+        AddWordsToKeywords();
+
         recognizer = new DictationRecognizer();
         recognizer.Start();
         recognizer.DictationResult += (text, confidence) =>
@@ -24,36 +29,58 @@ public class VoiceCommands : Commands
             word = text;
         };
 
+        HandleInteractableArea.OnEnterInteractableArea += AllowVoiceCommands;
+        HandleInteractableArea.OnExitInteractableArea += DenyVoiceCommands;
+    }
+    private void OnDisable()
+    {
+        HandleInteractableArea.OnEnterInteractableArea -= AllowVoiceCommands;
+        HandleInteractableArea.OnExitInteractableArea -= DenyVoiceCommands;
+
+    }
+
+    void AddWordsToKeywords()
+    {
+        keywords.Add(DriverInteraction.Greeting, "hello");
+        keywords.Add(DriverInteraction.AskReasonToStop, "do you know");
+        keywords.Add(DriverInteraction.Thank, "thank");
+        keywords.Add(DriverInteraction.AskLicense, "license");
+    }
+
+    void AllowVoiceCommands()
+    {
+        isAllowVoiceCommands = true;
+    }
+    
+    void DenyVoiceCommands()
+    {
+        isAllowVoiceCommands = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!ready) return;
+        if (recognizer.Status == SpeechSystemStatus.Stopped)
+            recognizer.Start();
+
+        if (!isAllowVoiceCommands) { word = ""; return; }
         if (word == "") return;
-        int idWord = MatchSpeachToDatabase(word);
-        if (idWord == -1) return;
+        DriverInteraction idWord = MatchSpeachToDatabase(word);
+        if (idWord == DriverInteraction.Null) return;
 
         switch (idWord)
         {
-            case 0:
+            case DriverInteraction.AskLicense:
                 FindDriversLicense();
-                //DriverLicensePass();
                 break;
-            case 1:
+            case DriverInteraction.AskReasonToStop:
                 SayIDontKnow();
-                //LipSyncAction(LipAnim[0]);
                 break;
-            case 2:
+            case DriverInteraction.Thank:
+                SayOk();
                 WhenOfficerGetDriversLicense();
-                //RestoreHandToNormalPose();
                 break;
-            case 3:
-                GoGetLicenseBack();
-                //ReturnDriverLicense();
-                break;
-            case 4:
-            case 5:
+            case DriverInteraction.Greeting:
                 SayHello();
                 //LipSyncAction(LipAnim[1]);
                 break;
@@ -61,15 +88,15 @@ public class VoiceCommands : Commands
                 break;
         }
         word = "";
-        idWord = -1;
+        idWord = DriverInteraction.Null;
     }
 
-    int MatchSpeachToDatabase(string phraseSaid)
+    DriverInteraction MatchSpeachToDatabase(string phraseSaid)
     {
-        for (int i = 0; i < keywords.Length; i++)
-            if (phraseSaid.Contains(keywords[i]))
-                return i;
-        return -1;
+        foreach(KeyValuePair<DriverInteraction,string> keyword in keywords)
+            if (phraseSaid.Contains(keyword.Value))
+                return keyword.Key;
+        return DriverInteraction.Null;
     }
 
     void OnApplicationQuit()

@@ -17,6 +17,8 @@ public class Driver_IK : MonoBehaviour
     public static Action OnReturnLicense;
     public static Action OnResetGetLicense;
 
+    // THESE FUNCTIONS ARE BEING CALLED AS EVENTS IN THE HUMAN1.fbx 
+
     void SetrightHandLock()
     {
         rightHandLock = true;
@@ -58,9 +60,6 @@ public class Driver_IK : MonoBehaviour
         InactLicense();
         OnResetGetLicense();
     }
-
-
-
 
     private void LateUpdate()
     {

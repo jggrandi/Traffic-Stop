@@ -433,8 +433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f7e9964f22ea04081caa6b5f160bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vbutton: {fileID: 0}
-  obutton: {fileID: 0}
 --- !u!1 &507393475548808910
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,7 +769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70998da461beeb4da4b3c8860cb5188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  driverbutton: {fileID: 0}
 --- !u!1 &1369486988857682500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,8 +1421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f7e9964f22ea04081caa6b5f160bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vbutton: {fileID: 6876814608842871514}
-  obutton: {fileID: 326256886322911712}
 --- !u!114 &5982502782158382277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1438,7 +1433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70998da461beeb4da4b3c8860cb5188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  driverbutton: {fileID: 794535106099980073}
 --- !u!1 &2963368080300796582
 GameObject:
   m_ObjectHideFlags: 0
@@ -4561,6 +4555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5785897565637136571}
   - component: {fileID: 5785897565637136568}
+  - component: {fileID: 6055015699870834300}
   m_Layer: 0
   m_Name: PUCK
   m_TagString: Untagged
@@ -4597,6 +4592,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 5
   origin: {fileID: 5785897566028474240}
+--- !u!114 &6055015699870834300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5785897565637136570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e12d54c43676f145ab37e36d024410e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5785897565661325124
 GameObject:
   m_ObjectHideFlags: 0
@@ -5530,7 +5537,6 @@ GameObject:
   - component: {fileID: 5099886280368599525}
   - component: {fileID: 2947846768532288262}
   - component: {fileID: 8604653586096133321}
-  - component: {fileID: 3482343435482742696}
   - component: {fileID: 4105644955297865439}
   m_Layer: 0
   m_Name: VehicleBtn
@@ -5693,34 +5699,6 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!114 &3482343435482742696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6876814608842871514}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c0e35ef0cc211b408d2d7e7eb0f850d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingPart: {fileID: 0}
-  localMoveDistance: {x: 0, y: -0.1, z: 0}
-  engageAtPercent: 0.95
-  disengageAtPercent: 0.9
-  onButtonDown:
-    m_PersistentCalls:
-      m_Calls: []
-  onButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-  onButtonIsPressed:
-    m_PersistentCalls:
-      m_Calls: []
-  engaged: 0
-  buttonDown: 0
-  buttonUp: 0
 --- !u!114 &4105644955297865439
 MonoBehaviour:
   m_ObjectHideFlags: 0

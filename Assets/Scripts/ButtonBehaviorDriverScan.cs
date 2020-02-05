@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ButtonBehaviorDriverScan : MonoBehaviour
 {
-    public GameObject driverbutton;
+    GameObject driverbutton;
     // Start is called before the first frame update
     void Start()
     {

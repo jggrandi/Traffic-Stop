@@ -6,6 +6,7 @@ using System;
 
 public class Commands : MonoBehaviour
 {
+    public enum DriverInteraction { Greeting, AskReasonToStop, Thank, AskLicense, Null };
 
     public static Action OnPutBackLicense;
     public static Action OnReturnToIdle;
@@ -64,9 +65,13 @@ public class Commands : MonoBehaviour
     }
 
     protected virtual void WhenOfficerGetDriversLicense()
+    {        
+        driverAnimations.RestoreHandToNormalPose();
+    }
+
+    protected virtual void SayOk()
     {
         driverAnswers.PlayOk();
-        driverAnimations.RestoreHandToNormalPose();
     }
 
     protected virtual void GoGetLicenseBack()

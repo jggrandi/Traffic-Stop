@@ -6605,6 +6605,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 541339779}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &517742639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6546165129847672900, guid: 9b1acadec4e48b3418f192fb7e772364,
+    type: 3}
+  m_PrefabInstance: {fileID: 1348496091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519975263
 GameObject:
   m_ObjectHideFlags: 0
@@ -20339,10 +20345,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 86084468045131281, guid: 9b1acadec4e48b3418f192fb7e772364,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8869430695597495179, guid: 9b1acadec4e48b3418f192fb7e772364,
+        type: 3}
+      propertyPath: useHandObjectAttachmentPoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4463362327218419722, guid: 9b1acadec4e48b3418f192fb7e772364,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674088649330760314, guid: 9b1acadec4e48b3418f192fb7e772364,
+        type: 3}
+      propertyPath: reference
+      value: 
+      objectReference: {fileID: 517742639}
+    - target: {fileID: 5674088649330760314, guid: 9b1acadec4e48b3418f192fb7e772364,
+        type: 3}
+      propertyPath: targetReference
+      value: 
+      objectReference: {fileID: 517742639}
     - target: {fileID: 6546165129847672900, guid: 9b1acadec4e48b3418f192fb7e772364,
         type: 3}
       propertyPath: m_Name
       value: DriversLicenseReturnPosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546165129847672900, guid: 9b1acadec4e48b3418f192fb7e772364,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2783767156102781929, guid: 9b1acadec4e48b3418f192fb7e772364,
         type: 3}
@@ -20373,6 +20409,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1387
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573803868038133716, guid: 9b1acadec4e48b3418f192fb7e772364,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b1acadec4e48b3418f192fb7e772364, type: 3}
