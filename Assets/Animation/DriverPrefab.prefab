@@ -5581,6 +5581,7 @@ Transform:
   - {fileID: 294671369432334704}
   - {fileID: 294671370694048291}
   - {fileID: 294671370246827149}
+  - {fileID: 4064171197275810621}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9862,6 +9863,36 @@ Transform:
   - {fileID: 5718153792929820348}
   m_Father: {fileID: 3974019026269365483}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2984091427285810601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4064171197275810621}
+  m_Layer: 0
+  m_Name: ReferencePosReturnDriversLicense
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4064171197275810621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2984091427285810601}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.556, y: 0.08099997, z: -0.10147858}
+  m_LocalScale: {x: 0.17143352, y: 0.06287938, z: 0.19428565}
+  m_Children: []
+  m_Father: {fileID: 294671370490395169}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3254853041417075430
 GameObject:
