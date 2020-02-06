@@ -582,7 +582,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5715959496442759803}
-        m_MethodName: ToggleDriverInfo
+        m_MethodName: ToggleDriverInfoWithVerification
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -848,9 +848,9 @@ MonoBehaviour:
   vehicleInfo: {fileID: 6359147143533852168}
   ownerInfo: {fileID: 4883879128725646512}
   driverInfo: {fileID: 9137072406026653849}
-  vehicleButton: {fileID: 5202271669204238151}
-  ownerButton: {fileID: 5589070455154514368}
-  driverButton: {fileID: 2043426480404187828}
+  vehicleButton: {fileID: 4590768849545240219}
+  ownerButton: {fileID: 2404979298927657663}
+  driverButton: {fileID: 2638351005346559023}
 --- !u!114 &1182306923775780162
 MonoBehaviour:
   m_ObjectHideFlags: 0

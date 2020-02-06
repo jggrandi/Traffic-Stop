@@ -17,67 +17,56 @@ public class UIHandler : MonoBehaviour
     public GameObject ownerInfo;
     public GameObject driverInfo;
 
-    public GameObject vehicleButton;
-    public GameObject ownerButton;
-    public GameObject driverButton;
-    bool firstPressVehicle = true;
-    bool firstPressOwner = true;
-    bool firstPressDriver = true;
+    public Button vehicleButton;
+    public Button ownerButton;
+    public Button driverButton;
+    //bool firstPressVehicle = true;
+    //bool firstPressOwner = true;
+    //bool firstPressDriver = true;
 
     //-------------------------------------------------
+
+    private bool ColorMatch(Button _b, int _colorCode)
+    {
+        if (AlertsHandler.GetButtonColor(_b) == AlertsHandler.DefineColorBasedOnAlertCode(_colorCode))
+            return true;
+        return false;
+    }
+
     public void ToggleVehicleInfo()
     {
-        if(firstPressVehicle)
-        {
-            TurnWhite(vehicleButton);
-            firstPressVehicle = false;
-        }
+        if(!ColorMatch(vehicleButton, (int)AlertsHandler.ScanCode.Null))        
+            AlertsHandler.ChangeButtonColor((int) AlertsHandler.ScanCode.Null, vehicleButton);
+
         vehicleInfo.SetActive(!vehicleInfo.activeInHierarchy);
-        ownerInfo.SetActive(false);
         driverInfo.SetActive(false);
-        //canvas.SetActive(!canvas.activeInHierarchy);
+        ownerInfo.SetActive(false);
     }
 
     public void ToggleOwnerInfo()
     {
-        if (firstPressOwner)
-        {
-            TurnWhite(ownerButton);
-            firstPressOwner = false;
-        }
+        if (!ColorMatch(ownerButton, (int)AlertsHandler.ScanCode.Null))
+            AlertsHandler.ChangeButtonColor((int)AlertsHandler.ScanCode.Null, ownerButton);
+
         ownerInfo.SetActive(!ownerInfo.activeInHierarchy);
-        vehicleInfo.SetActive(false);
         driverInfo.SetActive(false);
-        //canvas.SetActive(!canvas.activeInHierarchy);
+        vehicleInfo.SetActive(false);
+    }
+
+    public void ToggleDriverInfoWithVerification()
+    {
+        if (!ColorMatch(driverButton, (int)AlertsHandler.ScanCode.Null))
+            AlertsHandler.ChangeButtonColor((int)AlertsHandler.ScanCode.Null, driverButton);
+
+        ToggleDriverInfo();
     }
 
     public void ToggleDriverInfo()
     {
-        if (firstPressDriver)
-        {
-            TurnWhite(driverButton);
-            firstPressDriver = false;
-        }
         driverInfo.SetActive(!driverInfo.activeInHierarchy);
         vehicleInfo.SetActive(false);
         ownerInfo.SetActive(false);
-        //canvas.SetActive(!canvas.activeInHierarchy);
     }
 
-    public void ToggleDriverInfoTESTING()
-    {
-        driverInfo.SetActive(!driverInfo.activeInHierarchy);
-        vehicleInfo.SetActive(false);
-        ownerInfo.SetActive(false);
-        //canvas.SetActive(!canvas.activeInHierarchy);
-    }
-
-    void TurnWhite(GameObject obj)
-    {
-        Button b = obj.GetComponent<Button>();
-        ColorBlock colors = b.colors;
-        colors.normalColor = new Color32(225, 225, 225, 0);
-        b.colors = colors;
-    }
 
 }

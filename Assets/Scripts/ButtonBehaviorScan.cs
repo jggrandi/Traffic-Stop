@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +17,15 @@ public class ButtonBehaviorScan : MonoBehaviour
         AlertsHandler.OnScanPlateResult += EnableVehicleButton;
         AlertsHandler.OnScanPlateResult += EnableOwnerButton;
         AlertsHandler.OnScanDriverLicenseResult += EnableDriverButton;
+        HandleInteractableArea.OnExitInteractableArea += ResetButtons;
         uiReference = GetComponent<UIHandler>();
+    }
+
+    private void ResetButtons()
+    {
+        DisableButton(vbutton);
+        DisableButton(obutton);
+        DisableButton(dbutton);
     }
 
     private void OnDisable()
@@ -24,42 +33,38 @@ public class ButtonBehaviorScan : MonoBehaviour
         AlertsHandler.OnScanPlateResult -= EnableVehicleButton;
         AlertsHandler.OnScanPlateResult -= EnableOwnerButton;
         AlertsHandler.OnScanDriverLicenseResult -= EnableDriverButton;
+        HandleInteractableArea.OnExitInteractableArea -= ResetButtons;
     }
 
     protected void EnableVehicleButton(int _scanCode)
     {
-
-        ChangeButtonColor(_scanCode, vbutton);
-        vbutton.interactable = true;
-        vbutton.GetComponentInChildren<BoxCollider>().enabled = true;
-
+        EnableButton(_scanCode, vbutton);
     }
 
     protected void EnableOwnerButton(int _scanCode)
     {
-
-        ChangeButtonColor(_scanCode,obutton);
-        obutton.interactable = true;
-        obutton.GetComponentInChildren<BoxCollider>().enabled = true;
-
+        EnableButton(_scanCode, obutton);
     }
 
     protected void EnableDriverButton(int _scanCode)
     {
-
-        ChangeButtonColor(_scanCode, dbutton);
-        dbutton.interactable = true;
-        dbutton.GetComponentInChildren<BoxCollider>().enabled = true;
-        uiReference.ToggleDriverInfoTESTING();
-
+        EnableButton(_scanCode, dbutton);
+        uiReference.ToggleDriverInfo();
     }
 
 
-    protected void ChangeButtonColor(int _scanCode, Button _b)
+    private void EnableButton(int _scanCode, Button _b)
     {
-        ColorBlock colors = _b.colors;
-        colors.normalColor = AlertsHandler.DefineColorBasedOnAlertCode(_scanCode);
-        _b.colors = colors;
+        AlertsHandler.ChangeButtonColor(_scanCode, _b);
+        _b.interactable = true;
+        _b.GetComponentInChildren<BoxCollider>().enabled = true;
+    }
+
+    private void DisableButton(Button _b)
+    {
+        AlertsHandler.ChangeButtonColor((int)AlertsHandler.ScanCode.Null, _b);
+        _b.interactable = false;
+        _b.GetComponentInChildren<BoxCollider>().enabled = false;
     }
 
 }

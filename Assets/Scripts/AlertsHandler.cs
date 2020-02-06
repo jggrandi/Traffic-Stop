@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class AlertsHandler : Raycaster
 {
-    public enum  ScanCode {Scanning, Clear, Warning, Danger};
+    public enum  ScanCode {Scanning, Clear, Warning, Danger, Null};
     public enum ObjType { Plate, DriverLicense, LegalObj, IllegalObj};
 
 
@@ -70,6 +71,9 @@ public class AlertsHandler : Raycaster
             case (int)ScanCode.Warning:
                 returnColor = Color.red;
                 break;
+            case (int)ScanCode.Null:
+                returnColor = new Color32(225, 225, 225, 0);
+                break;
             default:
                 returnColor = Color.white;
                 break;
@@ -77,6 +81,18 @@ public class AlertsHandler : Raycaster
         return returnColor;
     }
 
+    public static void ChangeButtonColor(int _scanCode, Button _b)
+    {
+        ColorBlock colors = _b.colors;
+        colors.normalColor = AlertsHandler.DefineColorBasedOnAlertCode(_scanCode);
+        _b.colors = colors;
+    }
+
+    public static Color GetButtonColor(Button _b)
+    {
+        ColorBlock colors = _b.colors;
+        return colors.normalColor;
+    }
 
     private IEnumerator Wait(float waitTime, ScanCode scanCode)
     {
