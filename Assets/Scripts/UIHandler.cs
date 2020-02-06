@@ -25,7 +25,7 @@ public class UIHandler : MonoBehaviour
     bool firstPressDriver = true;
 
     //-------------------------------------------------
-    public void ToggleVehicleInfo(Hand hand)
+    public void ToggleVehicleInfo()
     {
         if(firstPressVehicle)
         {
@@ -38,7 +38,7 @@ public class UIHandler : MonoBehaviour
         //canvas.SetActive(!canvas.activeInHierarchy);
     }
 
-    public void ToggleOwnerInfo(Hand hand)
+    public void ToggleOwnerInfo()
     {
         if (firstPressOwner)
         {
@@ -51,13 +51,21 @@ public class UIHandler : MonoBehaviour
         //canvas.SetActive(!canvas.activeInHierarchy);
     }
 
-    public void ToggleDriverInfo(Hand hand)
+    public void ToggleDriverInfo()
     {
         if (firstPressDriver)
         {
             TurnWhite(driverButton);
             firstPressDriver = false;
         }
+        driverInfo.SetActive(!driverInfo.activeInHierarchy);
+        vehicleInfo.SetActive(false);
+        ownerInfo.SetActive(false);
+        //canvas.SetActive(!canvas.activeInHierarchy);
+    }
+
+    public void ToggleDriverInfoTESTING()
+    {
         driverInfo.SetActive(!driverInfo.activeInHierarchy);
         vehicleInfo.SetActive(false);
         ownerInfo.SetActive(false);

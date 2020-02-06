@@ -8,13 +8,15 @@ public class ButtonBehaviorScan : MonoBehaviour
     public Button obutton;
     public Button dbutton;
 
-    // Start is called before the first frame update
+    UIHandler uiReference; //temporary to show the drivers info when the alert is triggered
 
+    // Start is called before the first frame update
     private void Start()
     {
         AlertsHandler.OnScanPlateResult += EnableVehicleButton;
         AlertsHandler.OnScanPlateResult += EnableOwnerButton;
         AlertsHandler.OnScanDriverLicenseResult += EnableDriverButton;
+        uiReference = GetComponent<UIHandler>();
     }
 
     private void OnDisable()
@@ -48,6 +50,7 @@ public class ButtonBehaviorScan : MonoBehaviour
         ChangeButtonColor(_scanCode, dbutton);
         dbutton.interactable = true;
         dbutton.GetComponentInChildren<BoxCollider>().enabled = true;
+        uiReference.ToggleDriverInfoTESTING();
 
     }
 
