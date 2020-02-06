@@ -45,7 +45,7 @@ public class AlertsHandler : Raycaster
             isPlateTriggered = true;
         }
 
-        if (target.gameObject.name == "DriverLicense" && !isDriverLicenseTriggered)
+        if (target.gameObject.name == "DriverLicense" && !isDriverLicenseTriggered && GrabDriversLicense.isGrabbing)
         {
             //TriggerLicenseScan();
             OnScanDriverLicense((int)ScanCode.Scanning);

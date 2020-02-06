@@ -25,6 +25,11 @@ public class UIHandler : MonoBehaviour
     //bool firstPressDriver = true;
 
     //-------------------------------------------------
+    private void Start()
+    {
+        HandleInteractableArea.OnExitInteractableArea += ToggleAllOff;
+    }
+
 
     private bool ColorMatch(Button _b, int _colorCode)
     {
@@ -64,6 +69,13 @@ public class UIHandler : MonoBehaviour
     public void ToggleDriverInfo()
     {
         driverInfo.SetActive(!driverInfo.activeInHierarchy);
+        vehicleInfo.SetActive(false);
+        ownerInfo.SetActive(false);
+    }
+
+    void ToggleAllOff()
+    {
+        driverInfo.SetActive(false);
         vehicleInfo.SetActive(false);
         ownerInfo.SetActive(false);
     }
