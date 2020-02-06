@@ -15,9 +15,10 @@ public class ToggleArmUIOnLook : Raycaster
     {
         if (target.gameObject.name == "AttachToArm")
         {
-            Debug.Log("ArmDisplayTriggered");
-            coroutine = WaitToShowUI(target);
-            StartCoroutine(coroutine);
+            //Debug.Log("ArmDisplayTriggered");
+            //coroutine = WaitToShowUI(target);
+            //StartCoroutine(coroutine);
+            TriggerArmDisplay();
         }
     }
 
@@ -25,22 +26,23 @@ public class ToggleArmUIOnLook : Raycaster
     {
         if (target.gameObject.name == "AttachToArm")
         {
-            coroutine = WaitToHideUI(target);
-            StartCoroutine(coroutine);
+            //coroutine = WaitToHideUI(target);
+            //StartCoroutine(coroutine);
+            HideArmDisplay();
         }
     }
 
-    IEnumerator WaitToShowUI(GameObject target)
-    {
-        yield return new WaitForSeconds(.2f);
-        TriggerArmDisplay();
-    }
+    //IEnumerator WaitToShowUI(GameObject target)
+    //{
+    //    yield return new WaitForSeconds(.2f);
+    //    TriggerArmDisplay();
+    //}
 
-    IEnumerator WaitToHideUI(GameObject target)
-    {
-        yield return new WaitForSeconds(.5f);
-        HideArmDisplay();
-    }
+    //IEnumerator WaitToHideUI(GameObject target)
+    //{
+    //    yield return new WaitForSeconds(.5f);
+    //    HideArmDisplay();
+    //}
 
 
 
