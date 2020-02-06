@@ -26,6 +26,11 @@ public class AlertsHandler : Raycaster
         HandleInteractableArea.OnExitInteractableArea += ResetTriggers;
     }
 
+    private void OnDisable()
+    {
+        HandleInteractableArea.OnExitInteractableArea -= ResetTriggers;
+    }
+
     void ResetTriggers()
     {
         isPlateTriggered = false;

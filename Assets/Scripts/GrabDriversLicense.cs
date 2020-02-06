@@ -67,6 +67,7 @@ public class GrabDriversLicense : UIScanListner
         AlertsHandler.OnScanDriverLicenseResult -= AllowDriversLicenseReturn;
         AlertsHandler.OnScanDriverLicense -= ShowScanning;
         AlertsHandler.OnScanDriverLicenseResult -= ShowResultOfScan;
+        HandleInteractableArea.OnExitInteractableArea -= ResetLicenseAlert;
     }
 
     protected override void ShowScanning(int _scanCode)

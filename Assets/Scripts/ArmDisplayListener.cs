@@ -12,6 +12,13 @@ public class ArmDisplayListener : MonoBehaviour
         //HideDisplay();
     }
 
+    private void OnDisable()
+    {
+        ToggleArmUIOnLook.TriggerArmDisplay -= ShowArmDisplay;
+        ToggleArmUIOnLook.HideArmDisplay -= HideDisplay;
+
+    }
+
     void ShowArmDisplay()
     {
         for (int i = 0; i < gameObject.transform.childCount; i++)

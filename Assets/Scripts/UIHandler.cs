@@ -30,6 +30,10 @@ public class UIHandler : MonoBehaviour
         HandleInteractableArea.OnExitInteractableArea += ToggleAllOff;
     }
 
+    private void OnDisable()
+    {
+        HandleInteractableArea.OnExitInteractableArea -= ToggleAllOff;
+    }
 
     private bool ColorMatch(Button _b, int _colorCode)
     {

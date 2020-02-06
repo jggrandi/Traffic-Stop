@@ -25,7 +25,14 @@ public class HandAnimationListner : MonoBehaviour
         Driver_IK.OnReturnLicense += PlayAnimationSteeringWheelToWindow;
         Driver_IK.OnResetGetLicense += PlayAnimationHandBackToSteeringWheel;
     }
-
+    private void OnDisable()
+    {
+        Commands.OnPutBackLicense -= PlayAnimationPutBack;
+        Commands.OnReturnToIdle -= PlayAnimationIdle;
+        Driver_IK.OnSetGetLicense -= PlayAnimationDashToWindow;
+        Driver_IK.OnReturnLicense -= PlayAnimationSteeringWheelToWindow;
+        Driver_IK.OnResetGetLicense -= PlayAnimationHandBackToSteeringWheel;
+    }
     void PlayAnimationPutBack()
     {
         handAnimator.SetBool(handSteeringWheelToWindow, false);
@@ -56,10 +63,6 @@ public class HandAnimationListner : MonoBehaviour
         handAnimator.SetBool(handWindowToSteeringWheel, true);
     }
 
-    private void OnDisable()
-    {
-        Commands.OnPutBackLicense -= PlayAnimationPutBack;
-        Commands.OnReturnToIdle -= PlayAnimationIdle;
-    }
+
 
 }
