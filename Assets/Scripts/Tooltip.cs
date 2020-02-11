@@ -19,12 +19,14 @@ public class Tooltip : MonoBehaviour
     void Start()
     {
         player = Player.instance;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         Transform playerTransform = player.hmdTransform;
+        endPoint.transform.position = playerTransform.position + new Vector3(0f,0f,.3f);
 
         textCanvas.transform.position = endPoint.transform.position;
         textCanvas.transform.rotation = Quaternion.identity;

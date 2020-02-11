@@ -175,7 +175,6 @@ public class GrabDriversLicense : UIScanListner
     //-------------------------------------------------
     private void OnDetachedFromHand(Hand hand)
     {
-        Debug.Log("awwwee");
         //generalText.text = string.Format("Detached: {0}", hand.name);
     }
 
