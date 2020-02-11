@@ -4,62 +4,13 @@ using UnityEngine;
 using RootMotion.FinalIK;
 using System;
 
-public class Driver_IK : MonoBehaviour
+public class Driver_IK : EventsIK
 {
     public FullBodyBipedIK ik;
     public Transform leftHandTarget, leftFootTarget, rightFootTarget;
-    public bool rightHandLock = true, getLicense = false;
-    public float weight = 1f;
+
     public Transform[] rightHandTarget;
     public HandPoser handPoser;
-
-    public static Action OnSetGetLicense;
-    public static Action OnReturnLicense;
-    public static Action OnResetGetLicense;
-
-    // THESE FUNCTIONS ARE BEING CALLED AS EVENTS IN THE HUMAN1.fbx 
-
-    void SetrightHandLock()
-    {
-        rightHandLock = true;
-        getLicense = false;
-    }
-
-    void ResetrightHandLock()
-    {
-        rightHandLock = false;
-    }
-
-    void SetGetLicense()
-    {
-        ActLicense();
-        weight = 1f;
-        OnSetGetLicense();
-    }
-
-    void ActLicense()
-    {
-        getLicense = true;
-    }
-
-    void ReturnLicense()
-    {
-        ResetrightHandLock();
-        ActLicense();
-        weight = 1f;
-        OnReturnLicense();
-    }
-
-    void InactLicense()
-    {
-        getLicense = false;
-    }
-
-    void ResetGetLicense()
-    {
-        InactLicense();
-        OnResetGetLicense();
-    }
 
     private void LateUpdate()
     {

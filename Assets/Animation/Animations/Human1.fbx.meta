@@ -116,7 +116,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.041484836
+        functionName: SetrightHandLock
+        data: 
+        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -155,7 +163,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.99964845
-        functionName: setGetLicense
+        functionName: SetGetLicense
         data: 
         objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
           type: 3}
@@ -237,7 +245,7 @@ ModelImporter:
         intParameter: 0
         messageOptions: 0
       - time: 0.9833021
-        functionName: setrightHandLock
+        functionName: SetrightHandLock
         data: 
         objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
           type: 3}
@@ -304,6 +312,14 @@ ModelImporter:
       events:
       - time: 0
         functionName: ReturnLicense
+        data: 
+        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 1
+        functionName: AllowDriversLicenseRerturn
         data: 
         objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
           type: 3}

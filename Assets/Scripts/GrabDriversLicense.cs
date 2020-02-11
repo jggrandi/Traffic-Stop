@@ -29,7 +29,6 @@ public class GrabDriversLicense : UIScanListner
     private bool isGrabEnding;
     public static bool isGrabbing = false;
 
-
     bool isLicenseScanned = false;
 
 
@@ -100,7 +99,7 @@ public class GrabDriversLicense : UIScanListner
     private void HandHoverUpdate(Hand hand)
     {
         GrabTypes startingGrabType = hand.GetGrabStarting();
-        isGrabEnding = hand.IsGrabEnding(this.gameObject);
+        isGrabEnding = hand.IsGrabEnding(this.gameObject);  
 
         if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
         {
@@ -117,7 +116,7 @@ public class GrabDriversLicense : UIScanListner
             // Attach this object to the hand
             hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
         }
-        else if (isGrabEnding)
+        else if (isGrabEnding && EventsIK.allowLicenseReturn)
         {
             isGrabbing = false;
             OnPutLicenseBack();
@@ -145,7 +144,7 @@ public class GrabDriversLicense : UIScanListner
         if (!isGrabbing) return;
         if (!isLicenseScanned) return;
         if (IsAbleToReturnDriversLicense())
-            OnReturnLicense();
+            OnReturnLicense(); // trigger animation driver get the license back
     }
 
     bool IsAbleToReturnDriversLicense()

@@ -22,10 +22,10 @@ public class TunnelingListener : MonoBehaviour
         if (_scanCode == (int)AlertsHandler.ScanCode.Warning)
         {
             tunnelling.effectColor = AlertsHandler.DefineColorBasedOnAlertCode(_scanCode);
-            tunnelling.effectCoverage = .5f;
+            tunnelling.effectCoverage = .7f;
             tunnelling.effectFeather = .15f;
 
-            coroutine = WaitScan(3f);
+            coroutine = WaitScan(5f);
             StartCoroutine(coroutine);
         }
     }
