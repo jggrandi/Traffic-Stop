@@ -7,8 +7,8 @@ public class EventsIK : MonoBehaviour
 {
     // THESE FUNCTIONS ARE BEING CALLED AS EVENTS IN THE HUMAN1.fbx 
 
-    protected bool rightHandLock = true, getLicense = false;
-    protected float weight = 1f;
+    protected bool rightHandLock = true, getLicense = false, headIK = false;
+    protected float weight = 1f, headWeight = 1f;
     public static bool allowLicenseReturn = false;
 
     public static Action OnSetGetLicense;
@@ -19,6 +19,16 @@ public class EventsIK : MonoBehaviour
     {
         rightHandLock = true;
         getLicense = false;
+    }
+
+    void SetHeadIK()
+    {
+        headIK = true;
+    }
+
+    void ResetHeadIK()
+    {
+        headIK = false;
     }
 
     void ResetrightHandLock()

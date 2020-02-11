@@ -8,18 +8,43 @@ public class Driver_IK : EventsIK
 {
     public FullBodyBipedIK ik;
     public Transform leftHandTarget, leftFootTarget, rightFootTarget;
+    private IKSolverLookAt headIKTarget;
 
     public Transform[] rightHandTarget;
     public HandPoser handPoser;
 
+
+    private void Start()
+    {
+        LookAtIK lookAt = gameObject.GetComponent(typeof(LookAtIK)) as LookAtIK;
+        headIKTarget = lookAt.solver;
+    }
+
     private void LateUpdate()
     {
+
+        if (!headIK)
+        {
+            if(headWeight >0)
+            {
+                headWeight -= 2f * Time.deltaTime;
+            }
+            headIKTarget.SetLookAtWeight(headWeight);
+        }
+        else
+        {
+            if(headWeight < 1)
+            {
+                headWeight += 2f * Time.deltaTime;
+            }
+            headIKTarget.SetLookAtWeight(headWeight);
+        }
 
         if (rightHandLock)// if it is locked to the steering wheel
         {
             if(weight < 1f)
             {
-                weight += 2f * Time.deltaTime; ;
+                weight += 2f * Time.deltaTime; 
             }
             ik.solver.rightHandEffector.position = rightHandTarget[0].position;
             ik.solver.rightHandEffector.rotation = rightHandTarget[0].rotation;
