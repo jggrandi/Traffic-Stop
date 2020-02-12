@@ -3,35 +3,63 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 using UnityEngine.UI;
+using System;
 
 public class Tooltip : MonoBehaviour
 {
 
     private Player player;
     public GameObject startPoint;
-    public GameObject endPoint;
     public GameObject line;
     public GameObject textCanvas;
-
     
+    
+    Vector3 endPoint;
+    Vector3 offset = new Vector3(.0f, -.25f, .3f);
 
     // Start is called before the first frame update
     void Start()
     {
         player = Player.instance;
-        
+        AlertsHandler.OnScanPlateResult += ShowTooltip;
+    }
+
+    private void ShowTooltip(int obj)
+    {
+        if (!IsOnSight())
+        {
+            for (int i = 0; i < gameObject.transform.childCount; i++)
+                gameObject.transform.GetChild(i).gameObject.SetActive(true);
+        }
+
+
+    }
+
+    bool IsOnSight()
+    {
+        if (Vector3.Angle(player.hmdTransform.forward, transform.parent.transform.forward) < 2.0f)
+            return true;
+        return false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Transform playerTransform = player.hmdTransform;
-        endPoint.transform.position = playerTransform.position + new Vector3(0f,0f,.3f);
+        Debug.Log(Vector3.Angle(player.hmdTransform.forward, transform.parent.transform.forward));
+        if (IsOnSight())
+        {
+            for (int i = 0; i < gameObject.transform.childCount; i++)
+                gameObject.transform.GetChild(i).gameObject.SetActive(false);
+        }
 
-        textCanvas.transform.position = endPoint.transform.position;
+
+        Transform playerTransform = player.hmdTransform;
+        endPoint = playerTransform.position + offset;
+
+        textCanvas.transform.position = endPoint;
         textCanvas.transform.rotation = Quaternion.identity;
 
-        Vector3 vDir = playerTransform.position - endPoint.transform.position;
+        Vector3 vDir = playerTransform.position - endPoint;
 
         Quaternion standardLookat = Quaternion.LookRotation(vDir, Vector3.up);
         Quaternion upsideDownLookat = Quaternion.LookRotation(vDir, playerTransform.up);
@@ -52,7 +80,7 @@ public class Tooltip : MonoBehaviour
         LineRenderer lineR =  line.GetComponent<LineRenderer>();
         lineR.useWorldSpace = false;
         lineR.SetPosition(0, lineTransform.InverseTransformPoint(startPoint.transform.position));
-        lineR.SetPosition(1, lineTransform.InverseTransformPoint(endPoint.transform.position));
+        lineR.SetPosition(1, lineTransform.InverseTransformPoint(endPoint));
     }
 
     void CreateHint()

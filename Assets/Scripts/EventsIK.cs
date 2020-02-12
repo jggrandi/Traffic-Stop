@@ -21,12 +21,12 @@ public class EventsIK : MonoBehaviour
         getLicense = false;
     }
 
-    void SetHeadIK()
+    void ActivateHeadIK()
     {
         headIK = true;
     }
 
-    void ResetHeadIK()
+    void DeactivateHeadIK()
     {
         headIK = false;
     }

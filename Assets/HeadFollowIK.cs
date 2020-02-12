@@ -6,7 +6,7 @@ using Valve.VR.InteractionSystem;
 public class HeadFollowIK : MonoBehaviour
 {
     Player player;
-    Vector3 offset = new Vector3(.0f, -.2f, .0f);
+    Vector3 offset = new Vector3(-.1f, -.4f, -.17f);
     // Start is called before the first frame update
     void Start()
     {
