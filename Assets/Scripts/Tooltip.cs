@@ -12,8 +12,8 @@ public class Tooltip : MonoBehaviour
     public GameObject startPoint;
     public GameObject line;
     public GameObject textCanvas;
-    
-    
+
+    //GameObject sphere1, sphere2;
     Vector3 endPoint;
     Vector3 offset = new Vector3(.0f, -.25f, .3f);
 
@@ -22,11 +22,21 @@ public class Tooltip : MonoBehaviour
     {
         player = Player.instance;
         AlertsHandler.OnScanPlateResult += ShowTooltip;
+        AlertsHandler.OnScanDriverLicenseResult += ShowTooltip;
+        for (int i = 0; i < gameObject.transform.childCount; i++)
+            gameObject.transform.GetChild(i).gameObject.SetActive(false);
+        //sphere1 = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        //sphere2 = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        //sphere1.transform.localScale = new Vector3(.3f, .3f, .3f);
+        //sphere2.transform.localScale = new Vector3(.3f, .3f, .3f);
     }
 
-    private void ShowTooltip(int obj)
+    private void ShowTooltip(int _scanCode)
     {
-        if (!IsOnSight())
+        
+        textCanvas.transform.GetChild(0).GetComponentInChildren<Image>().color = AlertsHandler.DefineColorBasedOnAlertCode(_scanCode);
+
+        if (!IsArmDisplayOnSight())
         {
             for (int i = 0; i < gameObject.transform.childCount; i++)
                 gameObject.transform.GetChild(i).gameObject.SetActive(true);
@@ -35,9 +45,9 @@ public class Tooltip : MonoBehaviour
 
     }
 
-    bool IsOnSight()
+    bool IsArmDisplayOnSight()
     {
-        if (Vector3.Angle(player.hmdTransform.forward, transform.parent.transform.forward) < 2.0f)
+        if (Vector3.Angle(player.hmdTransform.position + player.hmdTransform.forward, transform.parent.transform.position - transform.parent.transform.up) < 3.0f)
             return true;
         return false;
     }
@@ -45,8 +55,11 @@ public class Tooltip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Vector3.Angle(player.hmdTransform.forward, transform.parent.transform.forward));
-        if (IsOnSight())
+        //sphere1.transform.position = player.hmdTransform.position + player.hmdTransform.forward;
+        //sphere2.transform.position = transform.parent.transform.position - transform.parent.transform.up;
+
+//        Debug.Log(Vector3.Angle(player.hmdTransform.position + player.hmdTransform.forward, transform.parent.transform.position - transform.parent.transform.up));
+        if (IsArmDisplayOnSight())
         {
             for (int i = 0; i < gameObject.transform.childCount; i++)
                 gameObject.transform.GetChild(i).gameObject.SetActive(false);
@@ -83,9 +96,4 @@ public class Tooltip : MonoBehaviour
         lineR.SetPosition(1, lineTransform.InverseTransformPoint(endPoint));
     }
 
-    void CreateHint()
-    {
-
-
-    }
 }
