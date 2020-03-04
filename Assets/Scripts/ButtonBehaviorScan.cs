@@ -14,11 +14,18 @@ public class ButtonBehaviorScan : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        AlertsHandler.OnScanPlateResult += EnableVehicleButton;
-        AlertsHandler.OnScanPlateResult += EnableOwnerButton;
-        AlertsHandler.OnScanDriverLicenseResult += EnableDriverButton;
+        PlateScanListener.OnReady += EnableVehicleButton;
+
+        //AlertsHandler.OnScanPlateResult += EnableVehicleButton;
+        //AlertsHandler.OnScanPlateResult += EnableOwnerButton;
+        //AlertsHandler.OnScanDriverLicenseResult += EnableDriverButton;
         HandleInteractableArea.OnExitInteractableArea += ResetButtons;
         uiReference = GetComponent<UIHandler>();
+    }
+
+    private void EnableVehicleButton(GameObject obj)
+    {
+        EnableButton(obj, vbutton);
     }
 
     private void ResetButtons()
@@ -30,39 +37,49 @@ public class ButtonBehaviorScan : MonoBehaviour
 
     private void OnDisable()
     {
-        AlertsHandler.OnScanPlateResult -= EnableVehicleButton;
-        AlertsHandler.OnScanPlateResult -= EnableOwnerButton;
-        AlertsHandler.OnScanDriverLicenseResult -= EnableDriverButton;
+        PlateScanListener.OnReady -= EnableVehicleButton;
+        //AlertsHandler.OnScanPlateResult -= EnableVehicleButton;
+        //AlertsHandler.OnScanPlateResult -= EnableOwnerButton;
+        //AlertsHandler.OnScanDriverLicenseResult -= EnableDriverButton;
         HandleInteractableArea.OnExitInteractableArea -= ResetButtons;
     }
 
-    protected void EnableVehicleButton(int _scanCode)
-    {
-        EnableButton(_scanCode, vbutton);
-    }
+    //protected void EnableVehicleButton(int _scanCode)
+    //{
+    //    EnableButton(_scanCode, vbutton);
+    //}
 
-    protected void EnableOwnerButton(int _scanCode)
-    {
-        EnableButton(_scanCode, obutton);
-    }
+    //protected void EnableOwnerButton(int _scanCode)
+    //{
+    //    EnableButton(_scanCode, obutton);
+    //}
 
-    protected void EnableDriverButton(int _scanCode)
-    {
-        EnableButton(_scanCode, dbutton);
-        uiReference.ToggleDriverInfo();
-    }
+    //protected void EnableDriverButton(int _scanCode)
+    //{
+    //    EnableButton(_scanCode, dbutton);
+    //    uiReference.ToggleDriverInfo();
+    //}
 
-
-    private void EnableButton(int _scanCode, Button _b)
+    private void EnableButton(GameObject _obj, Button _b)
     {
-        AlertsHandler.ChangeButtonColor(_scanCode, _b);
+        Utils.ChangeButtonColor(Utils.DefineColorBasedOnAlertCode(_obj.GetComponent<AlertObject>().LevelAlert),_b);
+        //AlertsHandler.ChangeButtonColor(_scanCode, _b);
         _b.interactable = true;
         _b.GetComponentInChildren<BoxCollider>().enabled = true;
     }
 
+
+    //private void EnableButton(int _scanCode, Button _b)
+    //{
+    //    AlertsHandler.ChangeButtonColor(_scanCode, _b);
+    //    _b.interactable = true;
+    //    _b.GetComponentInChildren<BoxCollider>().enabled = true;
+    //}
+
     private void DisableButton(Button _b)
     {
-        AlertsHandler.ChangeButtonColor((int)AlertsHandler.ScanCode.Null, _b);
+        Utils.ChangeButtonColor(new Color32(225, 225, 225, 0), _b);
+        //AlertsHandler.ChangeButtonColor((int)AlertsHandler.ScanCode.Null, _b);
         _b.interactable = false;
         _b.GetComponentInChildren<BoxCollider>().enabled = false;
     }

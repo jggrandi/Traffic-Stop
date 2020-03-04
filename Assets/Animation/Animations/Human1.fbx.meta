@@ -79,15 +79,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0
-        functionName: SetrightHandLock
-        data: 
-        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -116,23 +108,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.01566324
-        functionName: SetrightHandLock
-        data: 
-        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.32863852
-        functionName: ActivateHeadIK
-        data: 
-        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -161,31 +137,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.018779343
-        functionName: DeactivateHeadIK
-        data: 
-        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.14403293
-        functionName: ResetrightHandLock
-        data: 
-        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.99964845
-        functionName: SetGetLicense
-        data: 
-        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -214,15 +166,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.04048583
-        functionName: SetGetLicense
-        data: 
-        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -251,23 +195,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.3314501
-        functionName: ResetGetLicense
-        data: 
-        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.9833021
-        functionName: SetrightHandLock
-        data: 
-        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -325,23 +253,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0
-        functionName: ReturnLicense
-        data: 
-        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 1
-        functionName: AllowDriversLicenseRerturn
-        data: 
-        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -370,23 +282,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0.12011173
-        functionName: DeactivateHeadIK
-        data: 
-        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.5060729
-        functionName: InactLicense
-        data: 
-        objectReferenceParameter: {fileID: -927199367670048503, guid: a5fd8c8a2875d7c4cbeb5ee94b23cfde,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

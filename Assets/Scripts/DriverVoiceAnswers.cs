@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RogoDigital.Lipsync;
+using System;
 
 [RequireComponent(typeof(LipSync))]
 [RequireComponent(typeof(AudioSource))]
 
 public class DriverVoiceAnswers : MonoBehaviour
 {
+    public static Action OnAudioFinished;
 
     LipSync lipSync;
     public LipSyncData[] lipAnim = new LipSyncData[] { };
@@ -24,13 +26,26 @@ public class DriverVoiceAnswers : MonoBehaviour
         if (lipSync == null)
             Debug.LogError("Couldn't load 'AudioSource'");
 
+        lipSync.onFinishedPlaying.AddListener(OnLipSyncFinished);
+        
+    }
 
+    private void OnDestroy()
+    {
+        if (lipSync != null)
+        {
+            lipSync.onFinishedPlaying.RemoveListener(OnLipSyncFinished);
+        }
+    }
+
+    private void OnLipSyncFinished()
+    {
+        OnAudioFinished();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void PlayIDontKnow()
@@ -42,6 +57,9 @@ public class DriverVoiceAnswers : MonoBehaviour
     {
         lipSync.Play(lipAnim[1]);
     }
+
+
+
 
     public void PlayLetMeFind()
     {

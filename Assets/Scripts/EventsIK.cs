@@ -15,6 +15,40 @@ public class EventsIK : MonoBehaviour
     public static Action OnReturnLicense;
     public static Action OnResetGetLicense;
 
+    void Awake()
+    {
+        GetLicenseAnimBehaviour.OnAnimationEnd += AllowDriversLicenseRerturn;
+        GetLicenseAnimBehaviour.OnAnimationStart += ReturnLicense;
+        IdleAnimBehaviour.OnAnimationStart += SetrightHandLock;
+        HeadRotAnimBehaviour.OnAnimationStart += SetrightHandLock;
+        HeadRotAnimBehaviour.OnAnimationStart += ActivateHeadIK;
+        FindLicenseAnimBehaviour.OnAnimationStart += DeactivateHeadIK;
+        FindLicenseAnimBehaviour.OnAnimationStart += ResetrightHandLock;
+        FindLicenseAnimBehaviour.OnAnimationEnd += SetGetLicense;
+        HandLicenseAnimBehaviour.OnAnimationStart += SetGetLicense;
+        HandLicense2AnimBehaviour.OnAnimationStart += ResetGetLicense;
+        HandLicense2AnimBehaviour.OnAnimationEnd += SetrightHandLock;
+        PutLicenseAnimBehaviour.OnAnimationStart += DeactivateHeadIK;
+        PutLicenseAnimBehaviour.OnAnimationEnd += InactLicense;
+    }
+
+    private void OnDestroy()
+    {
+        GetLicenseAnimBehaviour.OnAnimationEnd -= AllowDriversLicenseRerturn;
+        GetLicenseAnimBehaviour.OnAnimationStart -= ReturnLicense;
+        IdleAnimBehaviour.OnAnimationStart -= SetrightHandLock;
+        HeadRotAnimBehaviour.OnAnimationStart -= SetrightHandLock;
+        HeadRotAnimBehaviour.OnAnimationStart -= ActivateHeadIK;
+        FindLicenseAnimBehaviour.OnAnimationStart -= DeactivateHeadIK;
+        FindLicenseAnimBehaviour.OnAnimationStart -= ResetrightHandLock;
+        FindLicenseAnimBehaviour.OnAnimationEnd -= SetGetLicense;
+        HandLicenseAnimBehaviour.OnAnimationStart -= SetGetLicense;
+        HandLicense2AnimBehaviour.OnAnimationStart -= ResetGetLicense;
+        HandLicense2AnimBehaviour.OnAnimationEnd -= SetrightHandLock;
+        PutLicenseAnimBehaviour.OnAnimationStart -= DeactivateHeadIK;
+        PutLicenseAnimBehaviour.OnAnimationEnd -= InactLicense;
+    }
+
     void SetrightHandLock()
     {
         rightHandLock = true;

@@ -11,7 +11,7 @@ using Valve.VR.InteractionSystem;
 
 //-------------------------------------------------------------------------
 [RequireComponent(typeof(Interactable))]
-public class GrabDriversLicense : UIScanListner
+public class GrabDriversLicense : MonoBehaviour
 {
     public GameObject targetReference;
 
@@ -47,33 +47,39 @@ public class GrabDriversLicense : UIScanListner
 
     private void Start()
     {
-        InitalSetup();
-        AlertsHandler.OnScanDriverLicenseResult += AllowDriversLicenseReturn;
-        AlertsHandler.OnScanDriverLicense += ShowScanning;
-        AlertsHandler.OnScanDriverLicenseResult += ShowResultOfScan;
+        //InitalSetup();
+        //alertObj = GetComponent<AlertObject>();
+        AlertsHandler.OnScanResult += AllowDriversLicenseReturn;
+        //AlertsHandler.OnScan += ShowScanning;
+        //AlertsHandler.OnScanResult += ShowResult;
         HandleInteractableArea.OnExitInteractableArea += ResetLicenseAlert;
     }
 
     private void ResetLicenseAlert()
     {
-        InitalSetup();
+        //InitalSetup();
         isLicenseScanned = false;
-
     }
 
     private void OnDisable()
     {
-        AlertsHandler.OnScanDriverLicenseResult -= AllowDriversLicenseReturn;
-        AlertsHandler.OnScanDriverLicense -= ShowScanning;
-        AlertsHandler.OnScanDriverLicenseResult -= ShowResultOfScan;
+        AlertsHandler.OnScanResult -= AllowDriversLicenseReturn;
+        //AlertsHandler.OnScan -= ShowScanning;
+        //AlertsHandler.OnScanResult -= ShowResult;
         HandleInteractableArea.OnExitInteractableArea -= ResetLicenseAlert;
     }
 
-    protected override void ShowScanning(int _scanCode)
-    {
-        if (!isGrabbing) return;
-        base.ShowScanning(_scanCode);
-    }
+    //protected override void ShowScanning(GameObject _candidate)
+    //{
+    //    base.ShowScanning(_candidate);
+    //    //OnProcessing(); //TODO Implement function
+    //}
+
+    //protected override void ShowResult(GameObject _candidate)
+    //{
+    //    base.ShowResult(_candidate);
+    //    //OnReady(); //TODO Implement function
+    //}
 
     //-------------------------------------------------
     // Called when a Hand starts hovering over this object
@@ -120,7 +126,7 @@ public class GrabDriversLicense : UIScanListner
         {
             isGrabbing = false;
             OnPutLicenseBack();
-            HideBrackets();
+            //HideBrackets(); TODO NEED TO FIND A WAY TO HIDE THE BRACKETS AGAIN...
             //isGrabing = false;
             // Detach this object from the hand
             hand.DetachObject(gameObject);
@@ -154,8 +160,9 @@ public class GrabDriversLicense : UIScanListner
         return false;
     }
 
-    void AllowDriversLicenseReturn(int _code)
+    void AllowDriversLicenseReturn(GameObject  _candidate)
     {
+        if (_candidate != this.gameObject) return;
         isLicenseScanned = true;
     }
 
