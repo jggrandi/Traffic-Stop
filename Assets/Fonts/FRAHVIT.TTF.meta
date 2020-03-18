@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: f2df947fee623e44b92a0d6fbc0b087b
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Franklin Gothic Heavy
+  fontNames:
+  - Franklin Gothic Heavy
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bec27c3617e8bd44d830f14b427a8987, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

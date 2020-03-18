@@ -136,6 +136,8 @@ public class GrabArmDisplay : MonoBehaviour
             //hoveringText.text = string.Format("Hovering: {0}", interactable.isHovering);
             lastHovering = interactable.isHovering;
         }
+        if (startPoint == null) return;
+        
         transform.position = Vector3.Lerp(startPoint.position, targetReference.transform.position, 0.1f);
         transform.rotation = Quaternion.Slerp(startPoint.rotation, targetReference.transform.rotation, 0.1f);
 

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6fbf80ae851cf4dac908d83f22a632, type: 3}
+  m_Name: AudiInfo
+  m_EditorClassIdentifier: 
+  make: Audi
+  model: RS5
+  year: 2018
+  vin: 1ASDG1AP8734B
+  plateNumber: RYZ-2429
+  issueDate: 05/22/2019
+  expirationDate: 05/21/2020
+  inspectionStatus: {fileID: 11400000, guid: c82f771e1bfec3e4a929433fdded199a, type: 2}
+  records: []
+  vehiclePicture: {fileID: 21300000, guid: ad7b325becee61f47891f3cd36e9592b, type: 3}

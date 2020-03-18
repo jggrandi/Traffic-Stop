@@ -9,6 +9,7 @@ using System.Collections;
 using Valve.VR.InteractionSystem;
 using UnityEngine.UI;
 
+
 //-------------------------------------------------------------------------
 public class UIHandler : MonoBehaviour
 {
@@ -28,7 +29,15 @@ public class UIHandler : MonoBehaviour
     private void Start()
     {
         HandleInteractableArea.OnExitInteractableArea += ToggleAllOff;
+        PlateScanListener.OnReady += ToggleVehicleInfo;
+        LicenseScanListener.OnReady += ToggleDriverInfo;
         ToggleAllOff();
+    }
+
+    private void ToggleVehicleInfo(GameObject _obj)
+    {
+        if (_obj.GetComponent<AlertObject>().LevelAlert != AlertObject.AlertLevel.high) return;
+        ToggleVehicleInfo();
     }
 
     private void OnDisable()
@@ -62,11 +71,9 @@ public class UIHandler : MonoBehaviour
         vehicleInfo.SetActive(false);
     }
 
-    public void ToggleDriverInfoWithVerification()
+    public void ToggleDriverInfo(GameObject _obj)
     {
-        //if (!ColorMatch(driverButton, (int)AlertsHandler.ScanCode.Null))
-        //    AlertsHandler.ChangeButtonColor((int)AlertsHandler.ScanCode.Null, driverButton);
-
+        if (_obj.GetComponent<AlertObject>().LevelAlert != AlertObject.AlertLevel.high) return;
         ToggleDriverInfo();
     }
 

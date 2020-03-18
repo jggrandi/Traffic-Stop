@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: e206519897389a0438304a60e9b994ca
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Franklin Gothic Book
+  fontNames:
+  - Franklin Gothic Book
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5dd9e83e4a46d9b4e8e054242eb1bc35, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

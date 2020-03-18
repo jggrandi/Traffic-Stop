@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlateScanListener : AlertListener
 {
     public static Action<GameObject> OnReady;
+    public static Action<GameObject> OnProcessing;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,6 @@ public class PlateScanListener : AlertListener
     protected override void ShowScanning(GameObject _candidate)
     {
         base.ShowScanning(_candidate);
-        //OnProcessing(_candidate);
+        OnProcessing(_candidate);
     }
 }

@@ -7,13 +7,8 @@ public class UIGuider : MonoBehaviour
 {
 
     Player player;
-    CanvasGroup partentCanvasGroup;
-    public GameObject reticle;
 
     public static Action OnCheckingVehiclePhase;
-    //public static Action OnCheckingDriverPhase;
-    //public static Action OnGreetingPhase;
-    //public static Action OnAskReasonPhase;
 
     private static UIGuider _instance;
     public static UIGuider Instance { get { return _instance; } }
@@ -34,19 +29,24 @@ public class UIGuider : MonoBehaviour
             _instance = this;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         Teleport.instance.CancelTeleportHint();
 
         player = Player.instance;
-        //ShowParentUI();
+
         HideAllChildUI();
-        //reticle.SetActive(false);
 
         DriverVoiceAnswers.OnAudioFinished += NextPhase;
         HandleInteractableArea.OnEnterInteractableArea += EnableUIDialog;
         HandleInteractableArea.OnExitInteractableArea += DisableUIDialog;
+        PlateScanListener.OnReady += NextPhase;
+        PlateScanListener.OnProcessing += HideTooltip;
+    }
+
+    private void HideTooltip(GameObject obj)
+    {
+        HideAllChildUI();
     }
 
     private void OnDestroy()
@@ -54,6 +54,7 @@ public class UIGuider : MonoBehaviour
         DriverVoiceAnswers.OnAudioFinished -= NextPhase;
         HandleInteractableArea.OnEnterInteractableArea -= EnableUIDialog;
         HandleInteractableArea.OnExitInteractableArea -= DisableUIDialog;
+        PlateScanListener.OnReady -= NextPhase;
     }
 
     bool isUIDialogEnabled = false;
@@ -68,20 +69,6 @@ public class UIGuider : MonoBehaviour
         isUIDialogEnabled = false;
     }
 
-    //private void ShowParentUI()
-    //{
-    //    partentCanvasGroup = this.GetComponent<CanvasGroup>();
-    //    partentCanvasGroup.alpha = 1f;
-    //    partentCanvasGroup.interactable = true;
-    //}
-
-    private void HideParentUI()
-    {
-        partentCanvasGroup = this.GetComponent<CanvasGroup>();
-        partentCanvasGroup.alpha = 0f;
-        partentCanvasGroup.interactable = false;
-    }
-
     private void HideAllChildUI()
     {
         for (int i = 0; i < this.transform.childCount; i++)
@@ -90,19 +77,11 @@ public class UIGuider : MonoBehaviour
 
     private void ShowUICanvas(int _id)
     {
-        //CanvasGroup cg = this.transform.GetChild(_id).GetComponent<CanvasGroup>();
-        //LeanTween.alphaCanvas(cg, 1f, 1f).setEaseInSine();
-        //cg.interactable = true;
-        //cg.blocksRaycasts = true;
         this.transform.GetChild(_id).gameObject.SetActive(true);
     }
 
     void HideUICanvas(int _id)
-    {
-        //CanvasGroup cg = this.transform.GetChild(_id).GetComponent<CanvasGroup>();
-        //cg.alpha = 0f;
-        //cg.interactable = false;
-        //cg.blocksRaycasts = false;        
+    {     
         this.transform.GetChild(_id).gameObject.SetActive(false);
     }
 
@@ -113,7 +92,6 @@ public class UIGuider : MonoBehaviour
         this.transform.GetChild(phase).position = player.hmdTransform.position + player.hmdTransform.forward;
         this.transform.GetChild(phase).rotation = Quaternion.LookRotation(this.transform.GetChild(phase).position - player.hmdTransform.position);
          
-        //this.transform.GetChild(phase).LookAt(new Vector3(player.hmdTransform.position.x, player.hmdTransform.position.y + 180, player.hmdTransform.position.z));
         previousUITransform = this.transform.GetChild(phase);
     }
 
@@ -137,17 +115,14 @@ public class UIGuider : MonoBehaviour
                 {
                     if (Vector3.Angle(player.hmdTransform.position + player.hmdTransform.forward, player.hmdTransform.position + Vector3.forward) < 3f)
                     {
-                        //reticle.SetActive(true);
                         ShowUICanvas(phase);
                         FaceUITowardsPlayer();
                         currentPhase = phase;
-                        
                     }
                     break;
                 }
             case (int)Phases.Goal:
                 {
-                    //reticle.SetActive(true);
                     ShowUICanvas(phase);
                     FaceUIUsingLastTransform();
                     currentPhase = phase;
@@ -155,7 +130,6 @@ public class UIGuider : MonoBehaviour
                 }
             case (int)Phases.PlateScan:
                 {
-                    //reticle.SetActive(true);
                     ShowUICanvas(phase);
                     currentPhase = phase;
                     OnCheckingVehiclePhase();
@@ -163,7 +137,6 @@ public class UIGuider : MonoBehaviour
                 }
             case (int)Phases.VehicleInfo:
                 {
-                    //reticle.SetActive(true);
                     ShowUICanvas(phase);
                     currentPhase = phase;
                     break;
@@ -171,7 +144,6 @@ public class UIGuider : MonoBehaviour
             case (int)Phases.Greeting:
                 {
                     if (!isUIDialogEnabled) return;
-                    //reticle.SetActive(true);
                     ShowUICanvas(phase);
                     currentPhase = phase;
                     break;
@@ -179,7 +151,6 @@ public class UIGuider : MonoBehaviour
             case (int)Phases.AskReason:
                 {
                     if (!isUIDialogEnabled) return;
-                    //reticle.SetActive(true);
                     ShowUICanvas(phase);
                     currentPhase = phase;
                     break;
@@ -187,16 +158,13 @@ public class UIGuider : MonoBehaviour
             case (int)Phases.AskDriversLicense:
                 {
                     if (!isUIDialogEnabled) return;
-                    //reticle.SetActive(true);
                     ShowUICanvas(phase);
                     currentPhase = phase;
                     break;
                 }
             default:
                 break;
-
         }
-
     }
 
     public void HideButton()
@@ -204,9 +172,13 @@ public class UIGuider : MonoBehaviour
         HideAllChildUI();
     }
 
+    public void NextPhase(GameObject _obj)
+    {
+        NextPhase();
+    }
+
     public void NextPhase()
     {
-        //reticle.SetActive(false);
         phase++;
     }
 

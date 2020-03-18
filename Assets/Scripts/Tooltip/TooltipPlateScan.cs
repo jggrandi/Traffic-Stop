@@ -14,8 +14,8 @@ public class TooltipPlateScan : Tooltip
         InitalSetup();
         SetTooltipText("Start by scanning the vehicle's plate");
 
-        AlertsHandler.OnScanPlate += SetHideTooltip;
-        AlertsHandler.OnScanPlateResult += NextPhase;
+        //AlertsHandler.OnScanPlate += SetHideTooltip;
+        //AlertsHandler.OnScanPlateResult += NextPhase;
         //AlertsHandler.OnScanDriverLicenseResult += ShowTooltip;
 
         //line = this.transform.GetChild(0).gameObject;
