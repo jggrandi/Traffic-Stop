@@ -18,4 +18,6 @@ public class AlertObject : MonoBehaviour
     public ObjType Type { get => type; set => type = value; }
     public AlertLevel LevelAlert { get => alertLevel; set => alertLevel = value; }
     public bool IsInteractable { get => isInteractable; set => isInteractable = value; }
+
+
 }

@@ -9,4 +9,6 @@ public class Vehicle : ScriptableObject
     public VehicleRegistration registration;
     public RecordsList records;
     public Person owner;
+
+    public AlertObject.AlertLevel alertLevel;
 }

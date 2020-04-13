@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 
 public class PopulateVehicleInfo : MonoBehaviour
 {
-    public Vehicle vehicle;
+    private Vehicle vehicleData;
     private VehicleInfo vehicleInfo;
     private VehicleRegistration vehicleRegistration;
     
@@ -26,8 +27,25 @@ public class PopulateVehicleInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        vehicleInfo = vehicle.basicInformation;
-        vehicleRegistration = vehicle.registration;
+        PlateScanListener.OnReady += PopulateUI;
+    }
+
+    private void PopulateUI(GameObject _obj)
+    {
+        vehicleData = _obj.GetComponent<StoreVehicleData>().data;
+        if (vehicleData == null)
+        {
+            Debug.LogWarning("No vehicle data attached to the game object");
+            return;
+        }
+            
+        PopulateInfo();
+    }
+
+    private void PopulateInfo()
+    {
+        vehicleInfo = vehicleData.basicInformation;
+        vehicleRegistration = vehicleData.registration;
 
         make.text = vehicleInfo.make;
         model.text = vehicleInfo.model;
@@ -39,14 +57,6 @@ public class PopulateVehicleInfo : MonoBehaviour
         inspectionStatus.text = vehicleRegistration.inspectionStatus.description;
         inspectionStatus.color = vehicleRegistration.inspectionStatus.color.color;
         vehiclePicture.sprite = vehicleInfo.vehiclePicture;
-
-
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

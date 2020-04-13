@@ -15,8 +15,8 @@ public class GrabDriversLicense : MonoBehaviour
 {
     public GameObject targetReference;
 
-    private Vector3 oldPosition;
-    private Quaternion oldRotation;
+    //private Vector3 oldPosition;
+    //private Quaternion oldRotation;
 
     private Hand.AttachmentFlags attachmentFlags = Hand.defaultAttachmentFlags & (~Hand.AttachmentFlags.SnapOnAttach) & (~Hand.AttachmentFlags.DetachOthers) & (~Hand.AttachmentFlags.VelocityMovement);
 
@@ -49,7 +49,7 @@ public class GrabDriversLicense : MonoBehaviour
     {
         //InitalSetup();
         //alertObj = GetComponent<AlertObject>();
-        AlertsHandler.OnScanResult += AllowDriversLicenseReturn;
+        LicenseScanListener.OnReady += AllowDriversLicenseReturn;
         //AlertsHandler.OnScan += ShowScanning;
         //AlertsHandler.OnScanResult += ShowResult;
         HandleInteractableArea.OnExitInteractableArea += ResetLicenseAlert;
@@ -63,7 +63,7 @@ public class GrabDriversLicense : MonoBehaviour
 
     private void OnDisable()
     {
-        AlertsHandler.OnScanResult -= AllowDriversLicenseReturn;
+        LicenseScanListener.OnReady -= AllowDriversLicenseReturn;
         //AlertsHandler.OnScan -= ShowScanning;
         //AlertsHandler.OnScanResult -= ShowResult;
         HandleInteractableArea.OnExitInteractableArea -= ResetLicenseAlert;
@@ -111,9 +111,9 @@ public class GrabDriversLicense : MonoBehaviour
         {
             isGrabbing = true;
             OnHoldLicense();
-            // Save our position/rotation so that we can restore it when we detach
-            oldPosition = transform.position;
-            oldRotation = transform.rotation;
+            //// Save our position/rotation so that we can restore it when we detach
+            //oldPosition = transform.position;
+            //oldRotation = transform.rotation;
 
             // Call this to continue receiving HandHoverUpdate messages,
             // and prevent the hand from hovering over anything else
@@ -122,11 +122,11 @@ public class GrabDriversLicense : MonoBehaviour
             // Attach this object to the hand
             hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
         }
-        else if (isGrabEnding && EventsIK.allowLicenseReturn)
+        else if (isGrabEnding) //&& EventsIK.allowLicenseReturn) //THIS SECOND PART IS TO IGNORE THE BUTTON RELEASE UNTIL THE CONDITION IS SATISFIED
         {
             isGrabbing = false;
             OnPutLicenseBack();
-            //HideBrackets(); TODO NEED TO FIND A WAY TO HIDE THE BRACKETS AGAIN...
+
             //isGrabing = false;
             // Detach this object from the hand
             hand.DetachObject(gameObject);
@@ -134,9 +134,9 @@ public class GrabDriversLicense : MonoBehaviour
             // Call this to undo HoverLock
             hand.HoverUnlock(interactable);
 
-            // Restore position/rotation
-            transform.position = oldPosition;
-            transform.rotation = oldRotation;
+            //// Restore position/rotation
+            //transform.position = oldPosition;
+            //transform.rotation = oldRotation;
 
             //transform.position = Vector3.Lerp(transform.position, oldPosition, 0.01f);
             //transform.rotation = Quaternion.Slerp(transform.rotation, oldRotation, 0.3f);

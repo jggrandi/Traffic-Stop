@@ -26,7 +26,6 @@ public class ToggleButton : UIElement
 
     protected override void OnButtonClick()
     {
-        Debug.Log("CLICK");
         base.OnButtonClick();
     }
 }

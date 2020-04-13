@@ -41,7 +41,6 @@ public class TabButton : UIElement
 
     protected override void OnButtonClick()
     {
-        Debug.Log("AAAAAAA");
         tabGroup.OnTabSelected(this);
     }
 

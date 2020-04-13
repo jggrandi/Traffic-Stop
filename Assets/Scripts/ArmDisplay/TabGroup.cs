@@ -7,9 +7,9 @@ public class TabGroup : MonoBehaviour
     List<TabButton> tabButtons;
     // Start is called before the first frame update
 
-    //public Color tabIdle;
+    public ColorVariable tabIdle;
     //public Color tabHover; 
-    //public Color tabSelect;
+    public ColorVariable tabSelect;
 
     public TabButton selectedTab;
 
@@ -32,7 +32,7 @@ public class TabGroup : MonoBehaviour
         ResetTabs();
         if (selectedTab == null || _button != selectedTab)
         {
-            //_button.background.color = tabHover;
+            _button.background.color = tabSelect.color;
         }
     }
 
@@ -53,7 +53,7 @@ public class TabGroup : MonoBehaviour
         selectedTab.Select();
 
         ResetTabs();
-        //_button.background.color = tabSelect;
+        _button.background.color = tabSelect.color;
 
         int index = _button.transform.GetSiblingIndex();
         for (int i = 0; i < contentPages.Count; i++)
@@ -75,7 +75,7 @@ public class TabGroup : MonoBehaviour
         foreach(TabButton _button in tabButtons)
         {
             if (selectedTab != null && _button == selectedTab) { continue; }
-            //_button.background.color = tabIdle;
+            _button.background.color = tabIdle.color;
         }
     }
 }

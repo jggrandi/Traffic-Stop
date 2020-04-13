@@ -5,11 +5,10 @@ using TMPro;
 
 public class PopulateRecords : MonoBehaviour
 {
-
-    public RecordsList records;
+    protected RecordsList records;
     public Canvas canvasRecords;
     // Start is called before the first frame update
-    void Start()
+    protected void PopulateInfo()
     {
         //THIS IS TEMPORARY.. IT IS JUST POPULATING THE EXISTING TEXT FIELDS ALREADY CREATED AS CANVAS CHILDREN
         int i = 0;

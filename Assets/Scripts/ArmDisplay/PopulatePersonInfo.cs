@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PopulatePersonInfo : MonoBehaviour
 {
-    public Person person;
+    protected Person person;
     private PersonInfo personInfo;
     private  License license;
 
@@ -25,8 +25,8 @@ public class PopulatePersonInfo : MonoBehaviour
     public TextMeshProUGUI licenseStatus;
     public Image picture;
 
-    // Start is called before the first frame update
-    void Start()
+
+    protected void PopulateInfo()
     {
         personInfo = person.personInfo;
         license = person.license;

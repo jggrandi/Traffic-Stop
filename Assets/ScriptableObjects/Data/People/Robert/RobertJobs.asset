@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personInfo: {fileID: 11400000, guid: d92d1c62e80b94644a5ffa91c3be50b1, type: 2}
   license: {fileID: 11400000, guid: c1f881b11a6cfa947a650ec623940a19, type: 2}
-  records: []
+  records: {fileID: 0}
+  alertLevel: 1

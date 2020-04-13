@@ -13,13 +13,15 @@ public class UIGuider : MonoBehaviour
     private static UIGuider _instance;
     public static UIGuider Instance { get { return _instance; } }
 
-    public enum Phases { Intro, Goal, PlateScan, VehicleInfo, Greeting, AskReason, AskDriversLicense, DriverInfo};
+    public enum Phases { Intro, Goal, PlateScan, VehicleInfo, Greeting, AskReason, AskDriversLicense, DriverInfo, TakeAction, IssueWarning, IssueTicket, CallBackup};
 
     [SerializeField]
     int phase = 0;
 
     float minAngle = 3f;
     private int currentPhase = -1;
+
+    private IEnumerator coroutine;
 
     private void Awake()
     {
@@ -42,7 +44,53 @@ public class UIGuider : MonoBehaviour
         HandleInteractableArea.OnExitInteractableArea += DisableUIDialog;
         PlateScanListener.OnReady += NextPhase;
         PlateScanListener.OnProcessing += HideTooltip;
+
+        TriggerTakeAction.OnTakeActionEnter += TakeActionPhase;
+        
     }
+    [SerializeField]
+    int savedPhase;
+    private void TakeActionPhase()
+    {
+        savedPhase = phase;
+        phase = (int)Phases.TakeAction;
+    }
+
+    public void BackToScenario()
+    {
+        phase = savedPhase;
+        TriggerTakeAction.isTriggered = false;
+    }
+
+    public void IssueWarning()
+    {
+        phase = (int)Phases.IssueWarning;
+        coroutine = Wait();
+        StartCoroutine(coroutine);
+    }
+
+    private IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(3f);
+        phase = savedPhase;
+        TriggerTakeAction.isTriggered = false;
+    }
+    public void IssueTicket()
+    {
+        
+        phase = (int)Phases.IssueTicket;
+        coroutine = Wait();
+        StartCoroutine(coroutine);
+    }
+
+    public void CallBackup()
+    {
+        
+        phase = (int)Phases.CallBackup;
+        coroutine = Wait();
+        StartCoroutine(coroutine);
+    }
+
 
     private void HideTooltip(GameObject obj)
     {
@@ -162,6 +210,34 @@ public class UIGuider : MonoBehaviour
                     currentPhase = phase;
                     break;
                 }
+            case (int)Phases.TakeAction:
+                {
+                    ShowUICanvas(phase);
+                    FaceUITowardsPlayer();
+                    currentPhase = phase;
+                    break;
+                }
+            case (int)Phases.IssueWarning:
+                {
+                    ShowUICanvas(phase);
+                    FaceUITowardsPlayer();
+                    currentPhase = phase;
+                    break;
+                }
+            case (int)Phases.IssueTicket:
+                {
+                    ShowUICanvas(phase);
+                    FaceUITowardsPlayer();
+                    currentPhase = phase;
+                    break;
+                }
+            case (int)Phases.CallBackup:
+                {
+                    ShowUICanvas(phase);
+                    FaceUITowardsPlayer();
+                    currentPhase = phase;
+                    break;
+                }
             default:
                 break;
         }
@@ -180,6 +256,7 @@ public class UIGuider : MonoBehaviour
     public void NextPhase()
     {
         phase++;
+        TriggerTakeAction.isTriggered = false;
     }
 
 

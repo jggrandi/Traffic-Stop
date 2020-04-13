@@ -8,6 +8,10 @@ public class ToggleElement : MonoBehaviour
     public GameObject canvasElement;
 
 
+    private void Start()
+    {
+        canvasElement.GetComponent<CanvasGroup>().alpha = 0f;
+    }
 
     public void Toogle()
     {

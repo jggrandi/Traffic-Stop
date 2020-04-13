@@ -11,6 +11,7 @@ public class VehicleButton : ButtonBehavior
         PlateScanListener.OnReady += Enable;
         HandleInteractableArea.OnExitInteractableArea += Disable;
         b = this.GetComponent<Button>();
+        Disable();
     }
     private void OnDisable()
     {

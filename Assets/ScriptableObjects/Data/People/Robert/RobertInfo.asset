@@ -15,7 +15,7 @@ MonoBehaviour:
   firstName: Robert
   lastName: Jobs
   birthDate: 01/07/1989
-  address: 111 Onestar Ave.\n Elsewhere, 12111
+  address: 111 Onestar Ave. Elsewhere, 12111
   sex: M
   height: 5'-12"
   eyes: GRN

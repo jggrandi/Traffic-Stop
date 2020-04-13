@@ -30,8 +30,8 @@ public class TunnelingListener : MonoBehaviour
             tunnelling.effectCoverage = .7f;
             tunnelling.effectFeather = .15f;
 
-            //        coroutine = WaitScan(5f);
-            //        StartCoroutine(coroutine);
+            coroutine = WaitScan(5f);
+            StartCoroutine(coroutine);
         }
     }
 

@@ -8,4 +8,6 @@ public class Person : ScriptableObject
     public PersonInfo personInfo;
     public License license;
     public RecordsList records;
+
+    public AlertObject.AlertLevel alertLevel;
 }
