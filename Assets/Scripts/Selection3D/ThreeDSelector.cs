@@ -1,36 +1,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThreeDSelector : MonoBehaviour, ISelector
+
+// Uses the dot product to determine which object is being looked at.
+// It tests all objects with the "Selectable" tag.
+// The object with the highest value is selected. 
+
+public class ThreeDSelector : MonoBehaviour
 {
-    
+    // Tolerance that allows the user to be a little off. 
     [SerializeField] private float threshold = 0.97f;
     
-    private GameObject _selection;
+    private GameObject selection;
    
-    public void Check(Ray ray)
+    public void Check(Ray _ray)
     {
-        _selection = null;
+        selection = null;
 
-        var closest = 0f;
+        var _closest = 0f;
         
+        // Verify  all "Selectable" objects.
         for (int i = 0; i < SceneConfigurator.Instance.selectables.Count; i++)
         {
-            var vector1 = ray.direction;
-            var vector2 = SceneConfigurator.Instance.selectables[i].transform.position - ray.origin;
+            var _vector1 = _ray.direction;
+            var _vector2 = SceneConfigurator.Instance.selectables[i].transform.position - _ray.origin;
         
-            var lookPercentage = Vector3.Dot(vector1.normalized, vector2.normalized);
+            var _lookPercentage = Vector3.Dot(_vector1.normalized, _vector2.normalized);
 
-            if (lookPercentage > threshold && lookPercentage > closest)
+            // Select the current object if the dot product between the ray provided and the object meets the conditions.
+            if (_lookPercentage > threshold && _lookPercentage > _closest)
             {
-                closest = lookPercentage;
-                _selection = SceneConfigurator.Instance.selectables[i];
+                _closest = _lookPercentage;
+                selection = SceneConfigurator.Instance.selectables[i];
             }
         }
     }
 
     public GameObject GetSelection()
     {
-        return _selection;
+        return selection;
     }
 }

@@ -4,6 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Handles the template used in the arm display UI.
+// Colors, text and fonts
+
 [RequireComponent(typeof(Image))]
 [RequireComponent(typeof(Button))]
 public class FlexibleUIButton : FlexibleUI

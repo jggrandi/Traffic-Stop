@@ -4,55 +4,54 @@ using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.UI;
 
+// Provides a list of UI element that were casted.
+
 public class UIRaycastProvider : MonoBehaviour
 {
-
-    PointerEventData m_pointerEvent;
-    IPointerClickHandler m_clickHandler;
-    EventSystem m_eventSystem;
-    private List<RaycastResult> raycastResults;
-
-    int countRays;
-
     public List<RaycastResult> RaycastResults { get => raycastResults; set => raycastResults = value; }
-    public int CountRays { get => countRays; set => countRays = raycastResults.Count; }
+
+    PointerEventData pointerEvent;
+    EventSystem eventSystem;
+    private List<RaycastResult> raycastResults;
 
     public void Start()
     {
-        m_eventSystem = EventSystem.current;
-        m_pointerEvent = new PointerEventData(m_eventSystem);
-        m_pointerEvent.button = PointerEventData.InputButton.Left;
+        eventSystem = EventSystem.current;
+        pointerEvent = new PointerEventData(eventSystem);
+        pointerEvent.button = PointerEventData.InputButton.Left;
     }
 
-    public List<RaycastResult> RaycastUI()
+    // Stores all UI element that the ray casted.
+    private void RaycastUI()
     {
-        List<RaycastResult> raycastResults = new List<RaycastResult>();
-        m_eventSystem.RaycastAll(m_pointerEvent, raycastResults);
-        return raycastResults;
+        RaycastResults = new List<RaycastResult>();
+        eventSystem.RaycastAll(pointerEvent, RaycastResults);
     }
 
     public void SendClickAction(GameObject _obj)
     {
-        IPointerClickHandler clickHandler = _obj.GetComponent<IPointerClickHandler>();
-        clickHandler.OnPointerClick(m_pointerEvent);
+        IPointerClickHandler _clickHandler = _obj.GetComponent<IPointerClickHandler>();
+        _clickHandler.OnPointerClick(pointerEvent);
     }
 
     public void OnHoverStart(GameObject _obj)
     {
-        _obj.GetComponent<Selectable>().OnPointerEnter(m_pointerEvent);
+        _obj.GetComponent<Selectable>().OnPointerEnter(pointerEvent);
     }
 
     public void OnHoverEnd(GameObject _obj)
     {
-        _obj.GetComponent<Selectable>().OnPointerExit(m_pointerEvent);
+        _obj.GetComponent<Selectable>().OnPointerExit(pointerEvent);
     }
 
 
     private void Update()
     {
-        m_pointerEvent.position = new Vector2(XRSettings.eyeTextureWidth / 2, XRSettings.eyeTextureHeight / 2);
-        RaycastResults = RaycastUI();
-        CountRays = raycastResults.Count;
+        // Updates the pointer position. It is center of the screen.
+        pointerEvent.position = new Vector2(XRSettings.eyeTextureWidth / 2, XRSettings.eyeTextureHeight / 2);
+        // Feeds the raycastResults list
+        RaycastUI();
+
     }
 
 }

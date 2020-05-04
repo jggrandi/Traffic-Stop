@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+
+// Provides a ray that is starts from the center of the HMD along the forward direction.
+
 public class VRCameraRayProvider : MonoBehaviour, IRayProvider
 {    
     public Ray CreateRay()

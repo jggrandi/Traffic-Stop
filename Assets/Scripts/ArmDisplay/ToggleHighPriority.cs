@@ -7,8 +7,8 @@ public class ToggleHighPriority : MonoBehaviour
 {
     protected void ToggleUION(GameObject _obj)
     {
-        AlertObject aObj = _obj.GetComponent<AlertObject>();
-        if (aObj.LevelAlert == AlertObject.AlertLevel.high)
+        AlertObject _aObj = _obj.GetComponent<AlertObject>();
+        if (_aObj.LevelAlert == AlertObject.AlertLevel.high)
         {
             ToggleElement te = GetComponent<ToggleElement>();
             te.menuElement.SetActive(true);

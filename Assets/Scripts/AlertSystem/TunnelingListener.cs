@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sigtrap.VrTunnellingPro;
 
+// Activates the tunneling alert 
 
 public class TunnelingListener : MonoBehaviour
 {
-
     private IEnumerator coroutine;
     Tunnelling tunnelling;
-    // Start is called before the first frame update
+
     void Start()
     {
         LicenseScanListener.OnReady += ShowTunnel;

@@ -3,54 +3,56 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
+using UnityEngine.UI;
 
+// Controls the selection of the UI elements in the scene.
+
+[RequireComponent(typeof(TagSelector))]
 public class UISelectionManager : MonoBehaviour
 {
+    public GameObject ActiveObject { get => activeObject; set => activeObject = value; }
+
+    // Handle timer to confirm selection.
     private TimerClick timerClick;
+    
+    // Ray provider for the UI selector
     private UIRaycastProvider uiRaycastProvider;
-    private ISelectionMode selectorMode;
 
-    GameObject activeObject;
+    // Define what is the rule to select UI elements (currently it is using the TagSelector script).
+    private TagSelector selector;
+    private bool foundCandidateUIElement = false;
+    private GameObject activeObject;
 
-    // Start is called before the first frame update
     void Awake()
     {
-        timerClick = GetComponent<TimerClick>();
+        selector = GetComponent<TagSelector>();
+
         uiRaycastProvider = GetComponent<UIRaycastProvider>();
-        selectorMode = GetComponent<ISelectionMode>();        
+
+        timerClick = GetComponent<TimerClick>();
     }
-
-    bool foundUIElement = false;
-
-    public GameObject ActiveObject { get => activeObject; set => activeObject = value; }
 
     void Update()
     {
-        //Debug.Log(uiRaycastProvider.CountRays);
-        if ( uiRaycastProvider.CountRays <= 2)
-        {
-            Deselect(ActiveObject);
-            return;
-        }
-        foundUIElement = false;
+        foundCandidateUIElement = false;
 
         foreach (var castedObj in uiRaycastProvider.RaycastResults)
         {
-            selectorMode.CandidateObject = castedObj.gameObject;
-            if (!selectorMode.Exists())
+            selector.CandidateObject = castedObj.gameObject;
+            if (!selector.Exists())
                 continue;
 
-            foundUIElement = true;
+            foundCandidateUIElement = true;
 
-            if (ActiveObject != selectorMode.CandidateObject)
+            if (ActiveObject != selector.CandidateObject)
             {
                 Deselect(ActiveObject);
-                Select(selectorMode.CandidateObject);
+                Select(selector.CandidateObject);
                 break;
             }
         }
 
-        if (!foundUIElement)
+        if (!foundCandidateUIElement)
         {
             Deselect(ActiveObject);
             return;

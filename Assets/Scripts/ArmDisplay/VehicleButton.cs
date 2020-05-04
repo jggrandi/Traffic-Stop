@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Enables the driver button on the arm displayu UI after the driver's license is scaned.
+
 public class VehicleButton : ButtonBehavior
 {
 

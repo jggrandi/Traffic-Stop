@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Handles the timer to confirm clicks.
+
 public class TimerClick : MonoBehaviour
 {
     public bool isReadyToClick { get; set; }
@@ -11,15 +13,13 @@ public class TimerClick : MonoBehaviour
     float elapsedTime = 0f;
     
     [SerializeField]
-    float loadingTime = 10f;
+    float loadingTime = 1f;
 
-    // Start is called before the first frame update
     void Start()
     {
         Reset();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!runTimer) return;

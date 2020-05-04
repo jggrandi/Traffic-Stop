@@ -2,20 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Controls the content displayed by the tabs in the arm display.
+// It switches the info shown based on the button selected.
+
 public class TabGroup : MonoBehaviour
 {
+    // List of buttons present on the tab.
     List<TabButton> tabButtons;
-    // Start is called before the first frame update
-
+    
+    // Template color for the button not in focus.
     public ColorVariable tabIdle;
-    //public Color tabHover; 
+    
+    // Template color for the button in focus.
     public ColorVariable tabSelect;
-
+    
+    // The current tab selected.
     public TabButton selectedTab;
-
+    
+    // The list of content to be displayed.
     public List<GameObject> contentPages;
-
-
 
     public void Subscribe(TabButton _button)
     {
@@ -44,13 +49,13 @@ public class TabGroup : MonoBehaviour
 
     public void OnTabSelected(TabButton _button)
     {
-        if(selectedTab != null)
-        {
-            selectedTab.Deselect();
-        }
+        //if(selectedTab != null)
+        //{
+        //    selectedTab.Deselect();
+        //}
         selectedTab = _button;
 
-        selectedTab.Select();
+        //selectedTab.Select();
 
         ResetTabs();
         _button.background.color = tabSelect.color;

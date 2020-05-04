@@ -1,18 +1,29 @@
 ﻿using UnityEngine;
 
+// Controls the selection of 3D elements in the scene.
+
+[RequireComponent(typeof(ThreeDSelector))]
 public class ThreeDSelectionManager : MonoBehaviour
 {
-    private IRayProvider _rayProvider;
-    private ISelector _selector;
-
     public GameObject CurrentSelection { get; set; }
     public bool IsNewSelection { get; set; }
 
+    // Controls how the rays will be generated.
+    private IRayProvider rayProvider;
+    
+    // Controls how the elements will be selected.
+    private ThreeDSelector selector;
+
     private void Awake()
     {
+        // Reset the selection when player moves away from the vehicle.
         HandleInteractableArea.OnExitInteractableArea += ResetSelection;
-        _rayProvider = GetComponent<IRayProvider>();
-        _selector = GetComponent<ISelector>();
+        
+        selector = GetComponent<ThreeDSelector>();
+        
+        // Currently using the VRCameraRayProvider script.
+        rayProvider = GetComponent<IRayProvider>();
+
         ResetSelection();
     }
 
@@ -30,8 +41,8 @@ public class ThreeDSelectionManager : MonoBehaviour
     {
         GameObject _selectionCandidate;
         IsNewSelection = false;
-        _selector.Check(_rayProvider.CreateRay());
-        _selectionCandidate = _selector.GetSelection();
+        selector.Check(rayProvider.CreateRay());
+        _selectionCandidate = selector.GetSelection();
 
         if (_selectionCandidate == null) return;
         if (!_selectionCandidate.GetComponent<AlertObject>().IsInteractable) return; //if the object gazed is not interactable yet

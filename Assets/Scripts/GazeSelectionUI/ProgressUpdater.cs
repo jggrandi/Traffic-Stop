@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+// Fills the UI circular progress bar based on the timer to click.
+
 class ProgressUpdater : MonoBehaviour
 {
     private TimerClick timerClick;
