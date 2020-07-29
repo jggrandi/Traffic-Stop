@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccb47ce1e9b7ced4aa1b176bcb9647b0, type: 3}
+  m_Name: Robert Jobs
+  m_EditorClassIdentifier: 
+  personInfo: {fileID: 11400000, guid: d92d1c62e80b94644a5ffa91c3be50b1, type: 2}
+  distance: 20
+  color: {r: 0.8009894, g: 0.7726927, b: 0.044385318, a: 1}
+  alertLevel: 0
+  isPlayer: 0
+  currentFloor: 0

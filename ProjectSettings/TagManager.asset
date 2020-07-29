@@ -6,6 +6,9 @@ TagManager:
   tags:
   - projectile
   - FxTemporaire
+  - UISelectable
+  - Firefighter
+  - Trigger
   layers:
   - Default
   - TransparentFX
@@ -18,6 +21,11 @@ TagManager:
   - PostProcessing
   - Raycaster
   - HUDInfo
+  - Environment
+  - FogLayer
+  - DoorWay
+  - Wall
+  - Floor1
   - 
   - 
   - 
@@ -33,12 +41,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Floor
   m_SortingLayers:
   - name: Default
     uniqueID: 0

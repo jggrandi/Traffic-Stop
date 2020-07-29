@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3d223666c3a064d8d06a80b3f3d4fa, type: 3}
+  m_Name: DefaultSkin
+  m_EditorClassIdentifier: 
+  buttonSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  defautColor: {fileID: 11400000, guid: 1d1b2362fefb18e4a95958bc4338813d, type: 2}
+  lowPriorityColor: {fileID: 11400000, guid: 47d4099cb1b602645ac3f190b409a2ca, type: 2}
+  mediumPriorityColor: {fileID: 11400000, guid: af7e824618c2bf04286a3a08003fff9a,
+    type: 2}
+  highPriorityColor: {fileID: 11400000, guid: 285097d75b4db34478695c74fdeabb17, type: 2}
+  hoverButtonColor: {fileID: 0}
+  selectedButtonColor: {fileID: 0}
+  fontType: {fileID: 11400000, guid: 0b61463cd58dd624584bfc1e825178a5, type: 2}
+  fontColor: {r: 1, g: 1, b: 1, a: 1}
