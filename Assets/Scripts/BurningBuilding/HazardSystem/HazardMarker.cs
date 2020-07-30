@@ -9,6 +9,7 @@ public class HazardMarker : MonoBehaviour
 {
     [SerializeField]
     private GameObject canvas;
+
     void Start()
     {
     }
@@ -45,6 +46,7 @@ public class HazardMarker : MonoBehaviour
             i.sprite = image;
         }
     }
+
 }
 
 

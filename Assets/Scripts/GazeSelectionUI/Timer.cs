@@ -13,12 +13,12 @@ public class Timer : MonoBehaviour
 
     public float elapsedTime = 0f;
 
-    void Start()
+    void Awake()
     {
         Reset();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (!RunTimer) return;
 

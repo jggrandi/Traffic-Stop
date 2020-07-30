@@ -11,14 +11,19 @@ namespace NextgenUI.AlertsEvaluation
     public class Log
     {
 
-        StreamWriter log;
+        private StreamWriter log;
+
+        private Alert alertInfo;
+        private float reactionTime;
+        private Alert.Intensity intensityAnswer;
+        private float timeStamp;
 
         public Log(int userID, int condition)
         {
             Debug.Log(Application.persistentDataPath);
             log = File.CreateText(Application.persistentDataPath + "/UserID-" + userID + "-Condition-" + condition + "---" + System.DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss") + ".csv");
 
-            string header = "AlertType;AlertIntensity;IntensityAnswer;ReactionTime";
+            string header = "TimeStamp;AlertType;AlertIntensity;IntensityAnswer;ReactionTime";
 
             log.WriteLine(header);
 
@@ -34,9 +39,6 @@ namespace NextgenUI.AlertsEvaluation
             log.Flush();
         }
 
-        Alert alertInfo;
-        float reactionTime;
-        Alert.Intensity intensityAnswer;
 
         public void BufferAlertInfo(Alert _alert)
         {
@@ -47,12 +49,18 @@ namespace NextgenUI.AlertsEvaluation
         {
 
             reactionTime = _playerReaction.GetReactionTime();
-            intensityAnswer = _playerReaction.GetSecondPhase();
+            intensityAnswer = _playerReaction.GetIntensityReaction();
+        }
+
+        public void BufferTimeStamp(float _timeStamp)
+        {
+            timeStamp = _timeStamp;
         }
 
         public void Save()
         {
             String line = "";
+            line += timeStamp + ";";
             line += alertInfo.AType + ";" + alertInfo.AIntensity + ";";
             line += intensityAnswer + ";"+ reactionTime + ";";
 

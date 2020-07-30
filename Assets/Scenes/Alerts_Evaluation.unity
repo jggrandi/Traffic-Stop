@@ -211,8 +211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alertSnoozeTimer: {fileID: 0}
-  minAlertWaitingTime: 6
-  maxAlertWaitingTime: 14
+  minAlertWaitingTime: 5
+  maxAlertWaitingTime: 15
 --- !u!114 &32918668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb30a3080ab67d459bb9ff389faf596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trials: 2
+  trials: 10
   visualParameters:
   - {fileID: 11400000, guid: 47a8614e6df875a44bf2f06d64077637, type: 2}
   - {fileID: 11400000, guid: 277e527fcbbdad84895dc0ad3e5fe6da, type: 2}
@@ -261,6 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 503942980}
   - component: {fileID: 503942979}
+  - component: {fileID: 503942981}
   m_Layer: 0
   m_Name: LogHandler
   m_TagString: Untagged
@@ -294,6 +295,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &503942981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503942978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 024bb767e2d1cc448abadf217725b60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elapsedTime: 0
 --- !u!1 &887547657
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +344,7 @@ MonoBehaviour:
   maxReactionTime: 3
   reacted: 0
   reactionTime: 0
-  intensityReaction: 0
+  intensityReaction: 3
 --- !u!114 &887547659
 MonoBehaviour:
   m_ObjectHideFlags: 0

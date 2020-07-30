@@ -51,7 +51,7 @@ public class FirefighterListener : MonoBehaviour
 
     protected int Distance2Player()
     {
-        return (int)Vector3.Distance(Player.instance.transform.position, this.transform.position);
+        return (int)(Vector3.Distance(Player.instance.transform.position, this.transform.position)/ 0.3048f);
     }
 
 

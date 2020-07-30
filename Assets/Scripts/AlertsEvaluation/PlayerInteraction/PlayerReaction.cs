@@ -10,18 +10,18 @@ namespace NextgenUI.AlertsEvaluation
 
     public class PlayerReaction : MonoBehaviour
     {
-        public Timer timer;
+        [SerializeField] private Timer timer;
 
         [SerializeField] private float maxReactionTime;
 
         [SerializeField] private bool reacted;
         [SerializeField] private float reactionTime;
 
-        [SerializeField] private Alert.Intensity intensityReaction;
+        [SerializeField] private Alert.Intensity intensityReaction = Alert.Intensity.none;
 
         private void Start()
         {
-            ResetSecondPhaseSelection();
+            ResetIntensityReaction();
             timer = GetComponent<Timer>();
             timer.TimeLimit = maxReactionTime;
 
@@ -29,11 +29,6 @@ namespace NextgenUI.AlertsEvaluation
             SoundAlert.OnStartSoundAlert += StartNewReaction;
             HapticAlert.OnStartHapticAlert += StartNewReaction;
 
-        }
-
-        private void ResetSecondPhaseSelection()
-        {
-            intensityReaction = Alert.Intensity.none;
         }
 
         private void OnDisable()
@@ -58,20 +53,13 @@ namespace NextgenUI.AlertsEvaluation
 
         private void StartNewReaction()
         {
-            ResetReaction();
-            ResetReactionTime();
-            ResetSecondPhaseSelection();
+            Reset();
             StartTimer();
         }
 
         private void StartTimer()
         {
             timer.StartRunTimer();
-        }
-
-        public void ResetReaction()
-        {
-            reacted = false;
         }
 
         public void Reacted()
@@ -86,14 +74,23 @@ namespace NextgenUI.AlertsEvaluation
             //    |----------| reaction window
             // RunTimer   TimeIsUP
 
-            if (timer.RunTimer && !timer.TimeIsUp )
+            if (IsTimerStarted() && !IsTimerFinished())
                 return true;
             return false;   
         }
 
-        private void ResetReactionTime()
+        public bool IsTimerFinished()
         {
-            reactionTime = 0;
+            if (timer.TimeIsUp)
+                return true;
+            return false;
+        }
+
+        public bool IsTimerStarted()
+        {
+            if (timer.RunTimer)
+                return true;
+            return false;
         }
 
         public bool PreviouslyReacted()
@@ -114,7 +111,7 @@ namespace NextgenUI.AlertsEvaluation
         //    return true;
         //}
 
-        public void SecondPhase(Alert.Intensity _optionSelected)
+        public void ReactedIntensity(Alert.Intensity _optionSelected)
         {
             intensityReaction = _optionSelected;
         }
@@ -123,19 +120,47 @@ namespace NextgenUI.AlertsEvaluation
         {
             return reactionTime;
         }
-        public Alert.Intensity GetSecondPhase()
+        public Alert.Intensity GetIntensityReaction()
         {
             return intensityReaction;
         }
 
+        private void ResetReaction()
+        {
+            reacted = false;
+        }
+
+        private void ResetIntensityReaction()
+        {
+            intensityReaction = Alert.Intensity.none;
+        }
+
+        public void ResetReactionTime()
+        {
+            reactionTime = 0;
+        }
+
+        public void ResetTimer()
+        {
+            timer.Reset();
+        }
+
+        public void Reset()
+        {
+            ResetReaction();
+            ResetIntensityReaction();
+            ResetReactionTime();
+            ResetTimer();
+        }
+
         private void Update()
         {
-            if (!IsInReactionWindow())
-            {
-                ResetReactionTime();
-                ResetSecondPhaseSelection();
-                timer.Reset();
-            }
+            //if (!IsInReactionWindow())
+            //{
+            //    ResetReactionTime();
+            //    ResetIntensityReaction();
+            //    timer.Reset();
+            //}
         }
 
     }

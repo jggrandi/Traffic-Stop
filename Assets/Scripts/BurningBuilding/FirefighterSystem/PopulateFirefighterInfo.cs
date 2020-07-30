@@ -40,7 +40,7 @@ public class PopulateFirefighterInfo : MonoBehaviour
         personInfo = person.personInfo;
 
         name.text = personInfo.firstName;
-        dist.text = person.distance.ToString()+"m";
+        dist.text = person.distance.ToString()+"'";
         name.color = color;
         dist.color = color;
         helmetIcon.color = color;

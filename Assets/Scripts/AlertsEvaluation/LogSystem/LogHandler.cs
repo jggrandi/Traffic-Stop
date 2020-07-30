@@ -7,11 +7,16 @@ namespace NextgenUI.AlertsEvaluation
 {
     public class LogHandler : MonoBehaviour
     {
-        Log log;
+        private Log log;
+        private Timer timer;
+
+        private float timeStamp;
 
         void Start()
         {
-            StartLogRecording();
+            timer = GetComponent<Timer>();
+            timer.StartRunTimer();
+            CreateNewLog(1,0);
             PlayerInteraction.OnEndTrial += SavePlayerReaction;
             VisualAlert.OnStartVisualAlert += SaveAlertInfo;
             SoundAlert.OnStartSoundAlert += SaveAlertInfo;
@@ -41,28 +46,14 @@ namespace NextgenUI.AlertsEvaluation
         {
             if (log == null) return;
             log.BufferPlayerReaction(_playerReaction);
+            log.BufferTimeStamp(timer.elapsedTime);
             Save();
         }
 
-        // Update is called once per frame
-        void FixedUpdate()
+
+        public void CreateNewLog(int _userID, int _condition)
         {
-            //if (!isServer) return;
-            //if (!isRecording) return;
-            //if (isPaused) return;
-
-            //RecordActiveTime();
-
-            //if (countFrames % 5 == 0)
-            //{
-            //    var objId = syncParameters.activeTrial;
-            //    log.SaveFull(objId, dockParameters.errorTrans[objId], dockParameters.errorRot[objId], dockParameters.errorRotAngle[objId], dockParameters.errorScale[objId], testParameters.playersActiveInScene);
-            //}
-        }
-
-        public void StartLogRecording()
-        {
-            log = new Log(0,1);
+            log = new Log(_userID,_condition);
         }
 
         public void StopLogRecording()

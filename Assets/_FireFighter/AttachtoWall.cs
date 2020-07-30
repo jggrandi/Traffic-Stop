@@ -58,5 +58,8 @@ public class AttachtoWall : MonoBehaviour
         return new Vector3(Mathf.Abs(a.x), Mathf.Abs(a.y), Mathf.Abs(a.z));
     }
 
-
+    public void test()
+    {
+        Debug.Log(")))))))))))))))0");
+    }
 }
