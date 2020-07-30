@@ -47,7 +47,10 @@ public class RoomListener : MonoBehaviour
             //{
             //    wall.SetActive(true);
             //}
-
+        }
+        if (other.gameObject.CompareTag("HazardMarker"))
+        {
+            other.gameObject.GetComponent<HazardMarker>().setRoomNumber(currentRoomNumber);
         }
     }
 

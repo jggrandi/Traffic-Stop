@@ -7,5 +7,4 @@ using UnityEngine;
 public class CoreAlertParameters : ScriptableObject
 {
     public float duration; // in seconds
-    public int intensity;
 }

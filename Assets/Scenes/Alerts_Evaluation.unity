@@ -211,8 +211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alertSnoozeTimer: {fileID: 0}
-  minAlertWaitingTime: 3
-  maxAlertWaitingTime: 5
+  minAlertWaitingTime: 6
+  maxAlertWaitingTime: 14
 --- !u!114 &32918668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb30a3080ab67d459bb9ff389faf596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trials: 1
+  trials: 2
   visualParameters:
   - {fileID: 11400000, guid: 47a8614e6df875a44bf2f06d64077637, type: 2}
   - {fileID: 11400000, guid: 277e527fcbbdad84895dc0ad3e5fe6da, type: 2}
@@ -251,6 +251,49 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 49167f6ecd20ad84d8b02d214b5143cd, type: 2}
   - {fileID: 11400000, guid: 85b33447f9239aa409ca3e1896ec3372, type: 2}
   - {fileID: 11400000, guid: d4bae05561525084ca7258736435c04f, type: 2}
+--- !u!1 &503942978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 503942980}
+  - component: {fileID: 503942979}
+  m_Layer: 0
+  m_Name: LogHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &503942979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503942978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3110d4f67bc834bb6fde40b370ece6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &503942980
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503942978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0058104815, y: -0.16009942, z: -2.2343848}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &887547657
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,9 +327,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 32918668}
-  maxReactionTime: 2
+  maxReactionTime: 3
   reacted: 0
   reactionTime: 0
+  intensityReaction: 0
 --- !u!114 &887547659
 MonoBehaviour:
   m_ObjectHideFlags: 0

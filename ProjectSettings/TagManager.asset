@@ -9,6 +9,7 @@ TagManager:
   - UISelectable
   - Firefighter
   - Trigger
+  - HazardMarker
   layers:
   - Default
   - TransparentFX

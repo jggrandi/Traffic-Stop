@@ -30,6 +30,7 @@ namespace Valve.VR.InteractionSystem
 		private Hand pointerHand = null;
 		private Player player = null;
 		private TeleportArc teleportArc = null;
+		private HazardInstantiate hazard;
 
 		private bool visible = false;
 
@@ -70,6 +71,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		void Start()
 		{
+			hazard = transform.parent.GetComponentInChildren<HazardInstantiate>();
 			HidePointer();
 
 			player = Player.instance;
@@ -110,6 +112,7 @@ namespace Valve.VR.InteractionSystem
 						{
 							//TryTeleportPlayer();
 							HideTeleportPointer();
+							hazard.deployed();
 						}
 					}
 				}
@@ -117,6 +120,7 @@ namespace Valve.VR.InteractionSystem
 				if (WasTeleportButtonPressed(hand))
 				{
 					ShowPointer(hand);
+					hazard.initiate(destinationReticleTransform);
 				}
 			}
 

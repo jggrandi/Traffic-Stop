@@ -606,7 +606,10 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Build: 0
     Collab: 1
+    ErrorHub: 0
+    Hub: 0
     UNet: 1
   luminIcon:
     m_Name: 
@@ -627,10 +630,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 42673580-b4c7-4a71-85a3-fe1115bb9c50
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Traffic Stop
+  organizationId: interactiverealities
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

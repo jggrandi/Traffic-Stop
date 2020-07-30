@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Visual-Low
   m_EditorClassIdentifier: 
   color: {fileID: 11400000, guid: ea85efeb0c5eaec4cbd35a6be8481b93, type: 2}
-  screenCoverage: 0.3
+  screenCoverage: 0.4
   effectFeather: 0.15

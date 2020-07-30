@@ -8,15 +8,15 @@ namespace NextgenUI.AlertsEvaluation
 {
     public struct TypeLevel
     {
-        public int type; //0-Visual, 1-Audio, 2-Haptic
-        public int level; //0-Low, 1-Med, 2-High
+        public Alert.Type type; 
+        public Alert.Intensity intensity;
     }
 
     public class TrialBuilder : MonoBehaviour
     {
-        private int alertTypesQnt;
-        private int alertLevelsQnt;
-        private Alert[] alert = new Alert[3];
+        private int alertTypesQnt = 3;
+        private int alertLevelsQnt = 3;
+        private Alert alert;
         
         [SerializeField] private int trials;       
         
@@ -28,12 +28,12 @@ namespace NextgenUI.AlertsEvaluation
 
         void Start()
         {
-            alert[0] = GetComponent<VisualAlert>();
-            alert[1] = GetComponent<SoundAlert>();
-            alert[2] = GetComponent<HapticAlert>();
+            //alert[0] = GetComponent<VisualAlert>();
+            //alert[1] = GetComponent<SoundAlert>();
+            //alert[2] = GetComponent<HapticAlert>();
 
-            alertTypesQnt = alert.Length;
-            alertLevelsQnt = visualParameters.Length;
+            //alertTypesQnt = alert.Length;
+            //alertLevelsQnt = visualParameters.Length;
 
             // Create the trials list
             CreateList();
@@ -51,8 +51,8 @@ namespace NextgenUI.AlertsEvaluation
                     for (int k = 0; k < alertLevelsQnt; k++)
                     {
                         TypeLevel temp;
-                        temp.type = j;
-                        temp.level = k;
+                        temp.type = (Alert.Type)j;
+                        temp.intensity = (Alert.Intensity)k;
                         AtlList.Add(temp);
                     }
                 }
@@ -62,7 +62,6 @@ namespace NextgenUI.AlertsEvaluation
         // Remove and return an alert
         public Alert PopAlert()
         {
-            
             if (IsListEmpty()) return null;
             
             TypeLevel alertCandidate = AtlList[AtlList.Count - 1];
@@ -74,23 +73,26 @@ namespace NextgenUI.AlertsEvaluation
         // Setup the alert based on the codification TypeLevel.
         private Alert BuildAlert(TypeLevel _alertCandidate)
         {
-            alert[_alertCandidate.type].coreAlertParameters.intensity = _alertCandidate.level;
-            if (alert[_alertCandidate.type] is VisualAlert v)
+            if (_alertCandidate.type == Alert.Type.visual)
             {
-                v.AlertParameters = visualParameters[_alertCandidate.level];
-                return v;
+                alert = GetComponent<VisualAlert>();
+                ((VisualAlert)alert).AlertParameters = visualParameters[(int)_alertCandidate.intensity];
             }
-            else if (alert[_alertCandidate.type] is SoundAlert s)
+            else if (_alertCandidate.type == Alert.Type.sound)
             {
-                s.AlertParameters = soundParameters[_alertCandidate.level];
-                return s;
+                alert = GetComponent<SoundAlert>();
+                ((SoundAlert)alert).AlertParameters = soundParameters[(int)_alertCandidate.intensity];
             }
-            else if (alert[_alertCandidate.type] is HapticAlert h)
+            else if (_alertCandidate.type == Alert.Type.haptic)
             {
-                h.AlertParameters = hapticParameters[_alertCandidate.level];
-                return h;
+                alert = GetComponent<HapticAlert>();
+                ((HapticAlert)alert).AlertParameters = hapticParameters[(int)_alertCandidate.intensity];
             }
-            return null;
+
+            alert.AType = _alertCandidate.type;
+            alert.AIntensity = _alertCandidate.intensity;
+
+            return alert;
         }
 
         public bool IsListEmpty()

@@ -17,36 +17,30 @@ namespace NextgenUI.AlertsEvaluation
         [SerializeField] private bool reacted;
         [SerializeField] private float reactionTime;
 
-        [SerializeField] private int secondPhaseSelection;
+        [SerializeField] private Alert.Intensity intensityReaction;
 
         private void Start()
         {
             ResetSecondPhaseSelection();
             timer = GetComponent<Timer>();
             timer.TimeLimit = maxReactionTime;
-            SoundAlert.OnStartSoundAlert += StartNewReaction;
+
             VisualAlert.OnStartVisualAlert += StartNewReaction;
+            SoundAlert.OnStartSoundAlert += StartNewReaction;
             HapticAlert.OnStartHapticAlert += StartNewReaction;
 
-            //SoundAlert.OnEndSoundAlert += ResetReaction;
-            //VisualAlert.OnEndVisualAlert += ResetReaction;
-            //HapticAlert.OnEndHapticAlert += ResetReaction;
         }
 
         private void ResetSecondPhaseSelection()
         {
-            secondPhaseSelection = -1;
+            intensityReaction = Alert.Intensity.none;
         }
 
         private void OnDisable()
         {
             SoundAlert.OnStartSoundAlert -= StartNewReaction;
             VisualAlert.OnStartVisualAlert -= StartNewReaction;
-            HapticAlert.OnStartHapticAlert = StartNewReaction;
-
-            //SoundAlert.OnEndSoundAlert -= ResetReaction;
-            //VisualAlert.OnEndVisualAlert -= ResetReaction;
-            //HapticAlert.OnEndHapticAlert -= ResetReaction;
+            HapticAlert.OnStartHapticAlert -= StartNewReaction;
         }
 
         private void StartNewReaction(SoundAlert obj)
@@ -66,6 +60,7 @@ namespace NextgenUI.AlertsEvaluation
         {
             ResetReaction();
             ResetReactionTime();
+            ResetSecondPhaseSelection();
             StartTimer();
         }
 
@@ -83,14 +78,16 @@ namespace NextgenUI.AlertsEvaluation
         {
             reacted = true;
             reactionTime = timer.elapsedTime;
-            timer.Reset();
         }
 
         public bool IsInReactionWindow()
-        {            
-            if (!timer.TimeIsUp)
-                return true;
+        {
+            //  Start      Finish
+            //    |----------| reaction window
+            // RunTimer   TimeIsUP
 
+            if (timer.RunTimer && !timer.TimeIsUp )
+                return true;
             return false;   
         }
 
@@ -105,35 +102,38 @@ namespace NextgenUI.AlertsEvaluation
         }
 
         //  Check if reaction is allowed
-        public bool IsReactionAllowed()
-        {
-            // the reaction needs to occur before the time window finished && just once.
-            // if the time window finishes reset the reacted variable
-            if (!timer.RunTimer) return false;
+        //public bool IsReactionAllowed()
+        //{
+        //    // the reaction needs to occur before the time window finished && just once.
+        //    // if the time window finishes reset the reacted variable
+        //    if (!timer.RunTimer) return false;
 
-            if (!IsInReactionWindow() && PreviouslyReacted())
-                return false;
+        //    if (!IsInReactionWindow() && PreviouslyReacted())
+        //        return false;
                 
-            return true;
-        }
+        //    return true;
+        //}
 
-        public void SecondPhase(int _optionSelected)
+        public void SecondPhase(Alert.Intensity _optionSelected)
         {
-            secondPhaseSelection = _optionSelected;
+            intensityReaction = _optionSelected;
         }
 
         public float GetReactionTime()
         {
             return reactionTime;
         }
+        public Alert.Intensity GetSecondPhase()
+        {
+            return intensityReaction;
+        }
 
         private void Update()
         {
-            if (!timer.RunTimer) return;
-
             if (!IsInReactionWindow())
             {
                 ResetReactionTime();
+                ResetSecondPhaseSelection();
                 timer.Reset();
             }
         }

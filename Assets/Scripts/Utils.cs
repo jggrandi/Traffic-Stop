@@ -109,4 +109,6 @@ public static class Utils
             ts[r] = tmp;
         }
     }
+
+    public enum ButtonStatus { none, presed, held, released };
 }
